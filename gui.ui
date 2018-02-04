@@ -83,7 +83,7 @@
          <string>180º</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_30">
+       <widget class="QLabel" name="FKLabelArt1">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -103,7 +103,7 @@
          <string>Articulation 1</string>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider_7">
+       <widget class="QSlider" name="FKSliderArt1">
         <property name="geometry">
          <rect>
           <x>140</x>
@@ -113,10 +113,16 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>-180</number>
+         <number>-1800</number>
         </property>
         <property name="maximum">
-         <number>180</number>
+         <number>1800</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
         </property>
         <property name="tracking">
          <bool>true</bool>
@@ -131,7 +137,7 @@
          <enum>QSlider::TicksBelow</enum>
         </property>
         <property name="tickInterval">
-         <number>20</number>
+         <number>200</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_31">
@@ -173,7 +179,7 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+       <widget class="QDoubleSpinBox" name="SpinBoxArt1">
         <property name="geometry">
          <rect>
           <x>25</x>
@@ -198,7 +204,7 @@
          <double>180.000000000000000</double>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_13">
+       <widget class="QPushButton" name="FKInc10ButtonArt1">
         <property name="geometry">
          <rect>
           <x>385</x>
@@ -211,7 +217,7 @@
          <string>+10º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="FKDec1ButtonArt1">
         <property name="geometry">
          <rect>
           <x>185</x>
@@ -224,7 +230,7 @@
          <string>-1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_10">
+       <widget class="QPushButton" name="FKDec0_1ButtonArt1">
         <property name="geometry">
          <rect>
           <x>235</x>
@@ -237,7 +243,7 @@
          <string>-0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_11">
+       <widget class="QPushButton" name="FKInc0_1ButtonArt1">
         <property name="geometry">
          <rect>
           <x>285</x>
@@ -250,7 +256,7 @@
          <string>+0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_12">
+       <widget class="QPushButton" name="FKInc1ButtonArt1">
         <property name="geometry">
          <rect>
           <x>335</x>
@@ -263,7 +269,7 @@
          <string>+1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="FKDec10ButtonArt1">
         <property name="geometry">
          <rect>
           <x>135</x>
@@ -289,17 +295,17 @@
        <widget class="QLabel" name="label_33">
         <property name="geometry">
          <rect>
-          <x>408</x>
+          <x>410</x>
           <y>24</y>
-          <width>31</width>
+          <width>30</width>
           <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>180º</string>
+         <string>90º</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_34">
+       <widget class="QLabel" name="FKLabelArt2">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -319,7 +325,7 @@
          <string>Articulation 2</string>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider_8">
+       <widget class="QSlider" name="FKSliderArt2">
         <property name="geometry">
          <rect>
           <x>140</x>
@@ -329,10 +335,16 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>-180</number>
+         <number>-900</number>
         </property>
         <property name="maximum">
-         <number>180</number>
+         <number>900</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
         </property>
         <property name="tracking">
          <bool>true</bool>
@@ -347,7 +359,7 @@
          <enum>QSlider::TicksBelow</enum>
         </property>
         <property name="tickInterval">
-         <number>20</number>
+         <number>200</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_35">
@@ -366,14 +378,14 @@
        <widget class="QLabel" name="label_36">
         <property name="geometry">
          <rect>
-          <x>132</x>
+          <x>136</x>
           <y>24</y>
           <width>31</width>
           <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>-180º</string>
+         <string>-90º</string>
         </property>
        </widget>
        <widget class="Line" name="line_10">
@@ -389,7 +401,7 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
+       <widget class="QDoubleSpinBox" name="SpinBoxArt2">
         <property name="geometry">
          <rect>
           <x>25</x>
@@ -414,7 +426,7 @@
          <double>180.000000000000000</double>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_14">
+       <widget class="QPushButton" name="FKInc10ButtonArt2">
         <property name="geometry">
          <rect>
           <x>385</x>
@@ -427,7 +439,7 @@
          <string>+10º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_15">
+       <widget class="QPushButton" name="FKDec1ButtonArt2">
         <property name="geometry">
          <rect>
           <x>185</x>
@@ -440,7 +452,7 @@
          <string>-1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_16">
+       <widget class="QPushButton" name="FKDec0_1ButtonArt2">
         <property name="geometry">
          <rect>
           <x>235</x>
@@ -453,7 +465,7 @@
          <string>-0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_17">
+       <widget class="QPushButton" name="FKInc0_1ButtonArt2">
         <property name="geometry">
          <rect>
           <x>285</x>
@@ -466,7 +478,7 @@
          <string>+0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_18">
+       <widget class="QPushButton" name="FKInc1ButtonArt2">
         <property name="geometry">
          <rect>
           <x>335</x>
@@ -479,7 +491,7 @@
          <string>+1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_19">
+       <widget class="QPushButton" name="FKDec10ButtonArt2">
         <property name="geometry">
          <rect>
           <x>135</x>
@@ -505,17 +517,17 @@
        <widget class="QLabel" name="label_37">
         <property name="geometry">
          <rect>
-          <x>408</x>
+          <x>410</x>
           <y>24</y>
-          <width>31</width>
+          <width>30</width>
           <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>180º</string>
+         <string>90º</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_38">
+       <widget class="QLabel" name="FKLabelArt3">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -535,7 +547,7 @@
          <string>Articulation 3</string>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider_9">
+       <widget class="QSlider" name="FKSliderArt3">
         <property name="geometry">
          <rect>
           <x>140</x>
@@ -545,10 +557,16 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>-180</number>
+         <number>-900</number>
         </property>
         <property name="maximum">
-         <number>180</number>
+         <number>900</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
         </property>
         <property name="tracking">
          <bool>true</bool>
@@ -563,7 +581,7 @@
          <enum>QSlider::TicksBelow</enum>
         </property>
         <property name="tickInterval">
-         <number>20</number>
+         <number>200</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_39">
@@ -582,14 +600,14 @@
        <widget class="QLabel" name="label_40">
         <property name="geometry">
          <rect>
-          <x>132</x>
+          <x>136</x>
           <y>24</y>
-          <width>31</width>
+          <width>30</width>
           <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>-180º</string>
+         <string>-90º</string>
         </property>
        </widget>
        <widget class="Line" name="line_11">
@@ -605,7 +623,7 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+       <widget class="QDoubleSpinBox" name="SpinBoxArt3">
         <property name="geometry">
          <rect>
           <x>25</x>
@@ -630,7 +648,7 @@
          <double>180.000000000000000</double>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_20">
+       <widget class="QPushButton" name="FKInc10ButtonArt3">
         <property name="geometry">
          <rect>
           <x>385</x>
@@ -643,7 +661,7 @@
          <string>+10º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_21">
+       <widget class="QPushButton" name="FKDec1ButtonArt3">
         <property name="geometry">
          <rect>
           <x>185</x>
@@ -656,7 +674,7 @@
          <string>-1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_22">
+       <widget class="QPushButton" name="FKDec0_1ButtonArt3">
         <property name="geometry">
          <rect>
           <x>235</x>
@@ -669,7 +687,7 @@
          <string>-0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_23">
+       <widget class="QPushButton" name="FKInc0_1ButtonArt3">
         <property name="geometry">
          <rect>
           <x>285</x>
@@ -682,7 +700,7 @@
          <string>+0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_24">
+       <widget class="QPushButton" name="FKInc1ButtonArt3">
         <property name="geometry">
          <rect>
           <x>335</x>
@@ -695,7 +713,7 @@
          <string>+1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_25">
+       <widget class="QPushButton" name="FKDec10ButtonArt3">
         <property name="geometry">
          <rect>
           <x>135</x>
@@ -731,7 +749,7 @@
          <string>180º</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_42">
+       <widget class="QLabel" name="FKLabelArt4">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -751,7 +769,7 @@
          <string>Articulation 4</string>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider_10">
+       <widget class="QSlider" name="FKSliderArt4">
         <property name="geometry">
          <rect>
           <x>140</x>
@@ -761,10 +779,16 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>-180</number>
+         <number>-1800</number>
         </property>
         <property name="maximum">
-         <number>180</number>
+         <number>1800</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
         </property>
         <property name="tracking">
          <bool>true</bool>
@@ -779,7 +803,7 @@
          <enum>QSlider::TicksBelow</enum>
         </property>
         <property name="tickInterval">
-         <number>20</number>
+         <number>200</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_43">
@@ -821,7 +845,7 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
+       <widget class="QDoubleSpinBox" name="SpinBoxArt4">
         <property name="geometry">
          <rect>
           <x>25</x>
@@ -846,7 +870,7 @@
          <double>180.000000000000000</double>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_26">
+       <widget class="QPushButton" name="FKInc10ButtonArt4">
         <property name="geometry">
          <rect>
           <x>385</x>
@@ -859,7 +883,7 @@
          <string>+10º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_27">
+       <widget class="QPushButton" name="FKDec1ButtonArt4">
         <property name="geometry">
          <rect>
           <x>185</x>
@@ -872,7 +896,7 @@
          <string>-1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_28">
+       <widget class="QPushButton" name="FKDec0_1ButtonArt4">
         <property name="geometry">
          <rect>
           <x>235</x>
@@ -885,7 +909,7 @@
          <string>-0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_29">
+       <widget class="QPushButton" name="FKInc0_1ButtonArt4">
         <property name="geometry">
          <rect>
           <x>285</x>
@@ -898,7 +922,7 @@
          <string>+0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_30">
+       <widget class="QPushButton" name="FKInc1ButtonArt4">
         <property name="geometry">
          <rect>
           <x>335</x>
@@ -911,7 +935,7 @@
          <string>+1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_31">
+       <widget class="QPushButton" name="FKDec10ButtonArt4">
         <property name="geometry">
          <rect>
           <x>135</x>
@@ -937,17 +961,17 @@
        <widget class="QLabel" name="label_45">
         <property name="geometry">
          <rect>
-          <x>408</x>
+          <x>410</x>
           <y>24</y>
-          <width>31</width>
+          <width>30</width>
           <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>180º</string>
+         <string>90º</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_46">
+       <widget class="QLabel" name="FKLabelArt5">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -967,7 +991,7 @@
          <string>Articulation 5</string>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider_11">
+       <widget class="QSlider" name="FKSliderArt5">
         <property name="geometry">
          <rect>
           <x>140</x>
@@ -977,10 +1001,16 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>-180</number>
+         <number>-900</number>
         </property>
         <property name="maximum">
-         <number>180</number>
+         <number>900</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
         </property>
         <property name="tracking">
          <bool>true</bool>
@@ -995,7 +1025,7 @@
          <enum>QSlider::TicksBelow</enum>
         </property>
         <property name="tickInterval">
-         <number>20</number>
+         <number>200</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_47">
@@ -1014,14 +1044,14 @@
        <widget class="QLabel" name="label_48">
         <property name="geometry">
          <rect>
-          <x>132</x>
+          <x>136</x>
           <y>24</y>
-          <width>31</width>
+          <width>30</width>
           <height>16</height>
          </rect>
         </property>
         <property name="text">
-         <string>-180º</string>
+         <string>-90º</string>
         </property>
        </widget>
        <widget class="Line" name="line_13">
@@ -1037,7 +1067,7 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+       <widget class="QDoubleSpinBox" name="SpinBoxArt5">
         <property name="geometry">
          <rect>
           <x>25</x>
@@ -1062,7 +1092,7 @@
          <double>180.000000000000000</double>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_32">
+       <widget class="QPushButton" name="FKInc10ButtonArt5">
         <property name="geometry">
          <rect>
           <x>385</x>
@@ -1075,7 +1105,7 @@
          <string>+10º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_33">
+       <widget class="QPushButton" name="FKDec1ButtonArt5">
         <property name="geometry">
          <rect>
           <x>185</x>
@@ -1088,7 +1118,7 @@
          <string>-1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_34">
+       <widget class="QPushButton" name="FKDec0_1ButtonArt5">
         <property name="geometry">
          <rect>
           <x>235</x>
@@ -1101,7 +1131,7 @@
          <string>-0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_35">
+       <widget class="QPushButton" name="FKInc0_1ButtonArt5">
         <property name="geometry">
          <rect>
           <x>285</x>
@@ -1114,7 +1144,7 @@
          <string>+0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_36">
+       <widget class="QPushButton" name="FKInc1ButtonArt5">
         <property name="geometry">
          <rect>
           <x>335</x>
@@ -1127,7 +1157,7 @@
          <string>+1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_37">
+       <widget class="QPushButton" name="FKDec10ButtonArt5">
         <property name="geometry">
          <rect>
           <x>135</x>
@@ -1163,7 +1193,7 @@
          <string>180º</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_50">
+       <widget class="QLabel" name="FKLabelArt6">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1183,7 +1213,7 @@
          <string>Articulation 6</string>
         </property>
        </widget>
-       <widget class="QSlider" name="horizontalSlider_12">
+       <widget class="QSlider" name="FKSliderArt6">
         <property name="geometry">
          <rect>
           <x>140</x>
@@ -1193,10 +1223,16 @@
          </rect>
         </property>
         <property name="minimum">
-         <number>-180</number>
+         <number>-1800</number>
         </property>
         <property name="maximum">
-         <number>180</number>
+         <number>1800</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
         </property>
         <property name="tracking">
          <bool>true</bool>
@@ -1211,7 +1247,7 @@
          <enum>QSlider::TicksBelow</enum>
         </property>
         <property name="tickInterval">
-         <number>20</number>
+         <number>200</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_51">
@@ -1253,7 +1289,7 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+       <widget class="QDoubleSpinBox" name="SpinBoxArt6">
         <property name="geometry">
          <rect>
           <x>25</x>
@@ -1278,7 +1314,7 @@
          <double>180.000000000000000</double>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_38">
+       <widget class="QPushButton" name="FKInc10ButtonArt6">
         <property name="geometry">
          <rect>
           <x>385</x>
@@ -1291,7 +1327,7 @@
          <string>+10º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_39">
+       <widget class="QPushButton" name="FKDec1ButtonArt6">
         <property name="geometry">
          <rect>
           <x>185</x>
@@ -1304,7 +1340,7 @@
          <string>-1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_40">
+       <widget class="QPushButton" name="FKDec0_1ButtonArt6">
         <property name="geometry">
          <rect>
           <x>235</x>
@@ -1317,7 +1353,7 @@
          <string>-0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_41">
+       <widget class="QPushButton" name="FKInc0_1ButtonArt6">
         <property name="geometry">
          <rect>
           <x>285</x>
@@ -1330,7 +1366,7 @@
          <string>+0,1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_42">
+       <widget class="QPushButton" name="FKInc1ButtonArt6">
         <property name="geometry">
          <rect>
           <x>335</x>
@@ -1343,7 +1379,7 @@
          <string>+1º</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_43">
+       <widget class="QPushButton" name="FKDec10ButtonArt6">
         <property name="geometry">
          <rect>
           <x>135</x>
@@ -1381,7 +1417,7 @@
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_27">
+          <widget class="QLabel" name="SerialPortLabel">
            <property name="minimumSize">
             <size>
              <width>65</width>
@@ -1406,7 +1442,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="SerialPortComboBox">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -1432,7 +1468,7 @@
           <number>10</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_28">
+          <widget class="QLabel" name="BaudRateLabel">
            <property name="minimumSize">
             <size>
              <width>65</width>
@@ -1457,7 +1493,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_2">
+          <widget class="QComboBox" name="BaudRateComboBox">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -1547,7 +1583,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QLabel" name="label_25">
+          <widget class="QLabel" name="RobotStateLabel">
            <property name="minimumSize">
             <size>
              <width>45</width>
@@ -1572,7 +1608,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_26">
+          <widget class="QLabel" name="RobotStateDisplay">
            <property name="minimumSize">
             <size>
              <width>99</width>
@@ -1610,7 +1646,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="ConnectButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -1662,7 +1698,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_44">
+   <widget class="QPushButton" name="MotorsOffButton">
     <property name="geometry">
      <rect>
       <x>150</x>
@@ -1675,7 +1711,7 @@
      <string>Motors off</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_45">
+   <widget class="QPushButton" name="HomeButton">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -1688,7 +1724,7 @@
      <string>Home</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_46">
+   <widget class="QPushButton" name="ZeroPositionButton">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -1701,7 +1737,7 @@
      <string>Zero position</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_53">
+   <widget class="QLabel" name="InverseKinematicsLabel">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -1742,7 +1778,7 @@
      <string>Forward Kinematics</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="IkOutputValueFrame">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -1760,7 +1796,7 @@
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
     </property>
-    <widget class="QLabel" name="label_60">
+    <widget class="QLabel" name="IkOutputValueZ">
      <property name="geometry">
       <rect>
        <x>172</x>
@@ -1776,7 +1812,7 @@
       <string>200 mm</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_56">
+    <widget class="QLabel" name="IkLabelOutputY">
      <property name="geometry">
       <rect>
        <x>83</x>
@@ -1799,7 +1835,7 @@
       <string>Y:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_58">
+    <widget class="QLabel" name="IkOutputValueX">
      <property name="geometry">
       <rect>
        <x>29</x>
@@ -1815,7 +1851,7 @@
       <string>200 mm</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_57">
+    <widget class="QLabel" name="IkLabelOutputZ">
      <property name="geometry">
       <rect>
        <x>153</x>
@@ -1838,7 +1874,7 @@
       <string>Z:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_55">
+    <widget class="QLabel" name="IkLabelOutputX">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1861,7 +1897,7 @@
       <string>X:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_59">
+    <widget class="QLabel" name="IkOutputValueY">
      <property name="geometry">
       <rect>
        <x>102</x>
@@ -2008,7 +2044,7 @@ G00 X0. Y0. Z0.25</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QFrame" name="frame_2">
+   <widget class="QFrame" name="GripperFrame">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -2023,7 +2059,7 @@ G00 X0. Y0. Z0.25</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="label_62">
+    <widget class="QLabel" name="GripperLabel">
      <property name="geometry">
       <rect>
        <x>22</x>
@@ -2043,7 +2079,7 @@ G00 X0. Y0. Z0.25</string>
       <string>Gripper</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_52">
+    <widget class="QPushButton" name="GripperDec1Button">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -2056,7 +2092,7 @@ G00 X0. Y0. Z0.25</string>
       <string>-1%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_53">
+    <widget class="QPushButton" name="GripperDec10Button">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -2069,7 +2105,7 @@ G00 X0. Y0. Z0.25</string>
       <string>-10%</string>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+    <widget class="QDoubleSpinBox" name="SpinBoxGripper">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -2094,7 +2130,7 @@ G00 X0. Y0. Z0.25</string>
       <double>100.000000000000000</double>
      </property>
     </widget>
-    <widget class="QLabel" name="label_64">
+    <widget class="QLabel" name="Gripper0Label">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -2107,7 +2143,7 @@ G00 X0. Y0. Z0.25</string>
       <string>0%</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_63">
+    <widget class="QLabel" name="Gripper100Label">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -2120,7 +2156,7 @@ G00 X0. Y0. Z0.25</string>
       <string>100%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_48">
+    <widget class="QPushButton" name="GripperInc10Button">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -2133,7 +2169,7 @@ G00 X0. Y0. Z0.25</string>
       <string>+10%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_51">
+    <widget class="QPushButton" name="GripperInc1Button">
      <property name="geometry">
       <rect>
        <x>230</x>
@@ -2146,7 +2182,7 @@ G00 X0. Y0. Z0.25</string>
       <string>+1%</string>
      </property>
     </widget>
-    <widget class="QSlider" name="horizontalSlider_13">
+    <widget class="QSlider" name="GripperSlider">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -2177,24 +2213,6 @@ G00 X0. Y0. Z0.25</string>
       <number>20</number>
      </property>
     </widget>
-    <zorder>pushButton_53</zorder>
-    <zorder>pushButton_52</zorder>
-    <zorder>doubleSpinBox_13</zorder>
-    <zorder>label_64</zorder>
-    <zorder>label_63</zorder>
-    <zorder>label_62</zorder>
-    <zorder>pushButton_48</zorder>
-    <zorder>pushButton_51</zorder>
-    <zorder>horizontalSlider_13</zorder>
-    <zorder>label_62</zorder>
-    <zorder>pushButton_52</zorder>
-    <zorder>pushButton_53</zorder>
-    <zorder>doubleSpinBox_13</zorder>
-    <zorder>label_64</zorder>
-    <zorder>label_63</zorder>
-    <zorder>pushButton_48</zorder>
-    <zorder>pushButton_51</zorder>
-    <zorder>horizontalSlider_13</zorder>
    </widget>
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
@@ -2211,7 +2229,7 @@ G00 X0. Y0. Z0.25</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_16">
+    <widget class="QDoubleSpinBox" name="IKInputSpinBoxX">
      <property name="geometry">
       <rect>
        <x>15</x>
@@ -2236,7 +2254,7 @@ G00 X0. Y0. Z0.25</string>
       <double>999.000000000000000</double>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_17">
+    <widget class="QDoubleSpinBox" name="IKInputSpinBoxY">
      <property name="geometry">
       <rect>
        <x>125</x>
@@ -2261,7 +2279,7 @@ G00 X0. Y0. Z0.25</string>
       <double>999.000000000000000</double>
      </property>
     </widget>
-    <widget class="QLabel" name="label_69">
+    <widget class="QLabel" name="IkLabelInputY">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -2284,7 +2302,7 @@ G00 X0. Y0. Z0.25</string>
       <string>Y:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_68">
+    <widget class="QLabel" name="IkLabelInputX">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -2307,7 +2325,7 @@ G00 X0. Y0. Z0.25</string>
       <string>X:</string>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_18">
+    <widget class="QDoubleSpinBox" name="IKInputSpinBoxZ">
      <property name="geometry">
       <rect>
        <x>233</x>
@@ -2332,7 +2350,7 @@ G00 X0. Y0. Z0.25</string>
       <double>999.000000000000000</double>
      </property>
     </widget>
-    <widget class="QLabel" name="label_70">
+    <widget class="QLabel" name="IkLabelInputZ">
      <property name="geometry">
       <rect>
        <x>219</x>
@@ -2378,7 +2396,7 @@ G00 X0. Y0. Z0.25</string>
      <enum>QFrame::Raised</enum>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -2394,7 +2412,7 @@ G00 X0. Y0. Z0.25</string>
         <number>6</number>
        </property>
        <item>
-        <widget class="QPushButton" name="pushButton_8">
+        <widget class="QPushButton" name="IkIncButtonZ">
          <property name="minimumSize">
           <size>
            <width>50</width>
@@ -2413,7 +2431,7 @@ G00 X0. Y0. Z0.25</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_9">
+        <widget class="QPushButton" name="IkDecButtonZ">
          <property name="minimumSize">
           <size>
            <width>50</width>
@@ -2457,7 +2475,7 @@ G00 X0. Y0. Z0.25</string>
           <number>0</number>
          </property>
          <item row="1" column="2">
-          <widget class="QPushButton" name="pushButton_7">
+          <widget class="QPushButton" name="IkIncButtonY">
            <property name="minimumSize">
             <size>
              <width>50</width>
@@ -2476,7 +2494,7 @@ G00 X0. Y0. Z0.25</string>
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QPushButton" name="pushButton_6">
+          <widget class="QPushButton" name="IkDecButtonY">
            <property name="minimumSize">
             <size>
              <width>50</width>
@@ -2495,7 +2513,7 @@ G00 X0. Y0. Z0.25</string>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="IkIncButtonX">
            <property name="minimumSize">
             <size>
              <width>50</width>
@@ -2514,7 +2532,7 @@ G00 X0. Y0. Z0.25</string>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QPushButton" name="pushButton_5">
+          <widget class="QPushButton" name="IkDecButtonX">
            <property name="minimumSize">
             <size>
              <width>50</width>
@@ -2560,7 +2578,7 @@ G00 X0. Y0. Z0.25</string>
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
-       <widget class="QPushButton" name="pushButton_59">
+       <widget class="QPushButton" name="IkMultiplierDecSpinBox">
         <property name="geometry">
          <rect>
           <x>43</x>
@@ -2573,7 +2591,7 @@ G00 X0. Y0. Z0.25</string>
          <string>-</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_50">
+       <widget class="QPushButton" name="IkMultiplierDiv10SpinBox">
         <property name="geometry">
          <rect>
           <x>3</x>
@@ -2586,7 +2604,7 @@ G00 X0. Y0. Z0.25</string>
          <string>÷10</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_58">
+       <widget class="QPushButton" name="IkMultiplierIncSpinBox">
         <property name="geometry">
          <rect>
           <x>43</x>
@@ -2599,7 +2617,7 @@ G00 X0. Y0. Z0.25</string>
          <string>+</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_57">
+       <widget class="QPushButton" name="IkMultiplierX10SpinBox">
         <property name="geometry">
          <rect>
           <x>3</x>
@@ -2612,7 +2630,7 @@ G00 X0. Y0. Z0.25</string>
          <string>×10</string>
         </property>
        </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+       <widget class="QDoubleSpinBox" name="IkMultiplierSpinBox">
         <property name="geometry">
          <rect>
           <x>3</x>
@@ -2647,12 +2665,12 @@ G00 X0. Y0. Z0.25</string>
    <zorder>line_7</zorder>
    <zorder>line_8</zorder>
    <zorder>line_15</zorder>
-   <zorder>pushButton_44</zorder>
-   <zorder>pushButton_45</zorder>
-   <zorder>pushButton_46</zorder>
-   <zorder>label_53</zorder>
+   <zorder>MotorsOffButton</zorder>
+   <zorder>HomeButton</zorder>
+   <zorder>ZeroPositionButton</zorder>
+   <zorder>InverseKinematicsLabel</zorder>
    <zorder>label_54</zorder>
-   <zorder>frame</zorder>
+   <zorder>IkOutputValueFrame</zorder>
    <zorder>line_16</zorder>
    <zorder>lineEdit</zorder>
    <zorder>pushButton_47</zorder>
@@ -2661,10 +2679,7 @@ G00 X0. Y0. Z0.25</string>
    <zorder>label_61</zorder>
    <zorder>plainTextEdit</zorder>
    <zorder>line_17</zorder>
-   <zorder>frame_2</zorder>
-   <zorder>frame_3</zorder>
-   <zorder>layoutWidget_2</zorder>
-   <zorder>layoutWidget_3</zorder>
+   <zorder>GripperFrame</zorder>
    <zorder>frame_4</zorder>
    <zorder>frame_5</zorder>
   </widget>
