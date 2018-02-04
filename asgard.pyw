@@ -61,6 +61,13 @@ class AsgardGUI(Ui_MainWindow):
 		self.FKInc1ButtonArt6.pressed.connect(self.FKInc1Art6)
 		self.FKInc10ButtonArt6.pressed.connect(self.FKInc10Art6)
 
+		self.SliderGripper.valueChanged.connect(self.SliderUpdateGripper)
+		self.SpinBoxGripper.valueChanged.connect(self.SpinBoxUpdateGripper)
+		self.Dec10ButtonGripper.pressed.connect(self.Dec10Gripper)
+		self.Dec1ButtonGripper.pressed.connect(self.Dec1Gripper)
+		self.Inc1ButtonGripper.pressed.connect(self.Inc1Gripper)
+		self.Inc10ButtonGripper.pressed.connect(self.Inc10Gripper)
+
 
 #FK Art1 Functions
 	def FKSliderUpdateArt1(self):
@@ -217,6 +224,26 @@ class AsgardGUI(Ui_MainWindow):
 	def FKInc10Art6(self):
 		val=self.SpinBoxArt6.value()+10
 		self.SpinBoxArt6.setValue(val)
+
+# Gripper Functions
+	def SliderUpdateGripper(self):
+		val=self.SliderGripper.value()
+		self.SpinBoxGripper.setValue(val)
+	def SpinBoxUpdateGripper(self):
+		val=int(self.SpinBoxGripper.value())
+		self.SliderGripper.setValue(val)
+	def Dec10Gripper(self):
+		val=self.SpinBoxGripper.value()-10
+		self.SpinBoxGripper.setValue(val)
+	def Dec1Gripper(self):
+		val=self.SpinBoxGripper.value()-1
+		self.SpinBoxGripper.setValue(val)
+	def Inc1Gripper(self):
+		val=self.SpinBoxGripper.value()+1
+		self.SpinBoxGripper.setValue(val)
+	def Inc10Gripper(self):
+		val=self.SpinBoxGripper.value()+10
+		self.SpinBoxGripper.setValue(val)
 
 if __name__ == '__main__':
 	app = QtWidgets.QApplication(sys.argv)

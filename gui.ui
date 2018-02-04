@@ -2079,7 +2079,7 @@ G00 X0. Y0. Z0.25</string>
       <string>Gripper</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="GripperDec1Button">
+    <widget class="QPushButton" name="Dec1ButtonGripper">
      <property name="geometry">
       <rect>
        <x>160</x>
@@ -2092,7 +2092,7 @@ G00 X0. Y0. Z0.25</string>
       <string>-1%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="GripperDec10Button">
+    <widget class="QPushButton" name="Dec10ButtonGripper">
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -2156,7 +2156,7 @@ G00 X0. Y0. Z0.25</string>
       <string>100%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="GripperInc10Button">
+    <widget class="QPushButton" name="Inc10ButtonGripper">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -2169,7 +2169,7 @@ G00 X0. Y0. Z0.25</string>
       <string>+10%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="GripperInc1Button">
+    <widget class="QPushButton" name="Inc1ButtonGripper">
      <property name="geometry">
       <rect>
        <x>230</x>
@@ -2182,7 +2182,7 @@ G00 X0. Y0. Z0.25</string>
       <string>+1%</string>
      </property>
     </widget>
-    <widget class="QSlider" name="GripperSlider">
+    <widget class="QSlider" name="SliderGripper">
      <property name="geometry">
       <rect>
        <x>110</x>
