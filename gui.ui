@@ -1455,6 +1455,21 @@
              <height>22</height>
             </size>
            </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>-----------</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Find Ports</string>
+            </property>
+           </item>
           </widget>
          </item>
         </layout>
@@ -1927,7 +1942,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="ConsoleInput">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -1937,7 +1952,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_47">
+   <widget class="QPushButton" name="ConsoleButtonSend">
     <property name="geometry">
      <rect>
       <x>760</x>
@@ -1950,7 +1965,7 @@
      <string>Send</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="checkBoxHideResp">
     <property name="geometry">
      <rect>
       <x>720</x>
@@ -1963,23 +1978,7 @@
      <string>Hide Some Responses</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_2">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>840</y>
-      <width>71</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Autoscroll</string>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_61">
+   <widget class="QLabel" name="ConsoleLabel">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -1999,7 +1998,7 @@
      <string>Console</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
+   <widget class="QPlainTextEdit" name="ConsoleOutput">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -2672,12 +2671,11 @@ G00 X0. Y0. Z0.25</string>
    <zorder>label_54</zorder>
    <zorder>IkOutputValueFrame</zorder>
    <zorder>line_16</zorder>
-   <zorder>lineEdit</zorder>
-   <zorder>pushButton_47</zorder>
-   <zorder>checkBox</zorder>
-   <zorder>checkBox_2</zorder>
-   <zorder>label_61</zorder>
-   <zorder>plainTextEdit</zorder>
+   <zorder>ConsoleInput</zorder>
+   <zorder>ConsoleButtonSend</zorder>
+   <zorder>checkBoxHideResp</zorder>
+   <zorder>ConsoleLabel</zorder>
+   <zorder>ConsoleOutput</zorder>
    <zorder>line_17</zorder>
    <zorder>GripperFrame</zorder>
    <zorder>frame_4</zorder>

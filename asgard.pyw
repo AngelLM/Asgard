@@ -1,6 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from gui import Ui_MainWindow
+import serial_port_finder as spf
 
 class AsgardGUI(Ui_MainWindow):
 	def __init__(self, MainWindow):
@@ -68,8 +69,25 @@ class AsgardGUI(Ui_MainWindow):
 		self.Inc1ButtonGripper.pressed.connect(self.Inc1Gripper)
 		self.Inc10ButtonGripper.pressed.connect(self.Inc10Gripper)
 
+		self.SerialPortComboBox.activated.connect(self.getSerialPorts)
 
-#FK Art1 Functions
+		self.HomeButton.pressed.connect(self.homeRobot)
+
+	def homeRobot(self):
+		self.ConsoleOutput.appendPlainText("home!")
+
+
+
+
+	def getSerialPorts(self):
+		if self.SerialPortComboBox.currentText()=="Find Ports":
+			var=spf.serial_ports()
+			var2=["-----------","Find Ports"]
+			self.SerialPortComboBox.clear()
+			self.SerialPortComboBox.addItems(var)
+			self.SerialPortComboBox.addItems(var2)
+
+
 	def FKSliderUpdateArt1(self):
 		val=self.FKSliderArt1.value()/10
 		self.SpinBoxArt1.setValue(val)
