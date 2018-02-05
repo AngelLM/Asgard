@@ -1,12 +1,23 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import pyqtSignal
 from gui import Ui_MainWindow
 import serial_port_finder as spf
+import serial, time
+
+s0 = serial.Serial()
+
 
 class AsgardGUI(Ui_MainWindow):
 	def __init__(self, MainWindow):
 		Ui_MainWindow.__init__(self)
 		self.setupUi(MainWindow)
+
+		self.SerialThreadClass = SerialThreadClass()
+		self.SerialThreadClass.start()
+		self.SerialThreadClass.serialSignal.connect(self.updateConsole)
+
+
 
 		self.FKSliderArt1.valueChanged.connect(self.FKSliderUpdateArt1)
 		self.SpinBoxArt1.valueChanged.connect(self.FKSpinBoxUpdateArt1)
@@ -69,23 +80,13 @@ class AsgardGUI(Ui_MainWindow):
 		self.Inc1ButtonGripper.pressed.connect(self.Inc1Gripper)
 		self.Inc10ButtonGripper.pressed.connect(self.Inc10Gripper)
 
-		self.SerialPortComboBox.activated.connect(self.getSerialPorts)
+		self.SerialPortRefreshButton.pressed.connect(self.getSerialPorts)
+		self.ConnectButton.pressed.connect(self.connectSerial)
 
 		self.HomeButton.pressed.connect(self.homeRobot)
 
 	def homeRobot(self):
 		self.ConsoleOutput.appendPlainText("home!")
-
-
-
-
-	def getSerialPorts(self):
-		if self.SerialPortComboBox.currentText()=="Find Ports":
-			var=spf.serial_ports()
-			var2=["-----------","Find Ports"]
-			self.SerialPortComboBox.clear()
-			self.SerialPortComboBox.addItems(var)
-			self.SerialPortComboBox.addItems(var2)
 
 
 	def FKSliderUpdateArt1(self):
@@ -262,6 +263,69 @@ class AsgardGUI(Ui_MainWindow):
 	def Inc10Gripper(self):
 		val=self.SpinBoxGripper.value()+10
 		self.SpinBoxGripper.setValue(val)
+
+# Serial Connection functions
+	def getSerialPorts(self):
+		self.SerialPortComboBox.clear()
+		self.SerialPortComboBox.addItems(spf.serial_ports())
+
+	def connectSerial(self):
+		serialPort = self.SerialPortComboBox.currentText()
+		if serialPort != "":
+			s0.port = serialPort
+			s0.baudrate = self.BaudRateComboBox.currentText()
+			s0.timeout = 1
+			try:
+				s0.close()
+				s0.open()
+				# self.DAQConnected()
+			except Exception as e:
+				# self.IncorrectSerialErrorPopup()
+				print ("error opening serial port: " + str(e))
+		else:
+			print ("Not serial port available")
+
+	def updateConsole(self, dataRead):
+		if dataRead=="SERIAL-DISCONNECTED":
+			print ("Serial Connection Lost")
+		else:
+			self.ConsoleOutput.appendPlainText(dataRead)
+
+
+
+
+############### SERIAL READ THREAD CLASS ###############
+
+class SerialThreadClass(QtCore.QThread):
+    serialSignal = pyqtSignal(str)
+    def __init__(self, parent=None):
+         super(SerialThreadClass,self).__init__(parent)
+    def run(self):
+        while True:
+            time.sleep(0.05)
+            if s0.isOpen():
+                try:
+                    s0.inWaiting()
+                except:
+                    s0.close()
+                    self.serialSignal.emit("SERIAL-DISCONNECTED")
+                    print ("Lost Serial connection!")
+                try:
+                    dataRead = str(s0.readline())
+                    self.serialSignal.emit(dataRead)
+                except Exception as e:
+                    print ("Something failed: " + str(e))
+
+###############  SERIAL READ THREAD CLASS ###############
+
+
+
+
+
+
+
+
+
 
 if __name__ == '__main__':
 	app = QtWidgets.QApplication(sys.argv)
