@@ -1661,7 +1661,7 @@
      <string>Send</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBoxHideResp">
+   <widget class="QCheckBox" name="HideRespcheckBox">
     <property name="geometry">
      <rect>
       <x>720</x>
@@ -1713,26 +1713,7 @@
      <bool>true</bool>
     </property>
     <property name="plainText">
-     <string>G17 G20 G90 G94 G54
-G0 Z0.25
-X-0.5 Y0.2
-Z0.1
-G01 Z0. F5.
-G02 X0. Y0.5 I0.5 J0. F2.5
-X0.5 Y0. I0. J-0.5
-X0. Y-0.5 I-0.5 J0.
-X-0.5 Y0. I0. J0.5
-G01 Z0.1 F5.
-G00 X0. Y0. Z0.25
-G17 G20 G90 G94 G54
-G0 Z0.25
-X-0.5 Y0.2
-Z0.1
-X0.5 Y0. I0. J-0.5
-X0. Y-0.5 I-0.5 J0.
-X-0.5 Y0. I0. J0.5
-G01 Z0.1 F5.
-G00 X0. Y0. Z0.25</string>
+     <string/>
     </property>
    </widget>
    <widget class="Line" name="line_17">
@@ -2547,7 +2528,7 @@ G00 X0. Y0. Z0.25</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 4)</string>
+     <string notr="true">background-color: rgb(255, 0, 0)</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
@@ -2689,7 +2670,7 @@ G00 X0. Y0. Z0.25</string>
    <zorder>line_16</zorder>
    <zorder>ConsoleInput</zorder>
    <zorder>ConsoleButtonSend</zorder>
-   <zorder>checkBoxHideResp</zorder>
+   <zorder>HideRespcheckBox</zorder>
    <zorder>ConsoleLabel</zorder>
    <zorder>ConsoleOutput</zorder>
    <zorder>line_17</zorder>

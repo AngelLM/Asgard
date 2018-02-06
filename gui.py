@@ -519,6 +519,7 @@ class Ui_MainWindow(object):
         self.ConsoleOutput.setAcceptDrops(False)
         self.ConsoleOutput.setUndoRedoEnabled(False)
         self.ConsoleOutput.setReadOnly(True)
+        self.ConsoleOutput.setPlainText("")
         self.ConsoleOutput.setObjectName("ConsoleOutput")
         self.line_17 = QtWidgets.QFrame(self.centralwidget)
         self.line_17.setGeometry(QtCore.QRect(0, 240, 378, 16))
@@ -765,7 +766,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.RobotStateDisplay.setFont(font)
-        self.RobotStateDisplay.setStyleSheet("background-color: rgb(255, 0, 4)")
+        self.RobotStateDisplay.setStyleSheet("background-color: rgb(255, 0, 0)")
         self.RobotStateDisplay.setFrameShape(QtWidgets.QFrame.Box)
         self.RobotStateDisplay.setAlignment(QtCore.Qt.AlignCenter)
         self.RobotStateDisplay.setObjectName("RobotStateDisplay")
@@ -940,26 +941,6 @@ class Ui_MainWindow(object):
         self.ConsoleButtonSend.setText(_translate("MainWindow", "Send"))
         self.checkBoxHideResp.setText(_translate("MainWindow", "Hide Some Responses"))
         self.ConsoleLabel.setText(_translate("MainWindow", "Console"))
-        self.ConsoleOutput.setPlainText(_translate("MainWindow", "G17 G20 G90 G94 G54\n"
-"G0 Z0.25\n"
-"X-0.5 Y0.2\n"
-"Z0.1\n"
-"G01 Z0. F5.\n"
-"G02 X0. Y0.5 I0.5 J0. F2.5\n"
-"X0.5 Y0. I0. J-0.5\n"
-"X0. Y-0.5 I-0.5 J0.\n"
-"X-0.5 Y0. I0. J0.5\n"
-"G01 Z0.1 F5.\n"
-"G00 X0. Y0. Z0.25\n"
-"G17 G20 G90 G94 G54\n"
-"G0 Z0.25\n"
-"X-0.5 Y0.2\n"
-"Z0.1\n"
-"X0.5 Y0. I0. J-0.5\n"
-"X0. Y-0.5 I-0.5 J0.\n"
-"X-0.5 Y0. I0. J0.5\n"
-"G01 Z0.1 F5.\n"
-"G00 X0. Y0. Z0.25"))
         self.GripperLabel.setText(_translate("MainWindow", "Gripper"))
         self.Dec1ButtonGripper.setText(_translate("MainWindow", "-1%"))
         self.Dec10ButtonGripper.setText(_translate("MainWindow", "-10%"))
