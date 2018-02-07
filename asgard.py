@@ -23,7 +23,7 @@ class AsgardGUI(Ui_MainWindow):
         self.SerialThreadClass.serialSignal.connect(self.updateConsole)
 
 
-
+        self.FKGoButtonArt1.pressed.connect(self.FKMoveArt1)
         self.FKSliderArt1.valueChanged.connect(self.FKSliderUpdateArt1)
         self.SpinBoxArt1.valueChanged.connect(self.FKSpinBoxUpdateArt1)
         self.FKDec10ButtonArt1.pressed.connect(self.FKDec10Art1)
@@ -33,6 +33,7 @@ class AsgardGUI(Ui_MainWindow):
         self.FKInc1ButtonArt1.pressed.connect(self.FKInc1Art1)
         self.FKInc10ButtonArt1.pressed.connect(self.FKInc10Art1)
 
+        self.FKGoButtonArt2.pressed.connect(self.FKMoveArt2)
         self.FKSliderArt2.valueChanged.connect(self.FKSliderUpdateArt2)
         self.SpinBoxArt2.valueChanged.connect(self.FKSpinBoxUpdateArt2)
         self.FKDec10ButtonArt2.pressed.connect(self.FKDec10Art2)
@@ -42,6 +43,7 @@ class AsgardGUI(Ui_MainWindow):
         self.FKInc1ButtonArt2.pressed.connect(self.FKInc1Art2)
         self.FKInc10ButtonArt2.pressed.connect(self.FKInc10Art2)
 
+        self.FKGoButtonArt3.pressed.connect(self.FKMoveArt3)
         self.FKSliderArt3.valueChanged.connect(self.FKSliderUpdateArt3)
         self.SpinBoxArt3.valueChanged.connect(self.FKSpinBoxUpdateArt3)
         self.FKDec10ButtonArt3.pressed.connect(self.FKDec10Art3)
@@ -51,6 +53,7 @@ class AsgardGUI(Ui_MainWindow):
         self.FKInc1ButtonArt3.pressed.connect(self.FKInc1Art3)
         self.FKInc10ButtonArt3.pressed.connect(self.FKInc10Art3)
 
+        self.FKGoButtonArt4.pressed.connect(self.FKMoveArt4)
         self.FKSliderArt4.valueChanged.connect(self.FKSliderUpdateArt4)
         self.SpinBoxArt4.valueChanged.connect(self.FKSpinBoxUpdateArt4)
         self.FKDec10ButtonArt4.pressed.connect(self.FKDec10Art4)
@@ -60,6 +63,7 @@ class AsgardGUI(Ui_MainWindow):
         self.FKInc1ButtonArt4.pressed.connect(self.FKInc1Art4)
         self.FKInc10ButtonArt4.pressed.connect(self.FKInc10Art4)
 
+        self.FKGoButtonArt5.pressed.connect(self.FKMoveArt5)
         self.FKSliderArt5.valueChanged.connect(self.FKSliderUpdateArt5)
         self.SpinBoxArt5.valueChanged.connect(self.FKSpinBoxUpdateArt5)
         self.FKDec10ButtonArt5.pressed.connect(self.FKDec10Art5)
@@ -69,6 +73,7 @@ class AsgardGUI(Ui_MainWindow):
         self.FKInc1ButtonArt5.pressed.connect(self.FKInc1Art5)
         self.FKInc10ButtonArt5.pressed.connect(self.FKInc10Art5)
 
+        self.FKGoButtonArt6.pressed.connect(self.FKMoveArt6)
         self.FKSliderArt6.valueChanged.connect(self.FKSliderUpdateArt6)
         self.SpinBoxArt6.valueChanged.connect(self.FKSpinBoxUpdateArt6)
         self.FKDec10ButtonArt6.pressed.connect(self.FKDec10Art6)
@@ -77,6 +82,8 @@ class AsgardGUI(Ui_MainWindow):
         self.FKInc0_1ButtonArt6.pressed.connect(self.FKInc0_1Art6)
         self.FKInc1ButtonArt6.pressed.connect(self.FKInc1Art6)
         self.FKInc10ButtonArt6.pressed.connect(self.FKInc10Art6)
+
+        self.FKGoAllButton.pressed.connect(self.FKMoveAll)
 
         self.SliderGripper.valueChanged.connect(self.SliderUpdateGripper)
         self.SpinBoxGripper.valueChanged.connect(self.SpinBoxUpdateGripper)
@@ -89,14 +96,25 @@ class AsgardGUI(Ui_MainWindow):
         self.ConnectButton.pressed.connect(self.connectSerial)
 
         self.ConsoleButtonSend.pressed.connect(self.sendSerialCommand)
+        self.ConsoleInput.returnPressed.connect(self.sendSerialCommand)
 
-        self.HomeButton.pressed.connect(self.homeRobot)
-        self.ZeroPositionButton.pressed.connect(self.blankBaudRate)
+        # self.HomeButton.pressed.connect(self.homeRobot)
+        # self.ZeroPositionButton.pressed.connect(self.blankBaudRate)
 
     def homeRobot(self):
         self.ConsoleOutput.appendPlainText("home!")
 
 
+#FK Art1 Functions
+    def FKMoveArt1(self):
+        if s0.isOpen():
+            message="G0 A" + str(self.SpinBoxArt1.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
     def FKSliderUpdateArt1(self):
         val=self.FKSliderArt1.value()/10
         self.SpinBoxArt1.setValue(val)
@@ -123,6 +141,15 @@ class AsgardGUI(Ui_MainWindow):
         self.SpinBoxArt1.setValue(val)
 
 #FK Art2 Functions
+    def FKMoveArt2(self):
+        if s0.isOpen():
+            message="G0 B" + str(self.SpinBoxArt2.value()) + " C" + str(self.SpinBoxArt2.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
     def FKSliderUpdateArt2(self):
         val=self.FKSliderArt2.value()/10
         self.SpinBoxArt2.setValue(val)
@@ -149,6 +176,15 @@ class AsgardGUI(Ui_MainWindow):
         self.SpinBoxArt2.setValue(val)
 
 #FK Art3 Functions
+    def FKMoveArt3(self):
+        if s0.isOpen():
+            message="G0 D" + str(self.SpinBoxArt3.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
     def FKSliderUpdateArt3(self):
         val=self.FKSliderArt3.value()/10
         self.SpinBoxArt3.setValue(val)
@@ -175,6 +211,15 @@ class AsgardGUI(Ui_MainWindow):
         self.SpinBoxArt3.setValue(val)
 
 #FK Art4 Functions
+    def FKMoveArt4(self):
+        if s0.isOpen():
+            message="G0 X" + str(self.SpinBoxArt4.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
     def FKSliderUpdateArt4(self):
         val=self.FKSliderArt4.value()/10
         self.SpinBoxArt4.setValue(val)
@@ -201,6 +246,15 @@ class AsgardGUI(Ui_MainWindow):
         self.SpinBoxArt4.setValue(val)
 
 #FK Art5 Functions
+    def FKMoveArt5(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
+        if s0.isOpen():
+            message="G0 Y" + str(self.SpinBoxArt5.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
     def FKSliderUpdateArt5(self):
         val=self.FKSliderArt5.value()/10
         self.SpinBoxArt5.setValue(val)
@@ -227,6 +281,15 @@ class AsgardGUI(Ui_MainWindow):
         self.SpinBoxArt5.setValue(val)
 
 #FK Art6 Functions
+    def FKMoveArt6(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
+        if s0.isOpen():
+            message="G0 Z" + str(self.SpinBoxArt6.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
     def FKSliderUpdateArt6(self):
         val=self.FKSliderArt6.value()/10
         self.SpinBoxArt6.setValue(val)
@@ -251,6 +314,17 @@ class AsgardGUI(Ui_MainWindow):
     def FKInc10Art6(self):
         val=self.SpinBoxArt6.value()+10
         self.SpinBoxArt6.setValue(val)
+
+#FK Every Articulation Functions
+    def FKMoveAll(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
+        if s0.isOpen():
+            message="G0 A" + str(self.SpinBoxArt1.value()) + " B" + str(self.SpinBoxArt2.value()) + " C" + str(self.SpinBoxArt2.value()) + " D" + str(self.SpinBoxArt3.value()) + " X" + str(self.SpinBoxArt4.value()) + " Y" + str(self.SpinBoxArt5.value()) + " Z" + str(self.SpinBoxArt6.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
 
 # Gripper Functions
     def SliderUpdateGripper(self):
@@ -306,23 +380,34 @@ class AsgardGUI(Ui_MainWindow):
 
 
     def updateConsole(self, dataRead):
+        verboseShow=self.ConsoleShowVerbosecheckBox.isChecked()
+        okShow=self.ConsoleShowOkRespcheckBox.isChecked()
+        isDataReadVerbose = "MPos" in dataRead
+        isDataOkResponse = "ok" in dataRead
+
         if dataRead=="SERIAL-DISCONNECTED":
             s0.close()
             self.serialDisconnected()
             print ("Serial Connection Lost")
+
         else:
-            self.ConsoleOutput.appendPlainText(dataRead)
+            if not isDataReadVerbose and not isDataOkResponse:
+                self.ConsoleOutput.appendPlainText(dataRead)
+            elif isDataOkResponse and okShow:
+                self.ConsoleOutput.appendPlainText(dataRead)
+            elif isDataReadVerbose and verboseShow:
+                self.ConsoleOutput.appendPlainText(dataRead)
 
     def sendSerialCommand(self):
         messageToSent=self.ConsoleInput.text()+"\n"
         messageToConsole= ">>> "+self.ConsoleInput.text()
         if s0.isOpen():
             if messageToSent!="":
-                self.ConsoleOutput.appendPlainText(messageToConsole)
                 s0.write(messageToSent.encode('UTF-8'))
+                self.ConsoleOutput.appendPlainText(messageToConsole)
                 self.ConsoleInput.clear()
         else:
-            print("Establish the connection before sending commands.")
+            self.noSerialConnection()
 
 
     def blankSerialPort(self):
@@ -337,8 +422,11 @@ class AsgardGUI(Ui_MainWindow):
         msgBox.setText("There is not Baud Rate value indicated to establish the connection.\nPlease check it and try to connect again.")
         msgBox.exec_()
 
-
-
+    def noSerialConnection(self):
+        msgBox = QtWidgets.QMessageBox()
+        msgBox.setIcon(QtWidgets.QMessageBox.Warning)
+        msgBox.setText("The connection has not been established yet. Please establish the connection before trying to control.")
+        msgBox.exec_()
 
 ############### SERIAL READ THREAD CLASS ###############
 

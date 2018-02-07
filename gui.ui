@@ -45,1356 +45,12 @@
       <x>370</x>
       <y>-10</y>
       <width>16</width>
-      <height>567</height>
+      <height>598</height>
      </rect>
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>50</y>
-      <width>451</width>
-      <height>491</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QFrame" name="frame_7">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_29">
-        <property name="geometry">
-         <rect>
-          <x>408</x>
-          <y>24</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>180º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="FKLabelArt1">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>101</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Articulation 1</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="FKSliderArt1">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>4</y>
-          <width>281</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>-1800</number>
-        </property>
-        <property name="maximum">
-         <number>1800</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>100</number>
-        </property>
-        <property name="tracking">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="invertedAppearance">
-         <bool>false</bool>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-        <property name="tickInterval">
-         <number>200</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_31">
-        <property name="geometry">
-         <rect>
-          <x>278</x>
-          <y>24</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_32">
-        <property name="geometry">
-         <rect>
-          <x>132</x>
-          <y>24</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-180º</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_9">
-        <property name="geometry">
-         <rect>
-          <x>105</x>
-          <y>5</y>
-          <width>20</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="SpinBoxArt1">
-        <property name="geometry">
-         <rect>
-          <x>25</x>
-          <y>40</y>
-          <width>62</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="suffix">
-         <string>º</string>
-        </property>
-        <property name="decimals">
-         <number>1</number>
-        </property>
-        <property name="minimum">
-         <double>-180.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>180.000000000000000</double>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc10ButtonArt1">
-        <property name="geometry">
-         <rect>
-          <x>385</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+10º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec1ButtonArt1">
-        <property name="geometry">
-         <rect>
-          <x>185</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec0_1ButtonArt1">
-        <property name="geometry">
-         <rect>
-          <x>235</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc0_1ButtonArt1">
-        <property name="geometry">
-         <rect>
-          <x>285</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc1ButtonArt1">
-        <property name="geometry">
-         <rect>
-          <x>335</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec10ButtonArt1">
-        <property name="geometry">
-         <rect>
-          <x>135</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-10º</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="frame_8">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_33">
-        <property name="geometry">
-         <rect>
-          <x>410</x>
-          <y>24</y>
-          <width>30</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>90º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="FKLabelArt2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>101</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Articulation 2</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="FKSliderArt2">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>4</y>
-          <width>281</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>-900</number>
-        </property>
-        <property name="maximum">
-         <number>900</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>100</number>
-        </property>
-        <property name="tracking">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="invertedAppearance">
-         <bool>false</bool>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-        <property name="tickInterval">
-         <number>200</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_35">
-        <property name="geometry">
-         <rect>
-          <x>278</x>
-          <y>24</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_36">
-        <property name="geometry">
-         <rect>
-          <x>136</x>
-          <y>24</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-90º</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_10">
-        <property name="geometry">
-         <rect>
-          <x>105</x>
-          <y>5</y>
-          <width>20</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="SpinBoxArt2">
-        <property name="geometry">
-         <rect>
-          <x>25</x>
-          <y>40</y>
-          <width>62</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="suffix">
-         <string>º</string>
-        </property>
-        <property name="decimals">
-         <number>1</number>
-        </property>
-        <property name="minimum">
-         <double>-180.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>180.000000000000000</double>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc10ButtonArt2">
-        <property name="geometry">
-         <rect>
-          <x>385</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+10º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec1ButtonArt2">
-        <property name="geometry">
-         <rect>
-          <x>185</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec0_1ButtonArt2">
-        <property name="geometry">
-         <rect>
-          <x>235</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc0_1ButtonArt2">
-        <property name="geometry">
-         <rect>
-          <x>285</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc1ButtonArt2">
-        <property name="geometry">
-         <rect>
-          <x>335</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec10ButtonArt2">
-        <property name="geometry">
-         <rect>
-          <x>135</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-10º</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="frame_9">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_37">
-        <property name="geometry">
-         <rect>
-          <x>410</x>
-          <y>24</y>
-          <width>30</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>90º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="FKLabelArt3">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>101</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Articulation 3</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="FKSliderArt3">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>4</y>
-          <width>281</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>-900</number>
-        </property>
-        <property name="maximum">
-         <number>900</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>100</number>
-        </property>
-        <property name="tracking">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="invertedAppearance">
-         <bool>false</bool>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-        <property name="tickInterval">
-         <number>200</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_39">
-        <property name="geometry">
-         <rect>
-          <x>278</x>
-          <y>24</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_40">
-        <property name="geometry">
-         <rect>
-          <x>136</x>
-          <y>24</y>
-          <width>30</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-90º</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_11">
-        <property name="geometry">
-         <rect>
-          <x>105</x>
-          <y>5</y>
-          <width>20</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="SpinBoxArt3">
-        <property name="geometry">
-         <rect>
-          <x>25</x>
-          <y>40</y>
-          <width>62</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="suffix">
-         <string>º</string>
-        </property>
-        <property name="decimals">
-         <number>1</number>
-        </property>
-        <property name="minimum">
-         <double>-180.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>180.000000000000000</double>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc10ButtonArt3">
-        <property name="geometry">
-         <rect>
-          <x>385</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+10º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec1ButtonArt3">
-        <property name="geometry">
-         <rect>
-          <x>185</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec0_1ButtonArt3">
-        <property name="geometry">
-         <rect>
-          <x>235</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc0_1ButtonArt3">
-        <property name="geometry">
-         <rect>
-          <x>285</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc1ButtonArt3">
-        <property name="geometry">
-         <rect>
-          <x>335</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec10ButtonArt3">
-        <property name="geometry">
-         <rect>
-          <x>135</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-10º</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="frame_10">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_41">
-        <property name="geometry">
-         <rect>
-          <x>408</x>
-          <y>24</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>180º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="FKLabelArt4">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>101</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Articulation 4</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="FKSliderArt4">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>4</y>
-          <width>281</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>-1800</number>
-        </property>
-        <property name="maximum">
-         <number>1800</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>100</number>
-        </property>
-        <property name="tracking">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="invertedAppearance">
-         <bool>false</bool>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-        <property name="tickInterval">
-         <number>200</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_43">
-        <property name="geometry">
-         <rect>
-          <x>278</x>
-          <y>24</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_44">
-        <property name="geometry">
-         <rect>
-          <x>132</x>
-          <y>24</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-180º</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_12">
-        <property name="geometry">
-         <rect>
-          <x>105</x>
-          <y>5</y>
-          <width>20</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="SpinBoxArt4">
-        <property name="geometry">
-         <rect>
-          <x>25</x>
-          <y>40</y>
-          <width>62</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="suffix">
-         <string>º</string>
-        </property>
-        <property name="decimals">
-         <number>1</number>
-        </property>
-        <property name="minimum">
-         <double>-180.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>180.000000000000000</double>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc10ButtonArt4">
-        <property name="geometry">
-         <rect>
-          <x>385</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+10º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec1ButtonArt4">
-        <property name="geometry">
-         <rect>
-          <x>185</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec0_1ButtonArt4">
-        <property name="geometry">
-         <rect>
-          <x>235</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc0_1ButtonArt4">
-        <property name="geometry">
-         <rect>
-          <x>285</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc1ButtonArt4">
-        <property name="geometry">
-         <rect>
-          <x>335</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec10ButtonArt4">
-        <property name="geometry">
-         <rect>
-          <x>135</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-10º</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="frame_11">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_45">
-        <property name="geometry">
-         <rect>
-          <x>410</x>
-          <y>24</y>
-          <width>30</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>90º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="FKLabelArt5">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>101</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Articulation 5</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="FKSliderArt5">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>4</y>
-          <width>281</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>-900</number>
-        </property>
-        <property name="maximum">
-         <number>900</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>100</number>
-        </property>
-        <property name="tracking">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="invertedAppearance">
-         <bool>false</bool>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-        <property name="tickInterval">
-         <number>200</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_47">
-        <property name="geometry">
-         <rect>
-          <x>278</x>
-          <y>24</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_48">
-        <property name="geometry">
-         <rect>
-          <x>136</x>
-          <y>24</y>
-          <width>30</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-90º</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_13">
-        <property name="geometry">
-         <rect>
-          <x>105</x>
-          <y>5</y>
-          <width>20</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="SpinBoxArt5">
-        <property name="geometry">
-         <rect>
-          <x>25</x>
-          <y>40</y>
-          <width>62</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="suffix">
-         <string>º</string>
-        </property>
-        <property name="decimals">
-         <number>1</number>
-        </property>
-        <property name="minimum">
-         <double>-180.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>180.000000000000000</double>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc10ButtonArt5">
-        <property name="geometry">
-         <rect>
-          <x>385</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+10º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec1ButtonArt5">
-        <property name="geometry">
-         <rect>
-          <x>185</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec0_1ButtonArt5">
-        <property name="geometry">
-         <rect>
-          <x>235</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc0_1ButtonArt5">
-        <property name="geometry">
-         <rect>
-          <x>285</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc1ButtonArt5">
-        <property name="geometry">
-         <rect>
-          <x>335</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec10ButtonArt5">
-        <property name="geometry">
-         <rect>
-          <x>135</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-10º</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QFrame" name="frame_12">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QLabel" name="label_49">
-        <property name="geometry">
-         <rect>
-          <x>408</x>
-          <y>24</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>180º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="FKLabelArt6">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>101</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Articulation 6</string>
-        </property>
-       </widget>
-       <widget class="QSlider" name="FKSliderArt6">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>4</y>
-          <width>281</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="minimum">
-         <number>-1800</number>
-        </property>
-        <property name="maximum">
-         <number>1800</number>
-        </property>
-        <property name="singleStep">
-         <number>10</number>
-        </property>
-        <property name="pageStep">
-         <number>100</number>
-        </property>
-        <property name="tracking">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="invertedAppearance">
-         <bool>false</bool>
-        </property>
-        <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
-        </property>
-        <property name="tickInterval">
-         <number>200</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_51">
-        <property name="geometry">
-         <rect>
-          <x>278</x>
-          <y>24</y>
-          <width>16</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>0º</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_52">
-        <property name="geometry">
-         <rect>
-          <x>132</x>
-          <y>24</y>
-          <width>31</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-180º</string>
-        </property>
-       </widget>
-       <widget class="Line" name="line_14">
-        <property name="geometry">
-         <rect>
-          <x>105</x>
-          <y>5</y>
-          <width>20</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="SpinBoxArt6">
-        <property name="geometry">
-         <rect>
-          <x>25</x>
-          <y>40</y>
-          <width>62</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="suffix">
-         <string>º</string>
-        </property>
-        <property name="decimals">
-         <number>1</number>
-        </property>
-        <property name="minimum">
-         <double>-180.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>180.000000000000000</double>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc10ButtonArt6">
-        <property name="geometry">
-         <rect>
-          <x>385</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+10º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec1ButtonArt6">
-        <property name="geometry">
-         <rect>
-          <x>185</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec0_1ButtonArt6">
-        <property name="geometry">
-         <rect>
-          <x>235</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc0_1ButtonArt6">
-        <property name="geometry">
-         <rect>
-          <x>285</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+0,1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKInc1ButtonArt6">
-        <property name="geometry">
-         <rect>
-          <x>335</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+1º</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="FKDec10ButtonArt6">
-        <property name="geometry">
-         <rect>
-          <x>135</x>
-          <y>50</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-10º</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-    </layout>
    </widget>
    <widget class="Line" name="line_15">
     <property name="geometry">
@@ -1449,6 +105,9 @@
     </property>
    </widget>
    <widget class="QLabel" name="InverseKinematicsLabel">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -1473,7 +132,7 @@
     <property name="geometry">
      <rect>
       <x>540</x>
-      <y>10</y>
+      <y>-7</y>
       <width>211</width>
       <height>31</height>
      </rect>
@@ -1490,6 +149,9 @@
     </property>
    </widget>
    <widget class="QFrame" name="IkOutputValueFrame">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -1629,7 +291,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>550</y>
+      <y>580</y>
       <width>901</width>
       <height>16</height>
      </rect>
@@ -1642,7 +304,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>810</y>
+      <y>835</y>
       <width>711</width>
       <height>20</height>
      </rect>
@@ -1652,7 +314,7 @@
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>810</y>
+      <y>835</y>
       <width>91</width>
       <height>23</height>
      </rect>
@@ -1661,24 +323,24 @@
      <string>Send</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="HideRespcheckBox">
+   <widget class="QCheckBox" name="ConsoleShowOkRespcheckBox">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>840</y>
-      <width>131</width>
+      <x>730</x>
+      <y>615</y>
+      <width>121</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
-     <string>Hide Some Responses</string>
+     <string>Show 'ok' Responses</string>
     </property>
    </widget>
    <widget class="QLabel" name="ConsoleLabel">
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>565</y>
+      <y>600</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -1698,9 +360,9 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>600</y>
+      <y>635</y>
       <width>811</width>
-      <height>201</height>
+      <height>191</height>
      </rect>
     </property>
     <property name="acceptDrops">
@@ -1915,6 +577,9 @@
      <enum>QFrame::Raised</enum>
     </property>
     <widget class="QDoubleSpinBox" name="IKInputSpinBoxX">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>15</x>
@@ -1940,6 +605,9 @@
      </property>
     </widget>
     <widget class="QDoubleSpinBox" name="IKInputSpinBoxY">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>125</x>
@@ -1965,6 +633,9 @@
      </property>
     </widget>
     <widget class="QLabel" name="IkLabelInputY">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>110</x>
@@ -1988,6 +659,9 @@
      </property>
     </widget>
     <widget class="QLabel" name="IkLabelInputX">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -2011,6 +685,9 @@
      </property>
     </widget>
     <widget class="QDoubleSpinBox" name="IKInputSpinBoxZ">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>233</x>
@@ -2036,6 +713,9 @@
      </property>
     </widget>
     <widget class="QLabel" name="IkLabelInputZ">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>219</x>
@@ -2058,291 +738,6 @@
       <string>Z:</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QFrame" name="frame_5">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>290</y>
-      <width>357</width>
-      <height>259</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgba(200, 200, 200, 150)</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>300</y>
-      <width>351</width>
-      <height>168</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_7">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <property name="spacing">
-        <number>6</number>
-       </property>
-       <item>
-        <widget class="QPushButton" name="IkIncButtonZ">
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Z+</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="IkDecButtonZ">
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Z-</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>15</width>
-         <height>98</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <layout class="QGridLayout" name="gridLayout">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item row="1" column="2">
-          <widget class="QPushButton" name="IkIncButtonY">
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Y+</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="IkDecButtonY">
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Y-</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="IkIncButtonX">
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>X+</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QPushButton" name="IkDecButtonX">
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>X-</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_4">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>98</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QFrame" name="frame_3">
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
-       </property>
-       <widget class="QPushButton" name="IkMultiplierDecSpinBox">
-        <property name="geometry">
-         <rect>
-          <x>43</x>
-          <y>110</y>
-          <width>31</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>-</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="IkMultiplierDiv10SpinBox">
-        <property name="geometry">
-         <rect>
-          <x>3</x>
-          <y>110</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>÷10</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="IkMultiplierIncSpinBox">
-        <property name="geometry">
-         <rect>
-          <x>43</x>
-          <y>40</y>
-          <width>31</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>+</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="IkMultiplierX10SpinBox">
-        <property name="geometry">
-         <rect>
-          <x>3</x>
-          <y>40</y>
-          <width>41</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>×10</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="IkMultiplierSpinBox">
-        <property name="geometry">
-         <rect>
-          <x>3</x>
-          <y>75</y>
-          <width>71</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="suffix">
-         <string/>
-        </property>
-        <property name="decimals">
-         <number>1</number>
-        </property>
-        <property name="minimum">
-         <double>0.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>100.000000000000000</double>
-        </property>
-       </widget>
-      </widget>
-     </item>
-    </layout>
    </widget>
    <widget class="QLabel" name="SerialPortLabel">
     <property name="geometry">
@@ -2656,6 +1051,2136 @@
      <string>Baud Rate:</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="ConsoleShowVerbosecheckBox">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>615</y>
+      <width>131</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show Verbose Output</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="FKGoAllButton">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>520</y>
+      <width>75</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>75</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>75</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Go All!</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="FKOutputValueFrame">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>560</y>
+      <width>491</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255)</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QLabel" name="FKCurrentPosValueArt1">
+     <property name="geometry">
+      <rect>
+       <x>48</x>
+       <y>2</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>0,0º</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKLabelCurrentPosArt1">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>Art1:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKLabelCurrentPosArt2">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>0</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>Art2:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKCurrentPosValueArt2">
+     <property name="geometry">
+      <rect>
+       <x>128</x>
+       <y>2</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>0,0º</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKLabelCurrentPosArt3">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>0</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>Art3:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKCurrentPosValueArt3">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>2</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>0,0º</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKLabelCurrentPosArt4">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>0</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>Art4:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKCurrentPosValueArt4">
+     <property name="geometry">
+      <rect>
+       <x>288</x>
+       <y>2</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>0,0º</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKLabelCurrentPosArt5">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>0</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>Art5:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKCurrentPosValueArt5">
+     <property name="geometry">
+      <rect>
+       <x>368</x>
+       <y>2</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>0,0º</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKCurrentPosValueArt6">
+     <property name="geometry">
+      <rect>
+       <x>448</x>
+       <y>2</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>0,0º</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FKLabelCurrentPosArt6">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>0</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+     </property>
+     <property name="text">
+      <string>Art6:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>30</y>
+      <width>491</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QFrame" name="frame_7">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_29">
+        <property name="geometry">
+         <rect>
+          <x>408</x>
+          <y>24</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>180º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FKLabelArt1">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Articulation 1</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="FKSliderArt1">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>4</y>
+          <width>281</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>-1800</number>
+        </property>
+        <property name="maximum">
+         <number>1800</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+        <property name="tickInterval">
+         <number>200</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_31">
+        <property name="geometry">
+         <rect>
+          <x>278</x>
+          <y>24</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_32">
+        <property name="geometry">
+         <rect>
+          <x>132</x>
+          <y>24</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-180º</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_9">
+        <property name="geometry">
+         <rect>
+          <x>105</x>
+          <y>5</y>
+          <width>20</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SpinBoxArt1">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>40</y>
+          <width>62</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="suffix">
+         <string>º</string>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="minimum">
+         <double>-180.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>180.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc10ButtonArt1">
+        <property name="geometry">
+         <rect>
+          <x>385</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+10º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec1ButtonArt1">
+        <property name="geometry">
+         <rect>
+          <x>185</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec0_1ButtonArt1">
+        <property name="geometry">
+         <rect>
+          <x>235</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc0_1ButtonArt1">
+        <property name="geometry">
+         <rect>
+          <x>285</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc1ButtonArt1">
+        <property name="geometry">
+         <rect>
+          <x>335</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec10ButtonArt1">
+        <property name="geometry">
+         <rect>
+          <x>135</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-10º</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FKGoButtonArt1">
+       <property name="minimumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Go!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>110</y>
+      <width>491</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QFrame" name="frame_8">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_33">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>24</y>
+          <width>30</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>90º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FKLabelArt2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Articulation 2</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="FKSliderArt2">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>4</y>
+          <width>281</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>-900</number>
+        </property>
+        <property name="maximum">
+         <number>900</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+        <property name="tickInterval">
+         <number>200</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_35">
+        <property name="geometry">
+         <rect>
+          <x>278</x>
+          <y>24</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_36">
+        <property name="geometry">
+         <rect>
+          <x>136</x>
+          <y>24</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-90º</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_10">
+        <property name="geometry">
+         <rect>
+          <x>105</x>
+          <y>5</y>
+          <width>20</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SpinBoxArt2">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>40</y>
+          <width>62</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="suffix">
+         <string>º</string>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="minimum">
+         <double>-180.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>180.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc10ButtonArt2">
+        <property name="geometry">
+         <rect>
+          <x>385</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+10º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec1ButtonArt2">
+        <property name="geometry">
+         <rect>
+          <x>185</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec0_1ButtonArt2">
+        <property name="geometry">
+         <rect>
+          <x>235</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc0_1ButtonArt2">
+        <property name="geometry">
+         <rect>
+          <x>285</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc1ButtonArt2">
+        <property name="geometry">
+         <rect>
+          <x>335</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec10ButtonArt2">
+        <property name="geometry">
+         <rect>
+          <x>135</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-10º</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FKGoButtonArt2">
+       <property name="minimumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Go!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>190</y>
+      <width>491</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QFrame" name="frame_9">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_37">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>24</y>
+          <width>30</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>90º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FKLabelArt3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Articulation 3</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="FKSliderArt3">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>4</y>
+          <width>281</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>-900</number>
+        </property>
+        <property name="maximum">
+         <number>900</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+        <property name="tickInterval">
+         <number>200</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_39">
+        <property name="geometry">
+         <rect>
+          <x>278</x>
+          <y>24</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_40">
+        <property name="geometry">
+         <rect>
+          <x>136</x>
+          <y>24</y>
+          <width>30</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-90º</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_11">
+        <property name="geometry">
+         <rect>
+          <x>105</x>
+          <y>5</y>
+          <width>20</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SpinBoxArt3">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>40</y>
+          <width>62</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="suffix">
+         <string>º</string>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="minimum">
+         <double>-180.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>180.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc10ButtonArt3">
+        <property name="geometry">
+         <rect>
+          <x>385</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+10º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec1ButtonArt3">
+        <property name="geometry">
+         <rect>
+          <x>185</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec0_1ButtonArt3">
+        <property name="geometry">
+         <rect>
+          <x>235</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc0_1ButtonArt3">
+        <property name="geometry">
+         <rect>
+          <x>285</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc1ButtonArt3">
+        <property name="geometry">
+         <rect>
+          <x>335</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec10ButtonArt3">
+        <property name="geometry">
+         <rect>
+          <x>135</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-10º</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FKGoButtonArt3">
+       <property name="minimumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Go!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>270</y>
+      <width>491</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QFrame" name="frame_10">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_41">
+        <property name="geometry">
+         <rect>
+          <x>408</x>
+          <y>24</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>180º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FKLabelArt4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Articulation 4</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="FKSliderArt4">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>4</y>
+          <width>281</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>-1800</number>
+        </property>
+        <property name="maximum">
+         <number>1800</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+        <property name="tickInterval">
+         <number>200</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_43">
+        <property name="geometry">
+         <rect>
+          <x>278</x>
+          <y>24</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_44">
+        <property name="geometry">
+         <rect>
+          <x>132</x>
+          <y>24</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-180º</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_12">
+        <property name="geometry">
+         <rect>
+          <x>105</x>
+          <y>5</y>
+          <width>20</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SpinBoxArt4">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>40</y>
+          <width>62</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="suffix">
+         <string>º</string>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="minimum">
+         <double>-180.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>180.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc10ButtonArt4">
+        <property name="geometry">
+         <rect>
+          <x>385</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+10º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec1ButtonArt4">
+        <property name="geometry">
+         <rect>
+          <x>185</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec0_1ButtonArt4">
+        <property name="geometry">
+         <rect>
+          <x>235</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc0_1ButtonArt4">
+        <property name="geometry">
+         <rect>
+          <x>285</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc1ButtonArt4">
+        <property name="geometry">
+         <rect>
+          <x>335</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec10ButtonArt4">
+        <property name="geometry">
+         <rect>
+          <x>135</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-10º</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FKGoButtonArt4">
+       <property name="minimumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Go!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>350</y>
+      <width>491</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="QFrame" name="frame_11">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_45">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>24</y>
+          <width>30</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>90º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FKLabelArt5">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Articulation 5</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="FKSliderArt5">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>4</y>
+          <width>281</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>-900</number>
+        </property>
+        <property name="maximum">
+         <number>900</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+        <property name="tickInterval">
+         <number>200</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_47">
+        <property name="geometry">
+         <rect>
+          <x>278</x>
+          <y>24</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_48">
+        <property name="geometry">
+         <rect>
+          <x>136</x>
+          <y>24</y>
+          <width>30</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-90º</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_13">
+        <property name="geometry">
+         <rect>
+          <x>105</x>
+          <y>5</y>
+          <width>20</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SpinBoxArt5">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>40</y>
+          <width>62</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="suffix">
+         <string>º</string>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="minimum">
+         <double>-180.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>180.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc10ButtonArt5">
+        <property name="geometry">
+         <rect>
+          <x>385</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+10º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec1ButtonArt5">
+        <property name="geometry">
+         <rect>
+          <x>185</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec0_1ButtonArt5">
+        <property name="geometry">
+         <rect>
+          <x>235</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc0_1ButtonArt5">
+        <property name="geometry">
+         <rect>
+          <x>285</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc1ButtonArt5">
+        <property name="geometry">
+         <rect>
+          <x>335</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec10ButtonArt5">
+        <property name="geometry">
+         <rect>
+          <x>135</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-10º</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FKGoButtonArt5">
+       <property name="minimumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Go!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>430</y>
+      <width>491</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <widget class="QFrame" name="frame_12">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QLabel" name="label_49">
+        <property name="geometry">
+         <rect>
+          <x>408</x>
+          <y>24</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>180º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="FKLabelArt6">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Articulation 6</string>
+        </property>
+       </widget>
+       <widget class="QSlider" name="FKSliderArt6">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>4</y>
+          <width>281</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <number>-1800</number>
+        </property>
+        <property name="maximum">
+         <number>1800</number>
+        </property>
+        <property name="singleStep">
+         <number>10</number>
+        </property>
+        <property name="pageStep">
+         <number>100</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+        <property name="tickInterval">
+         <number>200</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_51">
+        <property name="geometry">
+         <rect>
+          <x>278</x>
+          <y>24</y>
+          <width>16</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0º</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_52">
+        <property name="geometry">
+         <rect>
+          <x>132</x>
+          <y>24</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-180º</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_14">
+        <property name="geometry">
+         <rect>
+          <x>105</x>
+          <y>5</y>
+          <width>20</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="SpinBoxArt6">
+        <property name="geometry">
+         <rect>
+          <x>25</x>
+          <y>40</y>
+          <width>62</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="suffix">
+         <string>º</string>
+        </property>
+        <property name="decimals">
+         <number>1</number>
+        </property>
+        <property name="minimum">
+         <double>-180.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>180.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc10ButtonArt6">
+        <property name="geometry">
+         <rect>
+          <x>385</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+10º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec1ButtonArt6">
+        <property name="geometry">
+         <rect>
+          <x>185</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec0_1ButtonArt6">
+        <property name="geometry">
+         <rect>
+          <x>235</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc0_1ButtonArt6">
+        <property name="geometry">
+         <rect>
+          <x>285</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+0,1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKInc1ButtonArt6">
+        <property name="geometry">
+         <rect>
+          <x>335</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>+1º</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="FKDec10ButtonArt6">
+        <property name="geometry">
+         <rect>
+          <x>135</x>
+          <y>50</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>-10º</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="FKGoButtonArt6">
+       <property name="minimumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>35</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Go!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="IkDecButtonZ">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>395</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Z-</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="IkIncButtonZ">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>320</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Z+</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>300</y>
+      <width>91</width>
+      <height>166</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="IkMultiplierDecSpinBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>43</x>
+       <y>110</y>
+       <width>31</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="IkMultiplierDiv10SpinBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>110</y>
+       <width>41</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>÷10</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="IkMultiplierIncSpinBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>43</x>
+       <y>40</y>
+       <width>31</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="IkMultiplierX10SpinBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>40</y>
+       <width>41</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>×10</string>
+     </property>
+    </widget>
+    <widget class="QDoubleSpinBox" name="IkMultiplierSpinBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>3</x>
+       <y>75</y>
+       <width>71</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="suffix">
+      <string/>
+     </property>
+     <property name="decimals">
+      <number>1</number>
+     </property>
+     <property name="minimum">
+      <double>0.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>100.000000000000000</double>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>121</x>
+      <y>301</y>
+      <width>152</width>
+      <height>164</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="IkIncButtonY">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Y+</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="IkDecButtonY">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Y-</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="IkIncButtonX">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>X+</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="IkDecButtonX">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>X-</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>line_7</zorder>
@@ -2670,13 +3195,12 @@
    <zorder>line_16</zorder>
    <zorder>ConsoleInput</zorder>
    <zorder>ConsoleButtonSend</zorder>
-   <zorder>HideRespcheckBox</zorder>
+   <zorder>ConsoleShowOkRespcheckBox</zorder>
    <zorder>ConsoleLabel</zorder>
    <zorder>ConsoleOutput</zorder>
    <zorder>line_17</zorder>
    <zorder>GripperFrame</zorder>
    <zorder>frame_4</zorder>
-   <zorder>frame_5</zorder>
    <zorder>SerialPortLabel</zorder>
    <zorder>RobotStateLabel</zorder>
    <zorder>SerialPortComboBox</zorder>
@@ -2685,6 +3209,12 @@
    <zorder>RobotStateDisplay</zorder>
    <zorder>BaudRateComboBox</zorder>
    <zorder>BaudRateLabel</zorder>
+   <zorder>ConsoleShowVerbosecheckBox</zorder>
+   <zorder>FKGoAllButton</zorder>
+   <zorder>FKOutputValueFrame</zorder>
+   <zorder>IkDecButtonZ</zorder>
+   <zorder>IkIncButtonZ</zorder>
+   <zorder>frame_3</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
