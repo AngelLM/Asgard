@@ -363,7 +363,6 @@ class AsgardGUI(Ui_MainWindow):
                     s0.close()
                     s0.open()
                     self.SerialThreadClass.start()
-                    self.serialConnected()
                 except Exception as e:
                     print ("error opening serial port: " + str(e))
             else:
@@ -371,13 +370,9 @@ class AsgardGUI(Ui_MainWindow):
         else:
             self.blankSerialPort()
 
-    def serialConnected(self):
-        self.RobotStateDisplay.setStyleSheet('background-color: rgb(0, 255, 0)')
-        self.RobotStateDisplay.setText("Connected")
     def serialDisconnected(self):
         self.RobotStateDisplay.setStyleSheet('background-color: rgb(255, 0, 0)')
         self.RobotStateDisplay.setText("Disconnected")
-
 
     def updateConsole(self, dataRead):
         verboseShow=self.ConsoleShowVerbosecheckBox.isChecked()
@@ -395,8 +390,10 @@ class AsgardGUI(Ui_MainWindow):
                 self.ConsoleOutput.appendPlainText(dataRead)
             elif isDataOkResponse and okShow:
                 self.ConsoleOutput.appendPlainText(dataRead)
-            elif isDataReadVerbose and verboseShow:
-                self.ConsoleOutput.appendPlainText(dataRead)
+            elif isDataReadVerbose:
+                self.updateFKPosDisplay(dataRead)
+                if verboseShow:
+                    self.ConsoleOutput.appendPlainText(dataRead)
 
     def sendSerialCommand(self):
         messageToSent=self.ConsoleInput.text()+"\n"
@@ -408,6 +405,29 @@ class AsgardGUI(Ui_MainWindow):
                 self.ConsoleInput.clear()
         else:
             self.noSerialConnection()
+
+    def updateFKPosDisplay(self,dataRead):
+        data=dataRead[1:][:-1].split(",")
+        self.updateCurrentState(data[0])
+        self.FKCurrentPosValueArt1.setText(data[1][5:][:-2]+"º")
+        self.FKCurrentPosValueArt2.setText(data[2][:-2]+"º")
+        self.FKCurrentPosValueArt3.setText(data[4][:-2]+"º")
+        self.FKCurrentPosValueArt4.setText(data[5][:-2]+"º")
+        self.FKCurrentPosValueArt5.setText(data[6][:-2]+"º")
+        self.FKCurrentPosValueArt6.setText(data[7][:-2]+"º")
+
+    def updateCurrentState(self, state):
+        self.RobotStateDisplay.setText(state)
+        if state=="Idle" or state=="Run":
+            self.RobotStateDisplay.setStyleSheet('background-color: rgb(0, 255, 0)')
+        elif state=="Home":
+            self.RobotStateDisplay.setStyleSheet('background-color: rgb(85, 255, 255)')
+        elif state=="Alert":
+            self.RobotStateDisplay.setStyleSheet('background-color: rgb(255, 255, 0)')
+        elif state=="Hold":
+            self.RobotStateDisplay.setStyleSheet('background-color: rgb(255, 0, 0)')
+        else:
+            self.RobotStateDisplay.setStyleSheet('background-color: rgb(255, 255, 255)')
 
 
     def blankSerialPort(self):
@@ -431,6 +451,7 @@ class AsgardGUI(Ui_MainWindow):
 ############### SERIAL READ THREAD CLASS ###############
 
 class SerialThreadClass(QtCore.QThread):
+    elapsedTime = time.time()
     serialSignal = pyqtSignal(str)
     def __init__(self, parent=None):
          super(SerialThreadClass,self).__init__(parent)
@@ -442,13 +463,18 @@ class SerialThreadClass(QtCore.QThread):
                 except:
                     self.serialSignal.emit("SERIAL-DISCONNECTED")
                     print ("Lost Serial connection!")
+
                 try:
+                    if time.time()-self.elapsedTime>0.1:
+                        self.elapsedTime=time.time()
+                        s0.write("?\n".encode('UTF-8'))
                     dataRead = str(s0.readline())
                     dataCropped=dataRead[2:][:-5]
                     if dataCropped!="":
                         self.serialSignal.emit(dataCropped)
                 except Exception as e:
                     print ("Something failed: " + str(e))
+
 
 ###############  SERIAL READ THREAD CLASS ###############
 
