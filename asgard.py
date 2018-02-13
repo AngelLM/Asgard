@@ -22,6 +22,8 @@ class AsgardGUI(Ui_MainWindow):
         self.SerialThreadClass = SerialThreadClass()
         self.SerialThreadClass.serialSignal.connect(self.updateConsole)
 
+        self.G0MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
+        self.G1MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
 
         self.FKGoButtonArt1.pressed.connect(self.FKMoveArt1)
         self.FKSliderArt1.valueChanged.connect(self.FKSliderUpdateArt1)
@@ -85,6 +87,7 @@ class AsgardGUI(Ui_MainWindow):
 
         self.FKGoAllButton.pressed.connect(self.FKMoveAll)
 
+        self.GoButtonGripper.pressed.connect(self.MoveGripper)
         self.SliderGripper.valueChanged.connect(self.SliderUpdateGripper)
         self.SpinBoxGripper.valueChanged.connect(self.SpinBoxUpdateGripper)
         self.Dec10ButtonGripper.pressed.connect(self.Dec10Gripper)
@@ -101,14 +104,32 @@ class AsgardGUI(Ui_MainWindow):
         # self.HomeButton.pressed.connect(self.homeRobot)
         # self.ZeroPositionButton.pressed.connect(self.blankBaudRate)
 
+    # def G0MoveRadioButtonToggle(self):
+    #     G0MoveRadioButton.toggle()
+    # def G1MoveRadioButtonToggle(self):
+    #     G1MoveRadioButton.toggle()
+
     def homeRobot(self):
         self.ConsoleOutput.appendPlainText("home!")
+    def FeedRateBoxHide(self):
+        if self.G1MoveRadioButton.isChecked():
+            self.FeedRateLabel.setEnabled(True)
+            self.FeedRateInput.setEnabled(True)
+        else:
+            self.FeedRateLabel.setEnabled(False)
+            self.FeedRateInput.setEnabled(False)
 
 
 #FK Art1 Functions
     def FKMoveArt1(self):
         if s0.isOpen():
-            message="G0 A" + str(self.SpinBoxArt1.value())
+            if self.G1MoveRadioButton.isChecked():
+                typeOfMovement="G1 "
+                feedRate=" F" + str(self.FeedRateInput.value())
+            else:
+                typeOfMovement="G0 "
+                feedRate=""
+            message=typeOfMovement + "A" + str(self.SpinBoxArt1.value()) + feedRate
             messageToSend = message + "\n"
             messageToConsole = ">>> " + message
             s0.write(messageToSend.encode('UTF-8'))
@@ -143,7 +164,13 @@ class AsgardGUI(Ui_MainWindow):
 #FK Art2 Functions
     def FKMoveArt2(self):
         if s0.isOpen():
-            message="G0 B" + str(self.SpinBoxArt2.value()) + " C" + str(self.SpinBoxArt2.value())
+            if self.G1MoveRadioButton.isChecked():
+                typeOfMovement="G1 "
+                feedRate=" F" + str(self.FeedRateInput.value())
+            else:
+                typeOfMovement="G0 "
+                feedRate=""
+            message=typeOfMovement + "B" + str(self.SpinBoxArt2.value()) + " C" + str(self.SpinBoxArt2.value()) + feedRate
             messageToSend = message + "\n"
             messageToConsole = ">>> " + message
             s0.write(messageToSend.encode('UTF-8'))
@@ -178,7 +205,13 @@ class AsgardGUI(Ui_MainWindow):
 #FK Art3 Functions
     def FKMoveArt3(self):
         if s0.isOpen():
-            message="G0 D" + str(self.SpinBoxArt3.value())
+            if self.G1MoveRadioButton.isChecked():
+                typeOfMovement="G1 "
+                feedRate=" F" + str(self.FeedRateInput.value())
+            else:
+                typeOfMovement="G0 "
+                feedRate=""
+            message=typeOfMovement + "D" + str(self.SpinBoxArt3.value()) + feedRate
             messageToSend = message + "\n"
             messageToConsole = ">>> " + message
             s0.write(messageToSend.encode('UTF-8'))
@@ -213,7 +246,13 @@ class AsgardGUI(Ui_MainWindow):
 #FK Art4 Functions
     def FKMoveArt4(self):
         if s0.isOpen():
-            message="G0 X" + str(self.SpinBoxArt4.value())
+            if self.G1MoveRadioButton.isChecked():
+                typeOfMovement="G1 "
+                feedRate=" F" + str(self.FeedRateInput.value())
+            else:
+                typeOfMovement="G0 "
+                feedRate=""
+            message=typeOfMovement + "X" + str(self.SpinBoxArt4.value()) + feedRate
             messageToSend = message + "\n"
             messageToConsole = ">>> " + message
             s0.write(messageToSend.encode('UTF-8'))
@@ -248,7 +287,13 @@ class AsgardGUI(Ui_MainWindow):
 #FK Art5 Functions
     def FKMoveArt5(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
         if s0.isOpen():
-            message="G0 Y" + str(self.SpinBoxArt5.value())
+            if self.G1MoveRadioButton.isChecked():
+                typeOfMovement="G1 "
+                feedRate=" F" + str(self.FeedRateInput.value())
+            else:
+                typeOfMovement="G0 "
+                feedRate=""
+            message=typeOfMovement + "Y" + str(self.SpinBoxArt5.value()) + feedRate
             messageToSend = message + "\n"
             messageToConsole = ">>> " + message
             s0.write(messageToSend.encode('UTF-8'))
@@ -283,7 +328,13 @@ class AsgardGUI(Ui_MainWindow):
 #FK Art6 Functions
     def FKMoveArt6(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
         if s0.isOpen():
-            message="G0 Z" + str(self.SpinBoxArt6.value())
+            if self.G1MoveRadioButton.isChecked():
+                typeOfMovement="G1 "
+                feedRate=" F" + str(self.FeedRateInput.value())
+            else:
+                typeOfMovement="G0 "
+                feedRate=""
+            message=typeOfMovement + "Z" + str(self.SpinBoxArt6.value()) + feedRate
             messageToSend = message + "\n"
             messageToConsole = ">>> " + message
             s0.write(messageToSend.encode('UTF-8'))
@@ -318,7 +369,13 @@ class AsgardGUI(Ui_MainWindow):
 #FK Every Articulation Functions
     def FKMoveAll(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
         if s0.isOpen():
-            message="G0 A" + str(self.SpinBoxArt1.value()) + " B" + str(self.SpinBoxArt2.value()) + " C" + str(self.SpinBoxArt2.value()) + " D" + str(self.SpinBoxArt3.value()) + " X" + str(self.SpinBoxArt4.value()) + " Y" + str(self.SpinBoxArt5.value()) + " Z" + str(self.SpinBoxArt6.value())
+            if G1MoveRadioButton.isChecked():
+                typeOfMovement="G1 "
+                feedRate=" F" + str(self.FeedRateInput.value())
+            else:
+                typeOfMovement="G0 "
+                feedRate=""
+            message=typeOfMovement + "A" + str(self.SpinBoxArt1.value()) + " B" + str(self.SpinBoxArt2.value()) + " C" + str(self.SpinBoxArt2.value()) + " D" + str(self.SpinBoxArt3.value()) + " X" + str(self.SpinBoxArt4.value()) + " Y" + str(self.SpinBoxArt5.value()) + " Z" + str(self.SpinBoxArt6.value()) + feedRate
             messageToSend = message + "\n"
             messageToConsole = ">>> " + message
             s0.write(messageToSend.encode('UTF-8'))
@@ -327,6 +384,16 @@ class AsgardGUI(Ui_MainWindow):
             self.noSerialConnection()
 
 # Gripper Functions
+    def MoveGripper(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
+        if s0.isOpen():
+            message="M3 S" + str((255/100)*self.SpinBoxGripper.value())
+            messageToSend = message + "\n"
+            messageToConsole = ">>> " + message
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+        else:
+            self.noSerialConnection()
+
     def SliderUpdateGripper(self):
         val=self.SliderGripper.value()
         self.SpinBoxGripper.setValue(val)

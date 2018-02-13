@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -56,7 +59,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>150</y>
+      <y>200</y>
       <width>378</width>
       <height>16</height>
      </rect>
@@ -111,7 +114,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>260</y>
+      <y>300</y>
       <width>201</width>
       <height>31</height>
      </rect>
@@ -155,7 +158,7 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>520</y>
+      <y>560</y>
       <width>221</width>
       <height>21</height>
      </rect>
@@ -382,7 +385,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>240</y>
+      <y>290</y>
       <width>378</width>
       <height>16</height>
      </rect>
@@ -395,7 +398,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>160</y>
+      <y>210</y>
       <width>371</width>
       <height>80</height>
      </rect>
@@ -429,9 +432,9 @@
     <widget class="QPushButton" name="Dec1ButtonGripper">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>156</x>
        <y>50</y>
-       <width>41</width>
+       <width>31</width>
        <height>23</height>
       </rect>
      </property>
@@ -493,7 +496,7 @@
     <widget class="QLabel" name="Gripper100Label">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>265</x>
        <y>30</y>
        <width>31</width>
        <height>16</height>
@@ -506,7 +509,7 @@
     <widget class="QPushButton" name="Inc10ButtonGripper">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>240</x>
        <y>50</y>
        <width>41</width>
        <height>23</height>
@@ -519,9 +522,9 @@
     <widget class="QPushButton" name="Inc1ButtonGripper">
      <property name="geometry">
       <rect>
-       <x>230</x>
+       <x>205</x>
        <y>50</y>
-       <width>41</width>
+       <width>31</width>
        <height>23</height>
       </rect>
      </property>
@@ -534,7 +537,7 @@
       <rect>
        <x>110</x>
        <y>10</y>
-       <width>211</width>
+       <width>171</width>
        <height>22</height>
       </rect>
      </property>
@@ -560,12 +563,44 @@
       <number>20</number>
      </property>
     </widget>
+    <widget class="QPushButton" name="GoButtonGripper">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>30</y>
+       <width>35</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>35</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>35</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Go!</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
      <rect>
       <x>36</x>
-      <y>480</y>
+      <y>520</y>
       <width>321</width>
       <height>31</height>
      </rect>
@@ -1067,7 +1102,7 @@
    <widget class="QPushButton" name="FKGoAllButton">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>590</x>
       <y>520</y>
       <width>75</width>
       <height>30</height>
@@ -2916,7 +2951,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>395</y>
+      <y>435</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -2944,7 +2979,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>320</y>
+      <y>360</y>
       <width>50</width>
       <height>50</height>
      </rect>
@@ -2969,7 +3004,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>300</y>
+      <y>340</y>
       <width>91</width>
       <height>166</height>
      </rect>
@@ -3077,7 +3112,7 @@
     <property name="geometry">
      <rect>
       <x>121</x>
-      <y>301</y>
+      <y>341</y>
       <width>152</width>
       <height>164</height>
      </rect>
@@ -3176,6 +3211,85 @@
      </item>
     </layout>
    </widget>
+   <widget class="QRadioButton" name="G0MoveRadioButton">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>180</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>G0 Move</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="G1MoveRadioButton">
+    <property name="geometry">
+     <rect>
+      <x>99</x>
+      <y>180</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>G01 Move</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FeedRateLabel">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>180</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Feed Rate</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="FeedRateInput">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>255</x>
+      <y>177</y>
+      <width>95</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="suffix">
+     <string>º/min</string>
+    </property>
+    <property name="decimals">
+     <number>0</number>
+    </property>
+    <property name="minimum">
+     <double>0.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>100000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>100.000000000000000</double>
+    </property>
+    <property name="value">
+     <double>500.000000000000000</double>
+    </property>
+   </widget>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
@@ -3215,6 +3329,10 @@
    <zorder>IkDecButtonZ</zorder>
    <zorder>IkIncButtonZ</zorder>
    <zorder>frame_3</zorder>
+   <zorder>G0MoveRadioButton</zorder>
+   <zorder>G1MoveRadioButton</zorder>
+   <zorder>FeedRateLabel</zorder>
+   <zorder>FeedRateInput</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -3267,6 +3385,97 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>SerialPortComboBox</tabstop>
+  <tabstop>SerialPortRefreshButton</tabstop>
+  <tabstop>BaudRateComboBox</tabstop>
+  <tabstop>ConnectButton</tabstop>
+  <tabstop>HomeButton</tabstop>
+  <tabstop>MotorsOffButton</tabstop>
+  <tabstop>ZeroPositionButton</tabstop>
+  <tabstop>SpinBoxArt1</tabstop>
+  <tabstop>FKGoButtonArt1</tabstop>
+  <tabstop>SpinBoxArt2</tabstop>
+  <tabstop>FKGoButtonArt2</tabstop>
+  <tabstop>SpinBoxArt3</tabstop>
+  <tabstop>FKGoButtonArt3</tabstop>
+  <tabstop>SpinBoxArt4</tabstop>
+  <tabstop>FKGoButtonArt4</tabstop>
+  <tabstop>SpinBoxArt5</tabstop>
+  <tabstop>FKGoButtonArt5</tabstop>
+  <tabstop>SpinBoxArt6</tabstop>
+  <tabstop>FKGoButtonArt6</tabstop>
+  <tabstop>G0MoveRadioButton</tabstop>
+  <tabstop>G1MoveRadioButton</tabstop>
+  <tabstop>FKGoAllButton</tabstop>
+  <tabstop>ConsoleInput</tabstop>
+  <tabstop>ConsoleButtonSend</tabstop>
+  <tabstop>ConsoleShowVerbosecheckBox</tabstop>
+  <tabstop>ConsoleShowOkRespcheckBox</tabstop>
+  <tabstop>Inc10ButtonGripper</tabstop>
+  <tabstop>Inc1ButtonGripper</tabstop>
+  <tabstop>SpinBoxGripper</tabstop>
+  <tabstop>IKInputSpinBoxZ</tabstop>
+  <tabstop>FKInc10ButtonArt2</tabstop>
+  <tabstop>FKDec1ButtonArt2</tabstop>
+  <tabstop>Dec1ButtonGripper</tabstop>
+  <tabstop>ConsoleOutput</tabstop>
+  <tabstop>FKDec10ButtonArt2</tabstop>
+  <tabstop>FKInc1ButtonArt2</tabstop>
+  <tabstop>Dec10ButtonGripper</tabstop>
+  <tabstop>FKInc1ButtonArt1</tabstop>
+  <tabstop>IKInputSpinBoxY</tabstop>
+  <tabstop>FKSliderArt3</tabstop>
+  <tabstop>FKDec10ButtonArt1</tabstop>
+  <tabstop>FKInc10ButtonArt3</tabstop>
+  <tabstop>FKDec1ButtonArt3</tabstop>
+  <tabstop>FKDec0_1ButtonArt3</tabstop>
+  <tabstop>FKInc0_1ButtonArt3</tabstop>
+  <tabstop>FKInc1ButtonArt3</tabstop>
+  <tabstop>FKDec10ButtonArt3</tabstop>
+  <tabstop>FKInc0_1ButtonArt1</tabstop>
+  <tabstop>FKSliderArt4</tabstop>
+  <tabstop>FKDec1ButtonArt1</tabstop>
+  <tabstop>FKInc10ButtonArt4</tabstop>
+  <tabstop>FKDec1ButtonArt4</tabstop>
+  <tabstop>FKDec0_1ButtonArt4</tabstop>
+  <tabstop>FKInc0_1ButtonArt4</tabstop>
+  <tabstop>FKInc1ButtonArt4</tabstop>
+  <tabstop>FKDec10ButtonArt4</tabstop>
+  <tabstop>FKInc10ButtonArt1</tabstop>
+  <tabstop>FKSliderArt5</tabstop>
+  <tabstop>FKDec0_1ButtonArt1</tabstop>
+  <tabstop>FKInc10ButtonArt5</tabstop>
+  <tabstop>FKDec1ButtonArt5</tabstop>
+  <tabstop>FKDec0_1ButtonArt5</tabstop>
+  <tabstop>FKInc0_1ButtonArt5</tabstop>
+  <tabstop>FKInc1ButtonArt5</tabstop>
+  <tabstop>FKDec10ButtonArt5</tabstop>
+  <tabstop>FKSliderArt1</tabstop>
+  <tabstop>FKSliderArt6</tabstop>
+  <tabstop>FKSliderArt2</tabstop>
+  <tabstop>FKInc10ButtonArt6</tabstop>
+  <tabstop>FKDec1ButtonArt6</tabstop>
+  <tabstop>FKDec0_1ButtonArt6</tabstop>
+  <tabstop>FKInc0_1ButtonArt6</tabstop>
+  <tabstop>FKInc1ButtonArt6</tabstop>
+  <tabstop>FKDec10ButtonArt6</tabstop>
+  <tabstop>SliderGripper</tabstop>
+  <tabstop>IkDecButtonZ</tabstop>
+  <tabstop>IkIncButtonZ</tabstop>
+  <tabstop>IkMultiplierDecSpinBox</tabstop>
+  <tabstop>IkMultiplierDiv10SpinBox</tabstop>
+  <tabstop>IkMultiplierIncSpinBox</tabstop>
+  <tabstop>IkMultiplierX10SpinBox</tabstop>
+  <tabstop>IkMultiplierSpinBox</tabstop>
+  <tabstop>IkIncButtonY</tabstop>
+  <tabstop>IkDecButtonY</tabstop>
+  <tabstop>IkIncButtonX</tabstop>
+  <tabstop>IkDecButtonX</tabstop>
+  <tabstop>IKInputSpinBoxX</tabstop>
+  <tabstop>FKDec0_1ButtonArt2</tabstop>
+  <tabstop>FKInc0_1ButtonArt2</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
