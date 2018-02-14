@@ -22,6 +22,10 @@ class AsgardGUI(Ui_MainWindow):
         self.SerialThreadClass = SerialThreadClass()
         self.SerialThreadClass.serialSignal.connect(self.updateConsole)
 
+        self.HomeButton.pressed.connect(self.sendHomingCycleCommand)
+        self.ZeroPositionButton.pressed.connect(self.sendZeroPositionCommand)
+        self.KillAlarmLockButton.pressed.connect(self.sendKillAlarmCommand)
+
         self.G0MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
         self.G1MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
 
@@ -101,16 +105,28 @@ class AsgardGUI(Ui_MainWindow):
         self.ConsoleButtonSend.pressed.connect(self.sendSerialCommand)
         self.ConsoleInput.returnPressed.connect(self.sendSerialCommand)
 
-        # self.HomeButton.pressed.connect(self.homeRobot)
-        # self.ZeroPositionButton.pressed.connect(self.blankBaudRate)
 
-    # def G0MoveRadioButtonToggle(self):
-    #     G0MoveRadioButton.toggle()
-    # def G1MoveRadioButtonToggle(self):
-    #     G1MoveRadioButton.toggle()
+    def sendHomingCycleCommand(self):
+        if s0.isOpen():
+            messageToSend="$H"
+            messageToConsole=">>> " + messageToSend
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
 
-    def homeRobot(self):
-        self.ConsoleOutput.appendPlainText("home!")
+    def sendZeroPositionCommand(self):
+        if s0.isOpen():
+            messageToSend="G0 A0 B0 C0 D0 X0 Y0 Z0"
+            messageToConsole=">>> " + messageToSend
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+
+    def sendKillAlarmCommand(self):
+        if s0.isOpen():
+            messageToSend="$X"
+            messageToConsole=">>> " + messageToSend
+            s0.write(messageToSend.encode('UTF-8'))
+            self.ConsoleOutput.appendPlainText(messageToConsole)
+
     def FeedRateBoxHide(self):
         if self.G1MoveRadioButton.isChecked():
             self.FeedRateLabel.setEnabled(True)
@@ -489,7 +505,7 @@ class AsgardGUI(Ui_MainWindow):
             self.RobotStateDisplay.setStyleSheet('background-color: rgb(0, 255, 0)')
         elif state=="Home":
             self.RobotStateDisplay.setStyleSheet('background-color: rgb(85, 255, 255)')
-        elif state=="Alert":
+        elif state=="Alarm":
             self.RobotStateDisplay.setStyleSheet('background-color: rgb(255, 255, 0)')
         elif state=="Hold":
             self.RobotStateDisplay.setStyleSheet('background-color: rgb(255, 0, 0)')

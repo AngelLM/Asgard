@@ -68,26 +68,26 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="MotorsOffButton">
+   <widget class="QPushButton" name="KillAlarmLockButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>110</y>
+      <x>270</x>
+      <y>120</y>
       <width>81</width>
-      <height>31</height>
+      <height>25</height>
      </rect>
     </property>
     <property name="text">
-     <string>Motors off</string>
+     <string>Kill Alarm Lock</string>
     </property>
    </widget>
    <widget class="QPushButton" name="HomeButton">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>110</y>
+      <y>120</y>
       <width>81</width>
-      <height>31</height>
+      <height>25</height>
      </rect>
     </property>
     <property name="text">
@@ -97,10 +97,10 @@
    <widget class="QPushButton" name="ZeroPositionButton">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>110</y>
+      <x>150</x>
+      <y>120</y>
       <width>81</width>
-      <height>31</height>
+      <height>25</height>
      </rect>
     </property>
     <property name="text">
@@ -3215,7 +3215,7 @@
     <property name="geometry">
      <rect>
       <x>29</x>
-      <y>180</y>
+      <y>170</y>
       <width>82</width>
       <height>17</height>
      </rect>
@@ -3231,7 +3231,7 @@
     <property name="geometry">
      <rect>
       <x>99</x>
-      <y>180</y>
+      <y>170</y>
       <width>82</width>
       <height>17</height>
      </rect>
@@ -3247,7 +3247,7 @@
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>180</y>
+      <y>170</y>
       <width>51</width>
       <height>16</height>
      </rect>
@@ -3263,7 +3263,7 @@
     <property name="geometry">
      <rect>
       <x>255</x>
-      <y>177</y>
+      <y>167</y>
       <width>95</width>
       <height>22</height>
      </rect>
@@ -3300,7 +3300,7 @@
    <zorder>line_7</zorder>
    <zorder>line_8</zorder>
    <zorder>line_15</zorder>
-   <zorder>MotorsOffButton</zorder>
+   <zorder>KillAlarmLockButton</zorder>
    <zorder>HomeButton</zorder>
    <zorder>ZeroPositionButton</zorder>
    <zorder>InverseKinematicsLabel</zorder>
@@ -3365,6 +3365,9 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbout">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Manual</string>
    </property>
@@ -3375,6 +3378,9 @@
    </property>
   </action>
   <action name="actionExit">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Preferences</string>
    </property>
@@ -3391,7 +3397,7 @@
   <tabstop>BaudRateComboBox</tabstop>
   <tabstop>ConnectButton</tabstop>
   <tabstop>HomeButton</tabstop>
-  <tabstop>MotorsOffButton</tabstop>
+  <tabstop>KillAlarmLockButton</tabstop>
   <tabstop>ZeroPositionButton</tabstop>
   <tabstop>SpinBoxArt1</tabstop>
   <tabstop>FKGoButtonArt1</tabstop>
