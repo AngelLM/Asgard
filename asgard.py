@@ -401,7 +401,7 @@ class AsgardGUI(Ui_MainWindow):
 #FK Every Articulation Functions
     def FKMoveAll(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
         if s0.isOpen():
-            if G1MoveRadioButton.isChecked():
+            if self.G1MoveRadioButton.isChecked():
                 typeOfMovement="G1 "
                 feedRate=" F" + str(self.FeedRateInput.value())
             else:

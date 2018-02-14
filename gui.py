@@ -1329,7 +1329,7 @@ class Ui_MainWindow(object):
         self.G0MoveRadioButton.setText(_translate("MainWindow", "G0 Move"))
         self.G1MoveRadioButton.setText(_translate("MainWindow", "G01 Move"))
         self.FeedRateLabel.setText(_translate("MainWindow", "Feed Rate"))
-        self.FeedRateInput.setSuffix(_translate("MainWindow", "º/min"))
+        self.FeedRateInput.setSuffix(_translate("MainWindow", " º/min"))
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionManual.setText(_translate("MainWindow", "Manual"))

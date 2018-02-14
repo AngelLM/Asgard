@@ -3272,7 +3272,7 @@
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
     <property name="suffix">
-     <string>º/min</string>
+     <string> º/min</string>
     </property>
     <property name="decimals">
      <number>0</number>
