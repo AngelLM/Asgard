@@ -4,6 +4,8 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 from gui import Ui_MainWindow
+from about import Ui_Dialog as About_Ui_Dialog
+
 
 import serial_port_finder as spf
 
@@ -11,6 +13,10 @@ import serial, time
 
 s0 = serial.Serial()
 
+class AboutDialog(About_Ui_Dialog):
+    def __init__(self, dialog):
+        About_Ui_Dialog.__init__(self)
+        self.setupUi(dialog)
 
 class AsgardGUI(Ui_MainWindow):
     def __init__(self, dialog):
@@ -21,6 +27,9 @@ class AsgardGUI(Ui_MainWindow):
 
         self.SerialThreadClass = SerialThreadClass()
         self.SerialThreadClass.serialSignal.connect(self.updateConsole)
+
+        self.actionAbout.triggered.connect(self.launchAboutWindow)
+        self.actionExit.triggered.connect(self.close_application)
 
         self.HomeButton.pressed.connect(self.sendHomingCycleCommand)
         self.ZeroPositionButton.pressed.connect(self.sendZeroPositionCommand)
@@ -105,6 +114,13 @@ class AsgardGUI(Ui_MainWindow):
         self.ConsoleButtonSend.pressed.connect(self.sendSerialCommand)
         self.ConsoleInput.returnPressed.connect(self.sendSerialCommand)
 
+    def close_application(self):
+        sys.exit()
+
+    def launchAboutWindow(self):
+        self.dialogAbout = QtWidgets.QDialog()
+        self.ui = AboutDialog(self.dialogAbout)
+        self.dialogAbout.exec_()
 
     def sendHomingCycleCommand(self):
         if s0.isOpen():
