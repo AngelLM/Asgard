@@ -31,6 +31,10 @@ class AsgardGUI(Ui_MainWindow):
         self.actionAbout.triggered.connect(self.launchAboutWindow)
         self.actionExit.triggered.connect(self.close_application)
 
+        self.CollapseButtonConnection.clicked.connect(self.collapseConnectionMenu)
+        self.CollapseButtonState.clicked.connect(self.collapseStateMenu)
+        self.CollapseButtonQAB.clicked.connect(self.collapseQABMenu)
+
         self.HomeButton.pressed.connect(self.sendHomingCycleCommand)
         self.ZeroPositionButton.pressed.connect(self.sendZeroPositionCommand)
         self.KillAlarmLockButton.pressed.connect(self.sendKillAlarmCommand)
@@ -121,6 +125,34 @@ class AsgardGUI(Ui_MainWindow):
         self.dialogAbout = QtWidgets.QDialog()
         self.ui = AboutDialog(self.dialogAbout)
         self.dialogAbout.exec_()
+
+    def collapseConnectionMenu(self):
+        if self.ConnectionMenuBot.isHidden():
+            self.ConnectionMenuBot.show()
+            self.CollapseButtonConnection.setText("▼")
+        else:
+            self.ConnectionMenuBot.hide()
+            self.CollapseButtonConnection.setText("▶")
+
+    def collapseStateMenu(self):
+        if self.StateMenuBot.isHidden():
+            self.StateMenuBot.show()
+            self.CollapseButtonState.setText("▼")
+        else:
+            self.StateMenuBot.hide()
+            self.CollapseButtonState.setText("▶")
+
+    def collapseQABMenu(self):
+        if self.QABMenuBot.isHidden():
+            self.QABMenuBot.show()
+            self.CollapseButtonQAB.setText("▼")
+        else:
+            self.QABMenuBot.hide()
+            self.CollapseButtonQAB.setText("▶")
+
+
+
+
 
     def sendHomingCycleCommand(self):
         if s0.isOpen():
