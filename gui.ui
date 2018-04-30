@@ -75,10 +75,14 @@
            </property>
            <property name="font">
             <font>
+             <family>Cambria</family>
              <pointsize>10</pointsize>
              <weight>50</weight>
              <bold>false</bold>
             </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
@@ -468,10 +472,14 @@ background-color:rgba(255, 255, 255,0)</string>
            </property>
            <property name="font">
             <font>
+             <family>Cambria</family>
              <pointsize>10</pointsize>
              <weight>50</weight>
              <bold>false</bold>
             </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
@@ -648,7 +656,7 @@ background-color:rgba(255, 255, 255,0)</string>
               <string notr="true">background-color: rgba(255, 255, 255,0)</string>
              </property>
              <property name="text">
-              <string>200 mm</string>
+              <string>---</string>
              </property>
             </widget>
            </item>
@@ -691,7 +699,7 @@ background-color:rgba(255, 255, 255,0)</string>
               <string notr="true">background-color: rgba(255, 255, 255,0)</string>
              </property>
              <property name="text">
-              <string>200 mm</string>
+              <string>---</string>
              </property>
             </widget>
            </item>
@@ -734,7 +742,7 @@ background-color:rgba(255, 255, 255,0)</string>
               <string notr="true">background-color: rgba(255, 255, 255,0)</string>
              </property>
              <property name="text">
-              <string>200 mm</string>
+              <string>---</string>
              </property>
             </widget>
            </item>
@@ -1091,6 +1099,12 @@ background-color:rgba(255, 255, 255,0)</string>
          <enum>QFrame::Plain</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_21">
+         <property name="topMargin">
+          <number>8</number>
+         </property>
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
          <item>
           <widget class="QPushButton" name="CollapseButtonQAB">
            <property name="minimumSize">
@@ -1107,10 +1121,14 @@ background-color:rgba(255, 255, 255,0)</string>
            </property>
            <property name="font">
             <font>
+             <family>Cambria</family>
              <pointsize>10</pointsize>
              <weight>50</weight>
              <bold>false</bold>
             </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
             <string notr="true">border: none;
@@ -1123,6 +1141,24 @@ background-color:rgba(255, 255, 255,0)</string>
          </item>
          <item>
           <widget class="QLabel" name="connectionMenuLabel_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>14</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <pointsize>10</pointsize>
@@ -1135,6 +1171,9 @@ background-color:rgba(255, 255, 255,0)</string>
            </property>
            <property name="text">
             <string>Quick Access Buttons</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -1540,6 +1579,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>180º</string>
                </property>
@@ -1555,8 +1606,10 @@ QTabBar::tab:!selected {
                </property>
                <property name="font">
                 <font>
+                 <family>MS Shell Dlg 2</family>
                  <pointsize>8</pointsize>
                  <weight>75</weight>
+                 <italic>false</italic>
                  <bold>true</bold>
                 </font>
                </property>
@@ -1610,6 +1663,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>0º</string>
                </property>
@@ -1622,6 +1687,18 @@ QTabBar::tab:!selected {
                  <width>31</width>
                  <height>16</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="text">
                 <string>-180º</string>
@@ -1648,6 +1725,18 @@ QTabBar::tab:!selected {
                  <width>62</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1825,6 +1914,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>90º</string>
                </property>
@@ -1895,6 +1996,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>0º</string>
                </property>
@@ -1907,6 +2020,18 @@ QTabBar::tab:!selected {
                  <width>31</width>
                  <height>16</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="text">
                 <string>-90º</string>
@@ -1933,6 +2058,18 @@ QTabBar::tab:!selected {
                  <width>62</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -2110,6 +2247,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>90º</string>
                </property>
@@ -2180,6 +2329,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>0º</string>
                </property>
@@ -2192,6 +2353,18 @@ QTabBar::tab:!selected {
                  <width>30</width>
                  <height>16</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="text">
                 <string>-90º</string>
@@ -2218,6 +2391,18 @@ QTabBar::tab:!selected {
                  <width>62</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -2395,6 +2580,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>180º</string>
                </property>
@@ -2465,6 +2662,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>0º</string>
                </property>
@@ -2477,6 +2686,18 @@ QTabBar::tab:!selected {
                  <width>31</width>
                  <height>16</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="text">
                 <string>-180º</string>
@@ -2503,6 +2724,18 @@ QTabBar::tab:!selected {
                  <width>62</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -2680,6 +2913,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>90º</string>
                </property>
@@ -2750,6 +2995,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>0º</string>
                </property>
@@ -2762,6 +3019,18 @@ QTabBar::tab:!selected {
                  <width>30</width>
                  <height>16</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="text">
                 <string>-90º</string>
@@ -2788,6 +3057,18 @@ QTabBar::tab:!selected {
                  <width>62</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -2965,6 +3246,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>180º</string>
                </property>
@@ -3035,6 +3328,18 @@ QTabBar::tab:!selected {
                  <height>16</height>
                 </rect>
                </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+               </property>
                <property name="text">
                 <string>0º</string>
                </property>
@@ -3047,6 +3352,18 @@ QTabBar::tab:!selected {
                  <width>31</width>
                  <height>16</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="text">
                 <string>-180º</string>
@@ -3073,6 +3390,18 @@ QTabBar::tab:!selected {
                  <width>62</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>8</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -3315,6 +3644,9 @@ QTabBar::tab:!selected {
                <layout class="QVBoxLayout" name="verticalLayout_8">
                 <item>
                  <widget class="QLabel" name="FKLabelArt5_3">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="font">
                    <font>
                     <pointsize>12</pointsize>
@@ -3368,6 +3700,9 @@ QTabBar::tab:!selected {
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
                  <widget class="QLabel" name="FKLabelArt5_2">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="font">
                    <font>
                     <pointsize>12</pointsize>
@@ -3446,13 +3781,15 @@ QTabBar::tab:!selected {
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
-                    <weight>75</weight>
-                    <bold>true</bold>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>8</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+                   <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="text">
                    <string>Z:</string>
@@ -3463,6 +3800,18 @@ QTabBar::tab:!selected {
                  <widget class="QDoubleSpinBox" name="IKInputSpinBoxZ">
                   <property name="enabled">
                    <bool>false</bool>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>8</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -3492,13 +3841,15 @@ QTabBar::tab:!selected {
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
-                    <weight>75</weight>
-                    <bold>true</bold>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>8</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+                   <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="text">
                    <string>X:</string>
@@ -3509,6 +3860,18 @@ QTabBar::tab:!selected {
                  <widget class="QDoubleSpinBox" name="IKInputSpinBoxX">
                   <property name="enabled">
                    <bool>false</bool>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>8</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -3532,7 +3895,7 @@ QTabBar::tab:!selected {
               <item row="1" column="0">
                <widget class="QPushButton" name="IkDecButtonY">
                 <property name="enabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -3569,7 +3932,7 @@ QTabBar::tab:!selected {
                 <item>
                  <widget class="QPushButton" name="IkMultiplierX10SpinBox">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimumSize">
                    <size>
@@ -3584,7 +3947,7 @@ QTabBar::tab:!selected {
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220);font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="text">
                    <string>×10</string>
@@ -3594,7 +3957,7 @@ QTabBar::tab:!selected {
                 <item>
                  <widget class="QPushButton" name="IkMultiplierIncSpinBox">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -3615,7 +3978,7 @@ QTabBar::tab:!selected {
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220);font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="text">
                    <string>+</string>
@@ -3627,7 +3990,7 @@ QTabBar::tab:!selected {
               <item row="1" column="2">
                <widget class="QPushButton" name="IkIncButtonY">
                 <property name="enabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -3659,7 +4022,7 @@ QTabBar::tab:!selected {
               <item row="0" column="4">
                <widget class="QPushButton" name="IkIncButtonZ">
                 <property name="enabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -3697,7 +4060,7 @@ QTabBar::tab:!selected {
               <item row="0" column="1">
                <widget class="QPushButton" name="IkIncButtonX">
                 <property name="enabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -3729,7 +4092,7 @@ QTabBar::tab:!selected {
               <item row="1" column="6">
                <widget class="QDoubleSpinBox" name="IkMultiplierSpinBox">
                 <property name="enabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -3742,6 +4105,18 @@ QTabBar::tab:!selected {
                   <width>70</width>
                   <height>22</height>
                  </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
+                  <weight>50</weight>
+                  <italic>false</italic>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -3769,13 +4144,15 @@ QTabBar::tab:!selected {
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
-                    <weight>75</weight>
-                    <bold>true</bold>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>8</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color: rgba(255, 255, 255,0)</string>
+                   <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="text">
                    <string>Y:</string>
@@ -3786,6 +4163,18 @@ QTabBar::tab:!selected {
                  <widget class="QDoubleSpinBox" name="IKInputSpinBoxY">
                   <property name="enabled">
                    <bool>false</bool>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>MS Shell Dlg 2</family>
+                    <pointsize>8</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -3814,7 +4203,7 @@ QTabBar::tab:!selected {
                 <item>
                  <widget class="QPushButton" name="IkMultiplierDiv10SpinBox">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="minimumSize">
                    <size>
@@ -3829,7 +4218,7 @@ QTabBar::tab:!selected {
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220);font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="text">
                    <string>÷10</string>
@@ -3839,7 +4228,7 @@ QTabBar::tab:!selected {
                 <item>
                  <widget class="QPushButton" name="IkMultiplierDecSpinBox">
                   <property name="enabled">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -3860,7 +4249,7 @@ QTabBar::tab:!selected {
                    </size>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+                   <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220);font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                   </property>
                   <property name="text">
                    <string>-</string>
@@ -3872,7 +4261,7 @@ QTabBar::tab:!selected {
               <item row="2" column="1">
                <widget class="QPushButton" name="IkDecButtonX">
                 <property name="enabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -3904,7 +4293,7 @@ QTabBar::tab:!selected {
               <item row="2" column="4">
                <widget class="QPushButton" name="IkDecButtonZ">
                 <property name="enabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4250,7 +4639,7 @@ QTabBar::tab:!selected {
          </font>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="ConsoleTab">
          <attribute name="title">
@@ -4276,6 +4665,9 @@ QTabBar::tab:!selected {
               </item>
               <item>
                <widget class="QCheckBox" name="ConsoleShowVerbosecheckBox">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="text">
                  <string>Show Verbose Output</string>
                 </property>
@@ -4283,6 +4675,9 @@ QTabBar::tab:!selected {
               </item>
               <item>
                <widget class="QCheckBox" name="ConsoleShowOkRespcheckBox">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="text">
                  <string>Show 'ok' Responses</string>
                 </property>
@@ -4313,6 +4708,9 @@ QTabBar::tab:!selected {
               </item>
               <item>
                <widget class="QPushButton" name="ConsoleButtonSend">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="text">
                  <string>Send</string>
                 </property>
@@ -4334,6 +4732,8 @@ QTabBar::tab:!selected {
             <property name="font">
              <font>
               <pointsize>24</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="layoutDirection">
@@ -4371,6 +4771,8 @@ QTabBar::tab:!selected {
           <property name="font">
            <font>
             <pointsize>24</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
            </font>
           </property>
           <property name="layoutDirection">
@@ -4437,12 +4839,15 @@ QTabBar::tab:!selected {
              </property>
              <property name="font">
               <font>
+               <family>MS Shell Dlg 2</family>
+               <pointsize>8</pointsize>
                <weight>75</weight>
+               <italic>false</italic>
                <bold>true</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+              <string notr="true"/>
              </property>
              <property name="text">
               <string>Stepper Driver:</string>
@@ -4462,6 +4867,9 @@ QTabBar::tab:!selected {
                <width>48</width>
                <height>99999</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
              <property name="currentIndex">
               <number>4</number>
@@ -4524,12 +4932,15 @@ QTabBar::tab:!selected {
              </property>
              <property name="font">
               <font>
+               <family>MS Shell Dlg 2</family>
+               <pointsize>8</pointsize>
                <weight>50</weight>
+               <italic>false</italic>
                <bold>false</bold>
               </font>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+              <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
              </property>
              <property name="text">
               <string>μSteps/Step</string>
@@ -4568,12 +4979,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 1:</string>
@@ -4582,6 +4996,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="0" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4603,12 +5020,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 2:</string>
@@ -4617,6 +5037,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="1" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4638,12 +5061,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 3:</string>
@@ -4652,6 +5078,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="2" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4673,12 +5102,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 4:</string>
@@ -4687,6 +5119,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="3" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4708,12 +5143,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 5&amp;6:</string>
@@ -4722,6 +5160,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="4" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4762,12 +5203,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 1:</string>
@@ -4776,6 +5220,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="0" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4797,12 +5244,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 2:</string>
@@ -4811,6 +5261,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="1" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4832,12 +5285,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 3:</string>
@@ -4846,6 +5302,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="2" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4867,12 +5326,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 4:</string>
@@ -4881,6 +5343,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="3" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4902,12 +5367,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 5&amp;6:</string>
@@ -4916,6 +5384,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="4" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4956,12 +5427,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 1:</string>
@@ -4970,6 +5444,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="0" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_16">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -4991,12 +5468,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 2:</string>
@@ -5005,6 +5485,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="1" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_17">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5026,12 +5509,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 3:</string>
@@ -5040,6 +5526,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="2" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_18">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5061,12 +5550,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 4:</string>
@@ -5075,6 +5567,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="3" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_19">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5096,12 +5591,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Articulation 5&amp;6:</string>
@@ -5110,6 +5608,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="4" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_20">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5187,12 +5688,15 @@ QTabBar::tab:!selected {
                    </property>
                    <property name="font">
                     <font>
+                     <family>MS Shell Dlg 2</family>
+                     <pointsize>8</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Articulation 1:</string>
@@ -5201,6 +5705,9 @@ QTabBar::tab:!selected {
                  </item>
                  <item row="0" column="1">
                   <widget class="QDoubleSpinBox" name="doubleSpinBox_21">
+                   <property name="styleSheet">
+                    <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
                    <property name="maximum">
                     <double>9999999.000000000000000</double>
                    </property>
@@ -5222,12 +5729,15 @@ QTabBar::tab:!selected {
                    </property>
                    <property name="font">
                     <font>
+                     <family>MS Shell Dlg 2</family>
+                     <pointsize>8</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Articulation 2:</string>
@@ -5236,6 +5746,9 @@ QTabBar::tab:!selected {
                  </item>
                  <item row="1" column="1">
                   <widget class="QDoubleSpinBox" name="doubleSpinBox_22">
+                   <property name="styleSheet">
+                    <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
                    <property name="maximum">
                     <double>9999999.000000000000000</double>
                    </property>
@@ -5257,12 +5770,15 @@ QTabBar::tab:!selected {
                    </property>
                    <property name="font">
                     <font>
+                     <family>MS Shell Dlg 2</family>
+                     <pointsize>8</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Articulation 3:</string>
@@ -5271,6 +5787,9 @@ QTabBar::tab:!selected {
                  </item>
                  <item row="2" column="1">
                   <widget class="QDoubleSpinBox" name="doubleSpinBox_23">
+                   <property name="styleSheet">
+                    <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
                    <property name="maximum">
                     <double>9999999.000000000000000</double>
                    </property>
@@ -5292,12 +5811,15 @@ QTabBar::tab:!selected {
                    </property>
                    <property name="font">
                     <font>
+                     <family>MS Shell Dlg 2</family>
+                     <pointsize>8</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Articulation 4:</string>
@@ -5306,6 +5828,9 @@ QTabBar::tab:!selected {
                  </item>
                  <item row="3" column="1">
                   <widget class="QDoubleSpinBox" name="doubleSpinBox_24">
+                   <property name="styleSheet">
+                    <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
                    <property name="maximum">
                     <double>9999999.000000000000000</double>
                    </property>
@@ -5327,12 +5852,15 @@ QTabBar::tab:!selected {
                    </property>
                    <property name="font">
                     <font>
+                     <family>MS Shell Dlg 2</family>
+                     <pointsize>8</pointsize>
                      <weight>75</weight>
+                     <italic>false</italic>
                      <bold>true</bold>
                     </font>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                    <string notr="true"/>
                    </property>
                    <property name="text">
                     <string>Articulation 5&amp;6:</string>
@@ -5341,6 +5869,9 @@ QTabBar::tab:!selected {
                  </item>
                  <item row="4" column="1">
                   <widget class="QDoubleSpinBox" name="doubleSpinBox_25">
+                   <property name="styleSheet">
+                    <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                   </property>
                    <property name="maximum">
                     <double>9999999.000000000000000</double>
                    </property>
@@ -5352,6 +5883,9 @@ QTabBar::tab:!selected {
                 <widget class="QCheckBox" name="checkBox">
                  <property name="layoutDirection">
                   <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Soft Limits</string>
@@ -5379,12 +5913,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Homing Feed (º/min):</string>
@@ -5393,6 +5930,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="0" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_27">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5414,12 +5954,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Homing Seek (º/min):</string>
@@ -5428,6 +5971,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="1" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_28">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5449,12 +5995,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Homing Debounce (ms):</string>
@@ -5463,6 +6012,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="2" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_29">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5484,12 +6036,15 @@ QTabBar::tab:!selected {
                 </property>
                 <property name="font">
                  <font>
+                  <family>MS Shell Dlg 2</family>
+                  <pointsize>8</pointsize>
                   <weight>75</weight>
+                  <italic>false</italic>
                   <bold>true</bold>
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color:rgba(255, 255, 255,0)</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string>Homing pull-off (º):</string>
@@ -5498,6 +6053,9 @@ QTabBar::tab:!selected {
               </item>
               <item row="3" column="1">
                <widget class="QDoubleSpinBox" name="doubleSpinBox_30">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
                 <property name="maximum">
                  <double>9999999.000000000000000</double>
                 </property>
@@ -5509,6 +6067,9 @@ QTabBar::tab:!selected {
              <widget class="QCheckBox" name="checkBox_2">
               <property name="layoutDirection">
                <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
               </property>
               <property name="text">
                <string>Homing cycle</string>
