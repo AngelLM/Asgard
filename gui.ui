@@ -4622,7 +4622,7 @@ QTabBar::tab:!selected {
          </property>
         </widget>
        </widget>
-       <widget class="QTabWidget" name="tabWidget_3">
+       <widget class="QTabWidget" name="Viewer3D">
         <property name="geometry">
          <rect>
           <x>550</x>
@@ -4639,7 +4639,7 @@ QTabBar::tab:!selected {
          </font>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="ConsoleTab">
          <attribute name="title">
@@ -4755,7 +4755,7 @@ QTabBar::tab:!selected {
        </widget>
        <zorder>tabWidget_2</zorder>
        <zorder>GripperFrame</zorder>
-       <zorder>tabWidget_3</zorder>
+       <zorder>Viewer3D</zorder>
        <zorder>G0MoveRadioButton</zorder>
        <zorder>FeedRateInput</zorder>
        <zorder>FeedRateLabel</zorder>
