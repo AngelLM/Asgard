@@ -11,6 +11,12 @@ import serial_port_finder as spf
 
 import serial, time
 
+from PyQt5.QtCore import QPointF, QRect, QRectF, Qt, QTimer
+from PyQt5.QtGui import (QBrush, QColor, QFont, QLinearGradient, QPainter,
+        QPen, QSurfaceFormat)
+from PyQt5.QtWidgets import (QApplication, QGridLayout, QLabel, QOpenGLWidget,
+        QWidget)
+
 s0 = serial.Serial()
 
 class AboutDialog(About_Ui_Dialog):
@@ -117,6 +123,8 @@ class AsgardGUI(Ui_MainWindow):
 
         self.ConsoleButtonSend.pressed.connect(self.sendSerialCommand)
         self.ConsoleInput.returnPressed.connect(self.sendSerialCommand)
+
+        self.start3D()
 
     def close_application(self):
         sys.exit()
@@ -581,6 +589,82 @@ class AsgardGUI(Ui_MainWindow):
 
 ############### SERIAL READ THREAD CLASS ###############
 
+
+########## 3D ##############
+
+    def start3D(self):
+        helper = Helper()
+        native = Widget(helper, self.Viewer3DTab)
+        # nativeLabel = QLabel("Native")
+        # nativeLabel.setAlignment(Qt.AlignHCenter)
+
+        # layout = QGridLayout()
+        # layout.addWidget(native, 0, 0)
+        # layout.addWidget(nativeLabel, 1, 0)
+
+        # self.Viewer3DTab.setLayout(layout)
+
+        timer = QTimer(self.Viewer3DTab)
+        timer.timeout.connect(native.animate)
+        timer.start(50)
+
+class Widget(QWidget):
+    def __init__(self, helper, parent):
+        super(Widget, self).__init__(parent)
+
+        self.helper = helper
+        self.elapsed = 0
+        self.setFixedSize(540, 590)
+
+    def animate(self):
+        self.elapsed = (self.elapsed + self.sender().interval()) % 1000
+        self.repaint()
+
+    def paintEvent(self, event):
+        painter = QPainter()
+        painter.begin(self)
+        painter.setRenderHint(QPainter.Antialiasing)
+        self.helper.paint(painter, event, self.elapsed)
+        painter.end()
+
+class Helper(object):
+    def __init__(self):
+        gradient = QLinearGradient(QPointF(50, -20), QPointF(80, 20))
+        gradient.setColorAt(0.0, Qt.white)
+        gradient.setColorAt(1.0, QColor(0xa6, 0xce, 0x39))
+
+        self.background = QBrush(QColor(64, 32, 64))
+        self.circleBrush = QBrush(gradient)
+        self.circlePen = QPen(Qt.black)
+        self.circlePen.setWidth(1)
+        self.textPen = QPen(Qt.white)
+        self.textFont = QFont()
+        self.textFont.setPixelSize(50)
+
+    def paint(self, painter, event, elapsed):
+        painter.fillRect(event.rect(), self.background)
+        painter.translate(540/2, 590/2)
+
+        painter.save()
+        painter.setBrush(self.circleBrush)
+        painter.setPen(self.circlePen)
+        painter.rotate(elapsed * 0.030)
+
+        r = elapsed / 1000.0
+        n = 30
+        for i in range(n):
+            painter.rotate(30)
+            radius = 0 + 120.0*((i+r)/n)*3
+            circleRadius = 1 + ((i+r)/n)*40
+            painter.drawEllipse(QRectF(radius, -circleRadius,
+                    circleRadius*2, circleRadius*2))
+
+        painter.restore()
+
+        painter.setPen(self.textPen)
+        painter.setFont(self.textFont)
+        painter.drawText(QRect(-150, -150, 300, 300), Qt.AlignCenter, "Coming Soon")
+
 class SerialThreadClass(QtCore.QThread):
     elapsedTime = time.time()
     serialSignal = pyqtSignal(str)
@@ -620,6 +704,11 @@ class SerialThreadClass(QtCore.QThread):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
+
+    fmt = QSurfaceFormat()
+    fmt.setSamples(4)
+    QSurfaceFormat.setDefaultFormat(fmt)
+
     mwindow = QtWidgets.QMainWindow()
 
     prog = AsgardGUI(mwindow)
