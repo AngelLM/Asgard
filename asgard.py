@@ -17,6 +17,11 @@ from PyQt5.QtGui import (QBrush, QColor, QFont, QLinearGradient, QPainter,
 from PyQt5.QtWidgets import (QApplication, QGridLayout, QLabel, QOpenGLWidget,
         QWidget)
 
+
+import numpy as np
+from OpenGL import GL
+
+
 s0 = serial.Serial()
 
 class AboutDialog(About_Ui_Dialog):
@@ -593,20 +598,33 @@ class AsgardGUI(Ui_MainWindow):
 ########## 3D ##############
 
     def start3D(self):
+        widget = OpenGLWidget(self.Viewer3DTab)
+        widget.show()
+
+    def start3D2(self):
         helper = Helper()
         native = Widget(helper, self.Viewer3DTab)
-        # nativeLabel = QLabel("Native")
-        # nativeLabel.setAlignment(Qt.AlignHCenter)
-
-        # layout = QGridLayout()
-        # layout.addWidget(native, 0, 0)
-        # layout.addWidget(nativeLabel, 1, 0)
-
-        # self.Viewer3DTab.setLayout(layout)
-
         timer = QTimer(self.Viewer3DTab)
         timer.timeout.connect(native.animate)
         timer.start(50)
+
+class OpenGLWidget(QOpenGLWidget):
+    # def __init__(self, parent):
+        # super(OpenGLWidget, self).__init__(parent)
+    def initializeGL(self):
+        vertices = np.array([0.0, 1.0, -1.0, -1.0, 1.0, -1.0], dtype=np.float32)
+
+        bufferId = GL.glGenBuffers(1)
+        GL.glBindBuffer(GL.GL_ARRAY_BUFFER, bufferId)
+        GL.glBufferData(GL.GL_ARRAY_BUFFER, vertices.nbytes, vertices, GL.GL_STATIC_DRAW)
+
+        GL.glEnableVertexAttribArray(0)
+        GL.glVertexAttribPointer(0, 2, GL.GL_FLOAT, GL.GL_FALSE, 0, None)
+
+    def paintGL(self):
+        GL.glDrawArrays(GL.GL_TRIANGLES, 0, 3)
+
+
 
 class Widget(QWidget):
     def __init__(self, helper, parent):
