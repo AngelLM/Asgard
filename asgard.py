@@ -45,6 +45,8 @@ class AsgardGUI(Ui_MainWindow):
         self.SerialThreadClass = SerialThreadClass()
         self.SerialThreadClass.serialSignal.connect(self.updateConsole)
 
+        self.Viewer3Dinit = False
+
         self.actionAbout.triggered.connect(self.launchAboutWindow)
         self.actionExit.triggered.connect(self.close_application)
 
@@ -135,7 +137,7 @@ class AsgardGUI(Ui_MainWindow):
         self.ConsoleButtonSend.pressed.connect(self.sendSerialCommand)
         self.ConsoleInput.returnPressed.connect(self.sendSerialCommand)
 
-        self.start3D()
+        self.TabWidget.currentChanged.connect(self.start3D)
 
     def close_application(self):
         sys.exit()
@@ -604,58 +606,57 @@ class AsgardGUI(Ui_MainWindow):
 ########## 3D ##############
 
     def start3D(self):
-        w = gl.GLViewWidget()
-        w.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
-        w.show()
-        w.setCameraPosition(distance=1500, azimuth=-90)
+        if self.TabWidget.currentIndex()==1 and self.Viewer3Dinit==False:
+            w = gl.GLViewWidget()
+            w.setCameraPosition(distance=1500, azimuth=-90)
 
-        g = gl.GLGridItem()
-        g.scale(50,50,1)
-        w.addItem(g)
+            g = gl.GLGridItem()
+            g.scale(50,50,1)
+            w.addItem(g)
 
-        baseSTL = STLparser.parseSTL("stl/base.stl")
-        baseMesh = gl.MeshData(vertexes=baseSTL)
-        base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='opaque')
-        w.addItem(base3D)
+            baseSTL = STLparser.parseSTL("stl/base.stl")
+            baseMesh = gl.MeshData(vertexes=baseSTL)
+            base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='opaque')
+            w.addItem(base3D)
 
-        art1STL = STLparser.parseSTL("stl/art1.stl")
-        art1Mesh = gl.MeshData(vertexes=art1STL)
-        art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        art13D.translate(0, 0, 86)
-        w.addItem(art13D)
+            art1STL = STLparser.parseSTL("stl/art1.stl")
+            art1Mesh = gl.MeshData(vertexes=art1STL)
+            art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='opaque')
+            art13D.translate(0, 0, 86)
+            w.addItem(art13D)
 
-        art2STL = STLparser.parseSTL("stl/art2.stl")
-        art2Mesh = gl.MeshData(vertexes=art2STL)
-        art23D = gl.GLMeshItem(meshdata=art2Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        art23D.translate(0, 0, 138)
-        w.addItem(art23D)
+            art2STL = STLparser.parseSTL("stl/art2.stl")
+            art2Mesh = gl.MeshData(vertexes=art2STL)
+            art23D = gl.GLMeshItem(meshdata=art2Mesh, smooth=False, shader='shaded', glOptions='opaque')
+            art23D.translate(0, 0, 138)
+            w.addItem(art23D)
 
-        art3STL = STLparser.parseSTL("stl/art3.stl")
-        art3Mesh = gl.MeshData(vertexes=art3STL)
-        art33D = gl.GLMeshItem(meshdata=art3Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        art33D.translate(0, 0, 300)
-        w.addItem(art33D)
+            art3STL = STLparser.parseSTL("stl/art3.stl")
+            art3Mesh = gl.MeshData(vertexes=art3STL)
+            art33D = gl.GLMeshItem(meshdata=art3Mesh, smooth=False, shader='shaded', glOptions='opaque')
+            art33D.translate(0, 0, 300)
+            w.addItem(art33D)
 
-        art4STL = STLparser.parseSTL("stl/art4.stl")
-        art4Mesh = gl.MeshData(vertexes=art4STL)
-        art43D = gl.GLMeshItem(meshdata=art4Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        art43D.translate(0, 0, 378)
-        w.addItem(art43D)
+            art4STL = STLparser.parseSTL("stl/art4.stl")
+            art4Mesh = gl.MeshData(vertexes=art4STL)
+            art43D = gl.GLMeshItem(meshdata=art4Mesh, smooth=False, shader='shaded', glOptions='opaque')
+            art43D.translate(0, 0, 378)
+            w.addItem(art43D)
 
-        art5STL = STLparser.parseSTL("stl/art5.stl")
-        art5Mesh = gl.MeshData(vertexes=art5STL)
-        art53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        art53D.translate(0, 0, 510)
-        w.addItem(art53D)
+            art5STL = STLparser.parseSTL("stl/art5.stl")
+            art5Mesh = gl.MeshData(vertexes=art5STL)
+            art53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='opaque')
+            art53D.translate(0, 0, 510)
+            w.addItem(art53D)
 
-        art6STL = STLparser.parseSTL("stl/art6.stl")
-        art6Mesh = gl.MeshData(vertexes=art6STL)
-        art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        art63D.translate(0, 0, 613)
-        w.addItem(art63D)
+            art6STL = STLparser.parseSTL("stl/art6.stl")
+            art6Mesh = gl.MeshData(vertexes=art6STL)
+            art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
+            art63D.translate(0, 0, 613)
+            w.addItem(art63D)
 
-
-        self.gridLayout_5.addWidget(w,0,0)
+            self.gridLayout_5.addWidget(w,0,0)
+            self.Viewer3Dinit=True
 
 
 

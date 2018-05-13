@@ -4622,7 +4622,7 @@ QTabBar::tab:!selected {
          </property>
         </widget>
        </widget>
-       <widget class="QTabWidget" name="Viewer3D">
+       <widget class="QTabWidget" name="TabWidget">
         <property name="geometry">
          <rect>
           <x>550</x>
@@ -4639,7 +4639,7 @@ QTabBar::tab:!selected {
          </font>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="ConsoleTab">
          <attribute name="title">
@@ -4726,36 +4726,12 @@ QTabBar::tab:!selected {
          <attribute name="title">
           <string>3D Viewer</string>
          </attribute>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label">
-            <property name="font">
-             <font>
-              <pointsize>24</pointsize>
-              <weight>50</weight>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="text">
-             <string>Work in Progress</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::RichText</enum>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <layout class="QGridLayout" name="gridLayout_5"/>
         </widget>
        </widget>
        <zorder>tabWidget_2</zorder>
        <zorder>GripperFrame</zorder>
-       <zorder>Viewer3D</zorder>
+       <zorder>TabWidget</zorder>
        <zorder>G0MoveRadioButton</zorder>
        <zorder>FeedRateInput</zorder>
        <zorder>FeedRateLabel</zorder>
