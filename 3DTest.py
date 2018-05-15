@@ -45,11 +45,18 @@ md = gl.MeshData.sphere(rows=10, cols=20)
 # m3.scale(1, 1, 2)
 # w.addItem(m3)
 
+angle1=50
+angle2=-45
+angle3=90
+angle4=30
+angle5=50
+angle6=-20
+
 
 baseSTL = STLparser.parseSTL("stl/base.stl")
 baseMesh = gl.MeshData(vertexes=baseSTL)
 base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='opaque')
-# w.addItem(base3D)
+w.addItem(base3D)
 
 art1STL = STLparser.parseSTL("stl/art1.stl")
 art1Mesh = gl.MeshData(vertexes=art1STL)
@@ -67,42 +74,81 @@ w.addItem(art23D)
 art3STL = STLparser.parseSTL("stl/art3.stl")
 art3Mesh = gl.MeshData(vertexes=art3STL)
 art33D = gl.GLMeshItem(meshdata=art3Mesh, smooth=False, shader='shaded', glOptions='opaque')
-# art33D.translate(0, 0, 362)
 w.addItem(art33D)
 
 art4STL = STLparser.parseSTL("stl/art4.stl")
 art4Mesh = gl.MeshData(vertexes=art4STL)
 art43D = gl.GLMeshItem(meshdata=art4Mesh, smooth=False, shader='shaded', glOptions='opaque')
-# art43D.translate(0, 0, 378)
 w.addItem(art43D)
 
+art5STL = STLparser.parseSTL("stl/art5.stl")
+art5Mesh = gl.MeshData(vertexes=art5STL)
+art53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='opaque')
+w.addItem(art53D)
 
-angle1=90
+art6STL = STLparser.parseSTL("stl/art6.stl")
+art6Mesh = gl.MeshData(vertexes=art6STL)
+art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
+w.addItem(art63D)
+
+# angle1=0
 art13D.rotate(angle1, 0, 0, 1, True)
 art23D.rotate(angle1, 0, 0, 1, True)
 art33D.rotate(angle1, 0, 0, 1, True)
 art43D.rotate(angle1, 0, 0, 1, True)
+art53D.rotate(angle1, 0, 0, 1, True)
+art63D.rotate(angle1, 0, 0, 1, True)
 
 
-angle2=45
+# angle2=0
 art3x=160*np.sin(angle2/180.0*np.pi)
 art3z=160*np.cos(angle2/180.0*np.pi)+202
-# art3sx=250.5*np.sin(angle2/180.0*np.pi)
-# art3sz=250.5*np.cos(angle2/180.0*np.pi)+202
+
 art33D.translate(art3x, 0, art3z, True)
 art43D.translate(art3x, 0, art3z, True)
-# art43D.translate(art3sx, 0, art3sz, True)
+art53D.translate(art3x, 0, art3z, True)
+art63D.translate(art3x, 0, art3z, True)
+
 art23D.rotate(angle2, 0, 1, 0, True)
 art33D.rotate(angle2, 0, 1, 0, True)
 art43D.rotate(angle2, 0, 1, 0, True)
+art53D.rotate(angle2, 0, 1, 0, True)
+art63D.rotate(angle2, 0, 1, 0, True)
 
-angle3=45
+# angle3=0
 art4x=90.5*np.sin(angle3/180.0*np.pi)
 art4z=90.5*np.cos(angle3/180.0*np.pi)
 
+art5x=(90.5+104.5)*np.sin(angle3/180.0*np.pi)
+art5z=(90.5+104.5)*np.cos(angle3/180.0*np.pi)
+
 art43D.translate(art4x, 0, art4z, True)
+art53D.translate(art5x, 0, art5z, True)
+art63D.translate(art5x, 0, art5z, True)
+
 art33D.rotate(angle3, 0, 1, 0, True)
 art43D.rotate(angle3, 0, 1, 0, True)
+art53D.rotate(angle3, 0, 1, 0, True)
+art63D.rotate(angle3, 0, 1, 0, True)
+
+# angle4=0
+art43D.rotate(angle4, 0, 0, 1, True)
+art53D.rotate(angle4, 0, 0, 1, True)
+art63D.rotate(angle4, 0, 0, 1, True)
+
+# angle5=0
+art6x=64*np.sin(angle5/180.0*np.pi)
+art6z=64*np.cos(angle5/180.0*np.pi)
+
+art63D.translate(art6x, 0, art6z, True)
+
+art53D.rotate(angle5, 0, 1, 0, True)
+art63D.rotate(angle5, 0, 1, 0, True)
+
+# angle6=0
+art63D.rotate(angle6, 0, 0, 1, True)
+
+
 # print("X: " + str(art4x) + "    Z: " + str(art4z))
 
 
@@ -113,17 +159,9 @@ art43D.rotate(angle3, 0, 1, 0, True)
 #
 
 #
-# art5STL = STLparser.parseSTL("stl/art5.stl")
-# art5Mesh = gl.MeshData(vertexes=art5STL)
-# art53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='opaque')
-# art53D.translate(0, 0, 510)
-# w.addItem(art53D)
+
 #
-# art6STL = STLparser.parseSTL("stl/art6.stl")
-# art6Mesh = gl.MeshData(vertexes=art6STL)
-# art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
-# art63D.translate(0, 0, 613)
-# w.addItem(art63D)
+
 
 # m4 = gl.GLMeshItem(meshdata=md2, smooth=True, shader='shaded', glOptions='opaque')
 # m4.translate(0, 0, 1)
