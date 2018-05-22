@@ -30,10 +30,159 @@ import STLparser
 
 s0 = serial.Serial()
 
+class Robot(object):
+    def __init__(self):
+        self.w = gl.GLViewWidget()
+        self.w.setCameraPosition(distance=1500, azimuth=-90)
+
+        self.g = gl.GLGridItem()
+        self.g.scale(50,50,1)
+        self.w.addItem(self.g)
+
+        baseSTL = STLparser.parseSTL("stl/base.stl")
+        baseMesh = gl.MeshData(vertexes=baseSTL)
+        self.base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='opaque')
+        self.w.addItem(self.base3D)
+
+        art1STL = STLparser.parseSTL("stl/art1.stl")
+        art1Mesh = gl.MeshData(vertexes=art1STL)
+        self.art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='opaque')
+        self.w.addItem(self.art13D)
+
+        art2STL = STLparser.parseSTL("stl/art2.stl")
+        art2Mesh = gl.MeshData(vertexes=art2STL)
+        self.art23D = gl.GLMeshItem(meshdata=art2Mesh, smooth=False, shader='shaded', glOptions='opaque')
+        self.w.addItem(self.art23D)
+
+        art3STL = STLparser.parseSTL("stl/art3.stl")
+        art3Mesh = gl.MeshData(vertexes=art3STL)
+        self.art33D = gl.GLMeshItem(meshdata=art3Mesh, smooth=False, shader='shaded', glOptions='opaque')
+        self.w.addItem(self.art33D)
+
+        art4STL = STLparser.parseSTL("stl/art4.stl")
+        art4Mesh = gl.MeshData(vertexes=art4STL)
+        self.art43D = gl.GLMeshItem(meshdata=art4Mesh, smooth=False, shader='shaded', glOptions='opaque')
+        self.w.addItem(self.art43D)
+
+        art5STL = STLparser.parseSTL("stl/art5.stl")
+        art5Mesh = gl.MeshData(vertexes=art5STL)
+        self.art53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='opaque')
+        self.w.addItem(self.art53D)
+
+        art6STL = STLparser.parseSTL("stl/art6.stl")
+        art6Mesh = gl.MeshData(vertexes=art6STL)
+        self.art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
+        self.w.addItem(self.art63D)
+
+        self.rotateArm(0,0,0,0,0,0)
+
+    def rotArt1(self, angle1):
+        self.art13D.rotate(angle1, 0, 0, 1, True)
+        self.art23D.rotate(angle1, 0, 0, 1, True)
+        self.art33D.rotate(angle1, 0, 0, 1, True)
+        self.art43D.rotate(angle1, 0, 0, 1, True)
+        self.art53D.rotate(angle1, 0, 0, 1, True)
+        self.art63D.rotate(angle1, 0, 0, 1, True)
+
+    def rotArt2(self, angle2):
+        art3x=160*np.sin(angle2/180.0*np.pi)
+        art3z=160*np.cos(angle2/180.0*np.pi)+202
+
+        self.art33D.translate(art3x, 0, art3z, True)
+        self.art43D.translate(art3x, 0, art3z, True)
+        self.art53D.translate(art3x, 0, art3z, True)
+        self.art63D.translate(art3x, 0, art3z, True)
+
+        self.art23D.rotate(angle2, 0, 1, 0, True)
+        self.art33D.rotate(angle2, 0, 1, 0, True)
+        self.art43D.rotate(angle2, 0, 1, 0, True)
+        self.art53D.rotate(angle2, 0, 1, 0, True)
+        self.art63D.rotate(angle2, 0, 1, 0, True)
+
+    def rotArt3(self, angle3):
+        art4x=90.5*np.sin(angle3/180.0*np.pi)
+        art4z=90.5*np.cos(angle3/180.0*np.pi)
+
+        art5x=(90.5+104.5)*np.sin(angle3/180.0*np.pi)
+        art5z=(90.5+104.5)*np.cos(angle3/180.0*np.pi)
+
+        self.art43D.translate(art4x, 0, art4z, True)
+        self.art53D.translate(art5x, 0, art5z, True)
+        self.art63D.translate(art5x, 0, art5z, True)
+
+        self.art33D.rotate(angle3, 0, 1, 0, True)
+        self.art43D.rotate(angle3, 0, 1, 0, True)
+        self.art53D.rotate(angle3, 0, 1, 0, True)
+        self.art63D.rotate(angle3, 0, 1, 0, True)
+
+    def rotArt4(self, angle4):
+        self.art43D.rotate(angle4, 0, 0, 1, True)
+        self.art53D.rotate(angle4, 0, 0, 1, True)
+        self.art63D.rotate(angle4, 0, 0, 1, True)
+
+    def rotArt5(self, angle5):
+        art6x=64*np.sin(angle5/180.0*np.pi)
+        art6z=64*np.cos(angle5/180.0*np.pi)
+
+        self.art63D.translate(art6x, 0, art6z, True)
+
+        self.art53D.rotate(angle5, 0, 1, 0, True)
+        self.art63D.rotate(angle5, 0, 1, 0, True)
+
+    def rotArt6(self, angle6):
+        self.art63D.rotate(angle6, 0, 0, 1, True)
+
+    def rotateArm(self, a1, a2, a3, a4, a5, a6):
+         self.base3D.resetTransform()
+         self.art13D.resetTransform()
+         self.art23D.resetTransform()
+         self.art33D.resetTransform()
+         self.art43D.resetTransform()
+         self.art53D.resetTransform()
+         self.art63D.resetTransform()
+         self.art13D.translate(0, 0, 86)
+         self.art23D.translate(0, 0, 202)
+
+         self.rotArt1(a1)
+         self.rotArt2(a2)
+         self.rotArt3(a3)
+         self.rotArt4(a4)
+         self.rotArt5(a5)
+         self.rotArt6(a6)
+
+############### SERIAL READ THREAD CLASS ###############
+class SerialThreadClass(QtCore.QThread):
+    elapsedTime = time.time()
+    serialSignal = pyqtSignal(str)
+    def __init__(self, parent=None):
+         super(SerialThreadClass,self).__init__(parent)
+    def run(self):
+        while True:
+            if s0.isOpen():
+                try:
+                    s0.inWaiting()
+                except:
+                    self.serialSignal.emit("SERIAL-DISCONNECTED")
+                    print ("Lost Serial connection!")
+
+                try:
+                    if time.time()-self.elapsedTime>0.1:
+                        self.elapsedTime=time.time()
+                        s0.write("?\n".encode('UTF-8'))
+                    dataRead = str(s0.readline())
+                    dataCropped=dataRead[2:][:-5]
+                    if dataCropped!="":
+                        self.serialSignal.emit(dataCropped)
+                except Exception as e:
+                    print ("Something failed: " + str(e))
+###############  SERIAL READ THREAD CLASS ###############
+
+
 class AboutDialog(About_Ui_Dialog):
     def __init__(self, dialog):
         About_Ui_Dialog.__init__(self)
         self.setupUi(dialog)
+
 
 class AsgardGUI(Ui_MainWindow):
     def __init__(self, dialog):
@@ -171,10 +320,6 @@ class AsgardGUI(Ui_MainWindow):
             self.QABMenuBot.hide()
             self.CollapseButtonQAB.setText("▶")
 
-
-
-
-
     def sendHomingCycleCommand(self):
         if s0.isOpen():
             messageToSend="$H"
@@ -227,6 +372,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt1(self):
         val=int(self.SpinBoxArt1.value()*10)
         self.FKSliderArt1.setValue(val)
+        self.move3D()
     def FKDec10Art1(self):
         val=self.SpinBoxArt1.value()-10
         self.SpinBoxArt1.setValue(val)
@@ -268,6 +414,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt2(self):
         val=int(self.SpinBoxArt2.value()*10)
         self.FKSliderArt2.setValue(val)
+        self.move3D()
     def FKDec10Art2(self):
         val=self.SpinBoxArt2.value()-10
         self.SpinBoxArt2.setValue(val)
@@ -309,6 +456,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt3(self):
         val=int(self.SpinBoxArt3.value()*10)
         self.FKSliderArt3.setValue(val)
+        self.move3D()
     def FKDec10Art3(self):
         val=self.SpinBoxArt3.value()-10
         self.SpinBoxArt3.setValue(val)
@@ -350,6 +498,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt4(self):
         val=int(self.SpinBoxArt4.value()*10)
         self.FKSliderArt4.setValue(val)
+        self.move3D()
     def FKDec10Art4(self):
         val=self.SpinBoxArt4.value()-10
         self.SpinBoxArt4.setValue(val)
@@ -391,6 +540,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt5(self):
         val=int(self.SpinBoxArt5.value()*10)
         self.FKSliderArt5.setValue(val)
+        self.move3D()
     def FKDec10Art5(self):
         val=self.SpinBoxArt5.value()-10
         self.SpinBoxArt5.setValue(val)
@@ -432,6 +582,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt6(self):
         val=int(self.SpinBoxArt6.value()*10)
         self.FKSliderArt6.setValue(val)
+        self.move3D()
     def FKDec10Art6(self):
         val=self.SpinBoxArt6.value()-10
         self.SpinBoxArt6.setValue(val)
@@ -452,7 +603,7 @@ class AsgardGUI(Ui_MainWindow):
         self.SpinBoxArt6.setValue(val)
 
 #FK Every Articulation Functions
-    def FKMoveAll(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
+    def FKMoveAll(self): # En realidad esto no va así, hay que calcular el movimiento acoplado de los dos ultimos grados de libertad. Proximamente.
         if s0.isOpen():
             if self.G1MoveRadioButton.isChecked():
                 typeOfMovement="G1 "
@@ -600,182 +751,22 @@ class AsgardGUI(Ui_MainWindow):
         msgBox.setText("The connection has not been established yet. Please establish the connection before trying to control.")
         msgBox.exec_()
 
-############### SERIAL READ THREAD CLASS ###############
-
-
 ########## 3D ##############
 
     def start3D(self):
         if self.TabWidget.currentIndex()==1 and self.Viewer3Dinit==False:
-            w = gl.GLViewWidget()
-            w.setCameraPosition(distance=1500, azimuth=-90)
-
-            g = gl.GLGridItem()
-            g.scale(50,50,1)
-            w.addItem(g)
-
-            baseSTL = STLparser.parseSTL("stl/base.stl")
-            baseMesh = gl.MeshData(vertexes=baseSTL)
-            base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='opaque')
-            w.addItem(base3D)
-
-            art1STL = STLparser.parseSTL("stl/art1.stl")
-            art1Mesh = gl.MeshData(vertexes=art1STL)
-            art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='opaque')
-            art13D.translate(0, 0, 86)
-            w.addItem(art13D)
-
-            art2STL = STLparser.parseSTL("stl/art2.stl")
-            art2Mesh = gl.MeshData(vertexes=art2STL)
-            art23D = gl.GLMeshItem(meshdata=art2Mesh, smooth=False, shader='shaded', glOptions='opaque')
-            art23D.translate(0, 0, 138)
-            w.addItem(art23D)
-
-            art3STL = STLparser.parseSTL("stl/art3.stl")
-            art3Mesh = gl.MeshData(vertexes=art3STL)
-            art33D = gl.GLMeshItem(meshdata=art3Mesh, smooth=False, shader='shaded', glOptions='opaque')
-            art33D.translate(0, 0, 300)
-            w.addItem(art33D)
-
-            art4STL = STLparser.parseSTL("stl/art4.stl")
-            art4Mesh = gl.MeshData(vertexes=art4STL)
-            art43D = gl.GLMeshItem(meshdata=art4Mesh, smooth=False, shader='shaded', glOptions='opaque')
-            art43D.translate(0, 0, 378)
-            w.addItem(art43D)
-
-            art5STL = STLparser.parseSTL("stl/art5.stl")
-            art5Mesh = gl.MeshData(vertexes=art5STL)
-            art53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='opaque')
-            art53D.translate(0, 0, 510)
-            w.addItem(art53D)
-
-            art6STL = STLparser.parseSTL("stl/art6.stl")
-            art6Mesh = gl.MeshData(vertexes=art6STL)
-            art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
-            art63D.translate(0, 0, 613)
-            w.addItem(art63D)
-
-            self.gridLayout_5.addWidget(w,0,0)
+            self.thor3d=Robot()
+            self.gridLayout_5.addWidget(self.thor3d.w,0,0)
             self.Viewer3Dinit=True
 
-
-
-    def start3D1(self):
-        widget = OpenGLWidget(self.Viewer3DTab)
-        widget.show()
-
-    def start3D2(self):
-        helper = Helper()
-        native = Widget(helper, self.Viewer3DTab)
-        timer = QTimer(self.Viewer3DTab)
-        timer.timeout.connect(native.animate)
-        timer.start(50)
-
-class OpenGLWidget(QOpenGLWidget):
-    # def __init__(self, parent):
-        # super(OpenGLWidget, self).__init__(parent)
-    def initializeGL(self):
-        vertices = np.array([0.0, 1.0, -1.0, -1.0, 1.0, -1.0], dtype=np.float32)
-
-        bufferId = GL.glGenBuffers(1)
-        GL.glBindBuffer(GL.GL_ARRAY_BUFFER, bufferId)
-        GL.glBufferData(GL.GL_ARRAY_BUFFER, vertices.nbytes, vertices, GL.GL_STATIC_DRAW)
-
-        GL.glEnableVertexAttribArray(0)
-        GL.glVertexAttribPointer(0, 2, GL.GL_FLOAT, GL.GL_FALSE, 0, None)
-
-    def paintGL(self):
-        GL.glDrawArrays(GL.GL_TRIANGLES, 0, 3)
-
-
-
-class Widget(QWidget):
-    def __init__(self, helper, parent):
-        super(Widget, self).__init__(parent)
-
-        self.helper = helper
-        self.elapsed = 0
-        self.setFixedSize(540, 590)
-
-    def animate(self):
-        self.elapsed = (self.elapsed + self.sender().interval()) % 1000
-        self.repaint()
-
-    def paintEvent(self, event):
-        painter = QPainter()
-        painter.begin(self)
-        painter.setRenderHint(QPainter.Antialiasing)
-        self.helper.paint(painter, event, self.elapsed)
-        painter.end()
-
-class Helper(object):
-    def __init__(self):
-        gradient = QLinearGradient(QPointF(50, -20), QPointF(80, 20))
-        gradient.setColorAt(0.0, Qt.white)
-        gradient.setColorAt(1.0, QColor(0xa6, 0xce, 0x39))
-
-        self.background = QBrush(QColor(64, 32, 64))
-        self.circleBrush = QBrush(gradient)
-        self.circlePen = QPen(Qt.black)
-        self.circlePen.setWidth(1)
-        self.textPen = QPen(Qt.white)
-        self.textFont = QFont()
-        self.textFont.setPixelSize(50)
-
-    def paint(self, painter, event, elapsed):
-        painter.fillRect(event.rect(), self.background)
-        painter.translate(540/2, 590/2)
-
-        painter.save()
-        painter.setBrush(self.circleBrush)
-        painter.setPen(self.circlePen)
-        painter.rotate(elapsed * 0.030)
-
-        r = elapsed / 1000.0
-        n = 30
-        for i in range(n):
-            painter.rotate(30)
-            radius = 0 + 120.0*((i+r)/n)*3
-            circleRadius = 1 + ((i+r)/n)*40
-            painter.drawEllipse(QRectF(radius, -circleRadius,
-                    circleRadius*2, circleRadius*2))
-
-        painter.restore()
-
-        painter.setPen(self.textPen)
-        painter.setFont(self.textFont)
-        painter.drawText(QRect(-150, -150, 300, 300), Qt.AlignCenter, "Coming Soon")
-
-class SerialThreadClass(QtCore.QThread):
-    elapsedTime = time.time()
-    serialSignal = pyqtSignal(str)
-    def __init__(self, parent=None):
-         super(SerialThreadClass,self).__init__(parent)
-    def run(self):
-        while True:
-            if s0.isOpen():
-                try:
-                    s0.inWaiting()
-                except:
-                    self.serialSignal.emit("SERIAL-DISCONNECTED")
-                    print ("Lost Serial connection!")
-
-                try:
-                    if time.time()-self.elapsedTime>0.1:
-                        self.elapsedTime=time.time()
-                        s0.write("?\n".encode('UTF-8'))
-                    dataRead = str(s0.readline())
-                    dataCropped=dataRead[2:][:-5]
-                    if dataCropped!="":
-                        self.serialSignal.emit(dataCropped)
-                except Exception as e:
-                    print ("Something failed: " + str(e))
-
-
-###############  SERIAL READ THREAD CLASS ###############
-
-
-
+    def move3D(self):
+        a1=self.SpinBoxArt1.value()
+        a2=self.SpinBoxArt2.value()
+        a3=self.SpinBoxArt3.value()
+        a4=self.SpinBoxArt4.value()
+        a5=self.SpinBoxArt5.value()
+        a6=self.SpinBoxArt6.value()
+        self.thor3d.rotateArm(a1,a2,a3,a4,a5,a6)
 
 
 
@@ -785,10 +776,6 @@ class SerialThreadClass(QtCore.QThread):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-
-    fmt = QSurfaceFormat()
-    fmt.setSamples(4)
-    QSurfaceFormat.setDefaultFormat(fmt)
 
     mwindow = QtWidgets.QMainWindow()
 
