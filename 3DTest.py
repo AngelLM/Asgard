@@ -12,6 +12,82 @@ used to affect the appearance of a surface.
 from pyqtgraph.Qt import QtCore, QtGui
 import pyqtgraph as pg
 import pyqtgraph.opengl as gl
+import time
+
+def rotArt1(angle1):
+    art13D.rotate(angle1, 0, 0, 1, True)
+    art23D.rotate(angle1, 0, 0, 1, True)
+    art33D.rotate(angle1, 0, 0, 1, True)
+    art43D.rotate(angle1, 0, 0, 1, True)
+    art53D.rotate(angle1, 0, 0, 1, True)
+    art63D.rotate(angle1, 0, 0, 1, True)
+
+def rotArt2(angle2):
+    art3x=160*np.sin(angle2/180.0*np.pi)
+    art3z=160*np.cos(angle2/180.0*np.pi)+202
+
+    art33D.translate(art3x, 0, art3z, True)
+    art43D.translate(art3x, 0, art3z, True)
+    art53D.translate(art3x, 0, art3z, True)
+    art63D.translate(art3x, 0, art3z, True)
+
+    art23D.rotate(angle2, 0, 1, 0, True)
+    art33D.rotate(angle2, 0, 1, 0, True)
+    art43D.rotate(angle2, 0, 1, 0, True)
+    art53D.rotate(angle2, 0, 1, 0, True)
+    art63D.rotate(angle2, 0, 1, 0, True)
+
+def rotArt3(angle3):
+    art4x=90.5*np.sin(angle3/180.0*np.pi)
+    art4z=90.5*np.cos(angle3/180.0*np.pi)
+
+    art5x=(90.5+104.5)*np.sin(angle3/180.0*np.pi)
+    art5z=(90.5+104.5)*np.cos(angle3/180.0*np.pi)
+
+    art43D.translate(art4x, 0, art4z, True)
+    art53D.translate(art5x, 0, art5z, True)
+    art63D.translate(art5x, 0, art5z, True)
+
+    art33D.rotate(angle3, 0, 1, 0, True)
+    art43D.rotate(angle3, 0, 1, 0, True)
+    art53D.rotate(angle3, 0, 1, 0, True)
+    art63D.rotate(angle3, 0, 1, 0, True)
+
+def rotArt4(angle4):
+    art43D.rotate(angle4, 0, 0, 1, True)
+    art53D.rotate(angle4, 0, 0, 1, True)
+    art63D.rotate(angle4, 0, 0, 1, True)
+
+def rotArt5(angle5):
+    art6x=64*np.sin(angle5/180.0*np.pi)
+    art6z=64*np.cos(angle5/180.0*np.pi)
+
+    art63D.translate(art6x, 0, art6z, True)
+
+    art53D.rotate(angle5, 0, 1, 0, True)
+    art63D.rotate(angle5, 0, 1, 0, True)
+
+def rotArt6(angle6):
+    art63D.rotate(angle6, 0, 0, 1, True)
+
+def rotateArm(a1, a2, a3, a4, a5, a6):
+     base3D.resetTransform()
+     art13D.resetTransform()
+     art23D.resetTransform()
+     art33D.resetTransform()
+     art43D.resetTransform()
+     art53D.resetTransform()
+     art63D.resetTransform()
+     art13D.translate(0, 0, 86)
+     art23D.translate(0, 0, 202)
+
+     rotArt1(a1)
+     rotArt2(a2)
+     rotArt3(a3)
+     rotArt4(a4)
+     rotArt5(a5)
+     rotArt6(a6)
+
 
 app = QtGui.QApplication([])
 w = gl.GLViewWidget()
@@ -45,12 +121,12 @@ md = gl.MeshData.sphere(rows=10, cols=20)
 # m3.scale(1, 1, 2)
 # w.addItem(m3)
 
-angle1=50
-angle2=-45
-angle3=90
-angle4=30
-angle5=50
-angle6=-20
+art1=50
+art2=-45
+art3=90
+art4=30
+art5=50
+art6=-20
 
 
 baseSTL = STLparser.parseSTL("stl/base.stl")
@@ -61,14 +137,11 @@ w.addItem(base3D)
 art1STL = STLparser.parseSTL("stl/art1.stl")
 art1Mesh = gl.MeshData(vertexes=art1STL)
 art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='opaque')
-
-art13D.translate(0, 0, 86)
 w.addItem(art13D)
 
 art2STL = STLparser.parseSTL("stl/art2.stl")
 art2Mesh = gl.MeshData(vertexes=art2STL)
 art23D = gl.GLMeshItem(meshdata=art2Mesh, smooth=False, shader='shaded', glOptions='opaque')
-art23D.translate(0, 0, 202)
 w.addItem(art23D)
 
 art3STL = STLparser.parseSTL("stl/art3.stl")
@@ -91,76 +164,48 @@ art6Mesh = gl.MeshData(vertexes=art6STL)
 art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
 w.addItem(art63D)
 
-# angle1=0
-art13D.rotate(angle1, 0, 0, 1, True)
-art23D.rotate(angle1, 0, 0, 1, True)
-art33D.rotate(angle1, 0, 0, 1, True)
-art43D.rotate(angle1, 0, 0, 1, True)
-art53D.rotate(angle1, 0, 0, 1, True)
-art63D.rotate(angle1, 0, 0, 1, True)
+# rotateArm(art1, art2, art3, art4, art5, art6)
+# tic=time.time()
+# rotateArm(0, 0, 0, 0, 0, 0)
+# print(time.time()-tic)
 
+a=0
+b=0
+c=0
+d=0
+e=0
+f=0
+Rmax=False
 
-# angle2=0
-art3x=160*np.sin(angle2/180.0*np.pi)
-art3z=160*np.cos(angle2/180.0*np.pi)+202
+def update():
+    global a,b,c,d,e,f,Rmax
+    a+=0.5
+    d+=0.5
+    f+=0.5
+    if not Rmax:
+        b+=0.5
+        c-=0.5
+        e+=0.5
+    else:
+        b-=0.5
+        c+=0.5
+        e-=0.5
+    if b==90:
+        Rmax=True
+    if b==-90:
+        Rmax=False
+    if a==360:
+        a=0
 
-art33D.translate(art3x, 0, art3z, True)
-art43D.translate(art3x, 0, art3z, True)
-art53D.translate(art3x, 0, art3z, True)
-art63D.translate(art3x, 0, art3z, True)
+    rotateArm(a, b, c, d, e, f)
 
-art23D.rotate(angle2, 0, 1, 0, True)
-art33D.rotate(angle2, 0, 1, 0, True)
-art43D.rotate(angle2, 0, 1, 0, True)
-art53D.rotate(angle2, 0, 1, 0, True)
-art63D.rotate(angle2, 0, 1, 0, True)
-
-# angle3=0
-art4x=90.5*np.sin(angle3/180.0*np.pi)
-art4z=90.5*np.cos(angle3/180.0*np.pi)
-
-art5x=(90.5+104.5)*np.sin(angle3/180.0*np.pi)
-art5z=(90.5+104.5)*np.cos(angle3/180.0*np.pi)
-
-art43D.translate(art4x, 0, art4z, True)
-art53D.translate(art5x, 0, art5z, True)
-art63D.translate(art5x, 0, art5z, True)
-
-art33D.rotate(angle3, 0, 1, 0, True)
-art43D.rotate(angle3, 0, 1, 0, True)
-art53D.rotate(angle3, 0, 1, 0, True)
-art63D.rotate(angle3, 0, 1, 0, True)
-
-# angle4=0
-art43D.rotate(angle4, 0, 0, 1, True)
-art53D.rotate(angle4, 0, 0, 1, True)
-art63D.rotate(angle4, 0, 0, 1, True)
-
-# angle5=0
-art6x=64*np.sin(angle5/180.0*np.pi)
-art6z=64*np.cos(angle5/180.0*np.pi)
-
-art63D.translate(art6x, 0, art6z, True)
-
-art53D.rotate(angle5, 0, 1, 0, True)
-art63D.rotate(angle5, 0, 1, 0, True)
-
-# angle6=0
-art63D.rotate(angle6, 0, 0, 1, True)
-
-
-# print("X: " + str(art4x) + "    Z: " + str(art4z))
+timer = QtCore.QTimer()
+timer.timeout.connect(update)
+timer.start(30)
 
 
 
 
-
-
-#
-
-#
-
-#
 
 
 # m4 = gl.GLMeshItem(meshdata=md2, smooth=True, shader='shaded', glOptions='opaque')
