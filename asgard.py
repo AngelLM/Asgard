@@ -42,6 +42,7 @@ class SerialThreadClass(QtCore.QThread):
          super(SerialThreadClass,self).__init__(parent)
     def run(self):
         while True:
+            lastLineRead=""
             if s0.isOpen():
                 try:
                     s0.inWaiting()
@@ -50,13 +51,16 @@ class SerialThreadClass(QtCore.QThread):
                     print ("Lost Serial connection!")
 
                 try:
-                    if time.time()-self.elapsedTime>0.1:
+                    if time.time()-self.elapsedTime>0.01:
                         self.elapsedTime=time.time()
                         s0.write("?\n".encode('UTF-8'))
+                    # s0.write("?\n".encode('UTF-8'))
                     dataRead = str(s0.readline())
                     dataCropped=dataRead[2:][:-5]
-                    if dataCropped!="":
+                    if dataCropped!="" and lastLineRead!=dataCropped:
+                        lastLineRead=dataCropped
                         self.serialSignal.emit(dataCropped)
+
                 except Exception as e:
                     print ("Something failed: " + str(e))
 ###############  SERIAL READ THREAD CLASS ###############
@@ -267,7 +271,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt1(self):
         val=int(self.SpinBoxArt1.value()*10)
         self.FKSliderArt1.setValue(val)
-        self.move3D()
+        self.moveNext3D()
     def FKDec10Art1(self):
         val=self.SpinBoxArt1.value()-10
         self.SpinBoxArt1.setValue(val)
@@ -309,7 +313,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt2(self):
         val=int(self.SpinBoxArt2.value()*10)
         self.FKSliderArt2.setValue(val)
-        self.move3D()
+        self.moveNext3D()
     def FKDec10Art2(self):
         val=self.SpinBoxArt2.value()-10
         self.SpinBoxArt2.setValue(val)
@@ -351,7 +355,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt3(self):
         val=int(self.SpinBoxArt3.value()*10)
         self.FKSliderArt3.setValue(val)
-        self.move3D()
+        self.moveNext3D()
     def FKDec10Art3(self):
         val=self.SpinBoxArt3.value()-10
         self.SpinBoxArt3.setValue(val)
@@ -393,7 +397,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt4(self):
         val=int(self.SpinBoxArt4.value()*10)
         self.FKSliderArt4.setValue(val)
-        self.move3D()
+        self.moveNext3D()
     def FKDec10Art4(self):
         val=self.SpinBoxArt4.value()-10
         self.SpinBoxArt4.setValue(val)
@@ -435,7 +439,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt5(self):
         val=int(self.SpinBoxArt5.value()*10)
         self.FKSliderArt5.setValue(val)
-        self.move3D()
+        self.moveNext3D()
     def FKDec10Art5(self):
         val=self.SpinBoxArt5.value()-10
         self.SpinBoxArt5.setValue(val)
@@ -477,7 +481,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt6(self):
         val=int(self.SpinBoxArt6.value()*10)
         self.FKSliderArt6.setValue(val)
-        self.move3D()
+        self.moveNext3D()
     def FKDec10Art6(self):
         val=self.SpinBoxArt6.value()-10
         self.SpinBoxArt6.setValue(val)
@@ -607,12 +611,21 @@ class AsgardGUI(Ui_MainWindow):
     def updateFKPosDisplay(self,dataRead):
         data=dataRead[1:][:-1].split(",")
         self.updateCurrentState(data[0])
-        self.FKCurrentPosValueArt1.setText(data[1][5:][:-2]+"º")
-        self.FKCurrentPosValueArt2.setText(data[2][:-2]+"º")
-        self.FKCurrentPosValueArt3.setText(data[4][:-2]+"º")
-        self.FKCurrentPosValueArt4.setText(data[5][:-2]+"º")
-        self.FKCurrentPosValueArt5.setText(data[6][:-2]+"º")
-        self.FKCurrentPosValueArt6.setText(data[7][:-2]+"º")
+        a1=data[1][5:][:-2]
+        a2=data[2][:-2]
+        a3=data[4][:-2]
+        a4=data[5][:-2]
+        a5=data[6][:-2]
+        a6=data[7][:-2]
+        self.FKCurrentPosValueArt1.setText(a1+"º")
+        self.FKCurrentPosValueArt2.setText(a2+"º")
+        self.FKCurrentPosValueArt3.setText(a3+"º")
+        self.FKCurrentPosValueArt4.setText(a4+"º")
+        self.FKCurrentPosValueArt5.setText(a5+"º")
+        self.FKCurrentPosValueArt6.setText(a6+"º")
+
+        if self.Viewer3Dinit:
+            self.thor3d.rotateCurrentArm(float(a1),float(a2),float(a3),float(a4),float(a5),float(a6))
 
     def updateCurrentState(self, state):
         self.RobotStateDisplay.setText(state)
@@ -654,15 +667,15 @@ class AsgardGUI(Ui_MainWindow):
             self.gridLayout_5.addWidget(self.thor3d.w,0,0)
             self.Viewer3Dinit=True
 
-    def move3D(self):
+    def moveNext3D(self):
         a1=self.SpinBoxArt1.value()
         a2=self.SpinBoxArt2.value()
         a3=self.SpinBoxArt3.value()
         a4=self.SpinBoxArt4.value()
         a5=self.SpinBoxArt5.value()
         a6=self.SpinBoxArt6.value()
-        # self.thor3d.rotateArm(a1,a2,a3,a4,a5,a6)
         self.thor3d.rotateNextArm(a1,a2,a3,a4,a5,a6)
+
 
 ### settings
 
@@ -709,6 +722,8 @@ class AsgardGUI(Ui_MainWindow):
 
     def applyCurrentSettings(self):
         if self.Viewer3Dinit:
+            self.CurrentColor.setAlpha(int(self.SettingsSetOpacityCurrent.value()*2.55))
+            self.NextColor.setAlpha(int(self.SettingsSetOpacityNext.value()*2.55))
             self.thor3d.setColorCurrent(self.CurrentColor)
             self.thor3d.setColorNext(self.NextColor)
             self.thor3d.showModels(self.SettingsShowCurrent.isChecked(),self.SettingsShowNext.isChecked())

@@ -147,6 +147,9 @@ class Robot(object):
     def rotArt6(self, model, angle6):
         model[6].rotate(angle6, 0, 0, 1, True)
 
+    def rotateCurrentArm(self, a1, a2, a3, a4, a5, a6):
+        self.rotateArm(self.CurrentPosModel, a1, a2, a3, a4, a5, a6)
+
     def rotateNextArm(self, a1, a2, a3, a4, a5, a6):
         self.rotateArm(self.NextPosModel, a1, a2, a3, a4, a5, a6)
 
