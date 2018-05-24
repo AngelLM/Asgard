@@ -1,7 +1,11 @@
 import sys
+import json
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+
+from Robot import Robot
 
 from gui import Ui_MainWindow
 from about import Ui_Dialog as About_Ui_Dialog
@@ -18,137 +22,17 @@ from PyQt5.QtWidgets import (QApplication, QGridLayout, QLabel, QOpenGLWidget,
         QWidget)
 
 
-import numpy as np
+# import numpy as np
 # from OpenGL import GL
 
 from pyqtgraph.Qt import QtCore, QtGui
 import pyqtgraph as pg
-import pyqtgraph.opengl as gl
+# import pyqtgraph.opengl as gl
 
-import STLparser
+# import STLparser
 
 
 s0 = serial.Serial()
-
-class Robot(object):
-    def __init__(self):
-        self.w = gl.GLViewWidget()
-        self.w.setCameraPosition(distance=1500, azimuth=-90)
-
-        self.g = gl.GLGridItem()
-        self.g.scale(50,50,1)
-        self.w.addItem(self.g)
-
-        baseSTL = STLparser.parseSTL("stl/base.stl")
-        baseMesh = gl.MeshData(vertexes=baseSTL)
-        self.base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='opaque')
-        self.w.addItem(self.base3D)
-
-        art1STL = STLparser.parseSTL("stl/art1.stl")
-        art1Mesh = gl.MeshData(vertexes=art1STL)
-        self.art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        self.w.addItem(self.art13D)
-
-        art2STL = STLparser.parseSTL("stl/art2.stl")
-        art2Mesh = gl.MeshData(vertexes=art2STL)
-        self.art23D = gl.GLMeshItem(meshdata=art2Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        self.w.addItem(self.art23D)
-
-        art3STL = STLparser.parseSTL("stl/art3.stl")
-        art3Mesh = gl.MeshData(vertexes=art3STL)
-        self.art33D = gl.GLMeshItem(meshdata=art3Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        self.w.addItem(self.art33D)
-
-        art4STL = STLparser.parseSTL("stl/art4.stl")
-        art4Mesh = gl.MeshData(vertexes=art4STL)
-        self.art43D = gl.GLMeshItem(meshdata=art4Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        self.w.addItem(self.art43D)
-
-        art5STL = STLparser.parseSTL("stl/art5.stl")
-        art5Mesh = gl.MeshData(vertexes=art5STL)
-        self.art53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        self.w.addItem(self.art53D)
-
-        art6STL = STLparser.parseSTL("stl/art6.stl")
-        art6Mesh = gl.MeshData(vertexes=art6STL)
-        self.art63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='opaque')
-        self.w.addItem(self.art63D)
-
-        self.rotateArm(0,0,0,0,0,0)
-
-    def rotArt1(self, angle1):
-        self.art13D.rotate(angle1, 0, 0, 1, True)
-        self.art23D.rotate(angle1, 0, 0, 1, True)
-        self.art33D.rotate(angle1, 0, 0, 1, True)
-        self.art43D.rotate(angle1, 0, 0, 1, True)
-        self.art53D.rotate(angle1, 0, 0, 1, True)
-        self.art63D.rotate(angle1, 0, 0, 1, True)
-
-    def rotArt2(self, angle2):
-        art3x=160*np.sin(angle2/180.0*np.pi)
-        art3z=160*np.cos(angle2/180.0*np.pi)+202
-
-        self.art33D.translate(art3x, 0, art3z, True)
-        self.art43D.translate(art3x, 0, art3z, True)
-        self.art53D.translate(art3x, 0, art3z, True)
-        self.art63D.translate(art3x, 0, art3z, True)
-
-        self.art23D.rotate(angle2, 0, 1, 0, True)
-        self.art33D.rotate(angle2, 0, 1, 0, True)
-        self.art43D.rotate(angle2, 0, 1, 0, True)
-        self.art53D.rotate(angle2, 0, 1, 0, True)
-        self.art63D.rotate(angle2, 0, 1, 0, True)
-
-    def rotArt3(self, angle3):
-        art4x=90.5*np.sin(angle3/180.0*np.pi)
-        art4z=90.5*np.cos(angle3/180.0*np.pi)
-
-        art5x=(90.5+104.5)*np.sin(angle3/180.0*np.pi)
-        art5z=(90.5+104.5)*np.cos(angle3/180.0*np.pi)
-
-        self.art43D.translate(art4x, 0, art4z, True)
-        self.art53D.translate(art5x, 0, art5z, True)
-        self.art63D.translate(art5x, 0, art5z, True)
-
-        self.art33D.rotate(angle3, 0, 1, 0, True)
-        self.art43D.rotate(angle3, 0, 1, 0, True)
-        self.art53D.rotate(angle3, 0, 1, 0, True)
-        self.art63D.rotate(angle3, 0, 1, 0, True)
-
-    def rotArt4(self, angle4):
-        self.art43D.rotate(angle4, 0, 0, 1, True)
-        self.art53D.rotate(angle4, 0, 0, 1, True)
-        self.art63D.rotate(angle4, 0, 0, 1, True)
-
-    def rotArt5(self, angle5):
-        art6x=64*np.sin(angle5/180.0*np.pi)
-        art6z=64*np.cos(angle5/180.0*np.pi)
-
-        self.art63D.translate(art6x, 0, art6z, True)
-
-        self.art53D.rotate(angle5, 0, 1, 0, True)
-        self.art63D.rotate(angle5, 0, 1, 0, True)
-
-    def rotArt6(self, angle6):
-        self.art63D.rotate(angle6, 0, 0, 1, True)
-
-    def rotateArm(self, a1, a2, a3, a4, a5, a6):
-         self.base3D.resetTransform()
-         self.art13D.resetTransform()
-         self.art23D.resetTransform()
-         self.art33D.resetTransform()
-         self.art43D.resetTransform()
-         self.art53D.resetTransform()
-         self.art63D.resetTransform()
-         self.art13D.translate(0, 0, 86)
-         self.art23D.translate(0, 0, 202)
-
-         self.rotArt1(a1)
-         self.rotArt2(a2)
-         self.rotArt3(a3)
-         self.rotArt4(a4)
-         self.rotArt5(a5)
-         self.rotArt6(a6)
 
 ############### SERIAL READ THREAD CLASS ###############
 class SerialThreadClass(QtCore.QThread):
@@ -287,6 +171,17 @@ class AsgardGUI(Ui_MainWindow):
         self.ConsoleInput.returnPressed.connect(self.sendSerialCommand)
 
         self.TabWidget.currentChanged.connect(self.start3D)
+
+        self.SettingsSaveCurrentButton.clicked.connect(self.saveCurrentSettings)
+        self.SettingsShowCurrent.stateChanged.connect(self.settingsDisable3DCurrent)
+        self.SettingsShowNext.stateChanged.connect(self.settingsDisable3DNext)
+        self.SettingsSetColorButtonCurrent.pressed.connect(self.settingsUpdateColorCurrent)
+        self.SettingsSetColorButtonNext.pressed.connect(self.settingsUpdateColorNext)
+        self.SettingsApplyCurrentButton.pressed.connect(self.applyCurrentSettings)
+
+        self.loadSettings("conf/saved_configuration.json")
+
+
 
     def close_application(self):
         sys.exit()
@@ -755,7 +650,7 @@ class AsgardGUI(Ui_MainWindow):
 
     def start3D(self):
         if self.TabWidget.currentIndex()==1 and self.Viewer3Dinit==False:
-            self.thor3d=Robot()
+            self.thor3d=Robot(self.SettingsShowCurrent.isChecked(), self.SettingsShowNext.isChecked(), self.CurrentColor, self.NextColor)
             self.gridLayout_5.addWidget(self.thor3d.w,0,0)
             self.Viewer3Dinit=True
 
@@ -766,10 +661,93 @@ class AsgardGUI(Ui_MainWindow):
         a4=self.SpinBoxArt4.value()
         a5=self.SpinBoxArt5.value()
         a6=self.SpinBoxArt6.value()
-        self.thor3d.rotateArm(a1,a2,a3,a4,a5,a6)
+        # self.thor3d.rotateArm(a1,a2,a3,a4,a5,a6)
+        self.thor3d.rotateNextArm(a1,a2,a3,a4,a5,a6)
+
+### settings
+
+
+    def loadSettings(self, path):
+        with open(path, "r") as jsonFile:
+                data = json.load(jsonFile)
+                jsonFile.close()
+
+
+        self.CurrentColor=QColor(data["3dviewer"]["currentmodel"]["color"]["r"],data["3dviewer"]["currentmodel"]["color"]["g"],data["3dviewer"]["currentmodel"]["color"]["b"],int(data["3dviewer"]["currentmodel"]["opacity"]*2.55))
+        self.SettingsSetOpacityCurrent.setValue(data["3dviewer"]["currentmodel"]["opacity"])
+        self.SettingsColorPreviewCurrent.setStyleSheet('background-color: rgba' + str(self.CurrentColor.getRgb()))
+        self.SettingsShowCurrent.setChecked(data["3dviewer"]["currentmodel"]["show"])
+
+        self.NextColor=QColor(data["3dviewer"]["nextmodel"]["color"]["r"],data["3dviewer"]["nextmodel"]["color"]["g"],data["3dviewer"]["nextmodel"]["color"]["b"],int(data["3dviewer"]["nextmodel"]["opacity"]*2.55))
+        self.SettingsSetOpacityNext.setValue(data["3dviewer"]["nextmodel"]["opacity"])
+        self.SettingsColorPreviewNext.setStyleSheet('background-color: rgba' + str(self.NextColor.getRgb()))
+        self.SettingsShowNext.setChecked(data["3dviewer"]["nextmodel"]["show"])
+
+
+    def saveCurrentSettings(self):
+        with open("conf/saved_configuration.json", "r") as jsonFile:
+                temp = json.load(jsonFile)
+                jsonFile.close()
+
+        temp["3dviewer"]["currentmodel"]["color"]["r"]=self.CurrentColor.red()
+        temp["3dviewer"]["currentmodel"]["color"]["g"]=self.CurrentColor.green()
+        temp["3dviewer"]["currentmodel"]["color"]["b"]=self.CurrentColor.blue()
+        temp["3dviewer"]["currentmodel"]["opacity"]=self.SettingsSetOpacityCurrent.value()
+        temp["3dviewer"]["currentmodel"]["show"]=self.SettingsShowCurrent.isChecked()
+        temp["3dviewer"]["nextmodel"]["color"]["r"]=self.NextColor.red()
+        temp["3dviewer"]["nextmodel"]["color"]["g"]=self.NextColor.green()
+        temp["3dviewer"]["nextmodel"]["color"]["b"]=self.NextColor.blue()
+        temp["3dviewer"]["nextmodel"]["opacity"]=self.SettingsSetOpacityNext.value()
+        temp["3dviewer"]["nextmodel"]["show"]=self.SettingsShowNext.isChecked()
+
+        with open("conf/saved_configuration.json", "w") as jsonFile:
+            json.dump(temp, jsonFile)
+            jsonFile.close()
 
 
 
+
+    def applyCurrentSettings(self):
+        if self.Viewer3Dinit:
+            self.thor3d.setColorCurrent(self.CurrentColor)
+            self.thor3d.setColorNext(self.NextColor)
+            self.thor3d.showModels(self.SettingsShowCurrent.isChecked(),self.SettingsShowNext.isChecked())
+
+    def settingsDisable3DCurrent(self):
+        if self.SettingsShowCurrent.isChecked():
+            self.SettingsColorLabelCurrent.setEnabled(True)
+            self.SettingsColorPreviewCurrent.setEnabled(True)
+            self.SettingsSetColorButtonCurrent.setEnabled(True)
+            self.SettingsOpacityLabelCurrent.setEnabled(True)
+            self.SettingsSetOpacityCurrent.setEnabled(True)
+        else:
+            self.SettingsColorLabelCurrent.setEnabled(False)
+            self.SettingsColorPreviewCurrent.setEnabled(False)
+            self.SettingsSetColorButtonCurrent.setEnabled(False)
+            self.SettingsOpacityLabelCurrent.setEnabled(False)
+            self.SettingsSetOpacityCurrent.setEnabled(False)
+
+    def settingsDisable3DNext(self):
+        if self.SettingsShowNext.isChecked():
+            self.SettingsColorLabelNext.setEnabled(True)
+            self.SettingsColorPreviewNext.setEnabled(True)
+            self.SettingsSetColorButtonNext.setEnabled(True)
+            self.SettingsOpacityLabelNext.setEnabled(True)
+            self.SettingsSetOpacityNext.setEnabled(True)
+        else:
+            self.SettingsColorLabelNext.setEnabled(False)
+            self.SettingsColorPreviewNext.setEnabled(False)
+            self.SettingsSetColorButtonNext.setEnabled(False)
+            self.SettingsOpacityLabelNext.setEnabled(False)
+            self.SettingsSetOpacityNext.setEnabled(False)
+
+    def settingsUpdateColorCurrent(self):
+        self.CurrentColor = QtWidgets.QColorDialog.getColor(self.CurrentColor)
+        self.SettingsColorPreviewCurrent.setStyleSheet('background-color: rgba' + str(self.CurrentColor.getRgb()))
+
+    def settingsUpdateColorNext(self):
+        self.NextColor = QtWidgets.QColorDialog.getColor(self.NextColor)
+        self.SettingsColorPreviewNext.setStyleSheet('background-color: rgba' + str(self.NextColor.getRgb()))
 
 
 

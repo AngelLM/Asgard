@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1365</width>
-    <height>786</height>
+    <width>1337</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="font">
@@ -1362,7 +1362,7 @@ QTabBar::tab:!selected {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1505,7 +1505,7 @@ QTabBar::tab:!selected {
          <rect>
           <x>18</x>
           <y>17</y>
-          <width>488</width>
+          <width>521</width>
           <height>492</height>
          </rect>
         </property>
@@ -1517,7 +1517,7 @@ QTabBar::tab:!selected {
          </font>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="FKTab">
          <attribute name="title">
@@ -3616,22 +3616,657 @@ QTabBar::tab:!selected {
          <attribute name="title">
           <string>Inverse Kinematics</string>
          </attribute>
-         <layout class="QGridLayout" name="gridLayout_4">
-          <property name="leftMargin">
-           <number>20</number>
-          </property>
-          <property name="topMargin">
-           <number>20</number>
-          </property>
-          <property name="rightMargin">
-           <number>20</number>
-          </property>
-          <item row="4" column="0" colspan="3">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="2" column="0">
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>13</width>
+              <height>17</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="IKLabel_8">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>22</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>22</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>EOAT Angle</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="IKLabel_9">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>22</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>22</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>EOAT Location</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="2" column="3">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix33">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix13">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix11">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix12">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix23">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix31">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix32">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix22">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QDoubleSpinBox" name="IKOrMatrix21">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>41</horstretch>
+                <verstretch>20</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>41</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="buttonSymbols">
+               <enum>QAbstractSpinBox::NoButtons</enum>
+              </property>
+              <property name="keyboardTracking">
+               <bool>true</bool>
+              </property>
+              <property name="decimals">
+               <number>4</number>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="4">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="4" column="0" colspan="2">
            <layout class="QVBoxLayout" name="verticalLayout_11">
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_35">
+             <layout class="QHBoxLayout" name="horizontalLayout_36">
               <item>
-               <widget class="QLabel" name="FKLabelArt5_8">
+               <widget class="QLabel" name="IKLabel_5">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -3660,7 +4295,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="IKInputSpinBoxX_2">
+               <widget class="QDoubleSpinBox" name="IKInputAngleSpinBoxX">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -3753,7 +4388,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="horizontalSlider_4">
+               <widget class="QSlider" name="IKAngleSliderX">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -3817,9 +4452,9 @@ QTabBar::tab:!selected {
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_36">
+             <layout class="QHBoxLayout" name="horizontalLayout_37">
               <item>
-               <widget class="QLabel" name="FKLabelArt5_9">
+               <widget class="QLabel" name="IKLabel_6">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -3848,7 +4483,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="IKInputSpinBoxY_2">
+               <widget class="QDoubleSpinBox" name="IKInputAngleSpinBoxY">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -3941,7 +4576,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="horizontalSlider_5">
+               <widget class="QSlider" name="IKAngleSliderY">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4005,9 +4640,9 @@ QTabBar::tab:!selected {
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_37">
+             <layout class="QHBoxLayout" name="horizontalLayout_38">
               <item>
-               <widget class="QLabel" name="FKLabelArt5_10">
+               <widget class="QLabel" name="IKLabel">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4036,7 +4671,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="IKInputSpinBoxZ_2">
+               <widget class="QDoubleSpinBox" name="IKInputAngleSpinBoxZ">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4129,7 +4764,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="horizontalSlider_6">
+               <widget class="QSlider" name="IKAngleSliderZ">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4194,12 +4829,12 @@ QTabBar::tab:!selected {
             </item>
            </layout>
           </item>
-          <item row="1" column="0" colspan="3">
+          <item row="1" column="0" colspan="2">
            <layout class="QVBoxLayout" name="verticalLayout_10">
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_32">
+             <layout class="QHBoxLayout" name="horizontalLayout_33">
               <item>
-               <widget class="QLabel" name="FKLabelArt5_5">
+               <widget class="QLabel" name="IKLabel_2">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4228,7 +4863,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="IKInputSpinBoxX">
+               <widget class="QDoubleSpinBox" name="IKInputLocSpinBoxX">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4321,7 +4956,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="horizontalSlider">
+               <widget class="QSlider" name="IKLocSliderX">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4385,9 +5020,9 @@ QTabBar::tab:!selected {
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_33">
+             <layout class="QHBoxLayout" name="horizontalLayout_34">
               <item>
-               <widget class="QLabel" name="FKLabelArt5_6">
+               <widget class="QLabel" name="IKLabel_3">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4416,7 +5051,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="IKInputSpinBoxY">
+               <widget class="QDoubleSpinBox" name="IKInputLocSpinBoxY">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4509,7 +5144,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="horizontalSlider_2">
+               <widget class="QSlider" name="IKLocSliderY">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4573,9 +5208,9 @@ QTabBar::tab:!selected {
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_34">
+             <layout class="QHBoxLayout" name="horizontalLayout_35">
               <item>
-               <widget class="QLabel" name="FKLabelArt5_7">
+               <widget class="QLabel" name="IKLabel_4">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4604,7 +5239,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QDoubleSpinBox" name="IKInputSpinBoxZ">
+               <widget class="QDoubleSpinBox" name="IKInputLocSpinBoxZ">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4697,7 +5332,7 @@ QTabBar::tab:!selected {
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="horizontalSlider_3">
+               <widget class="QSlider" name="IKLocSliderZ">
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
@@ -4762,602 +5397,8 @@ QTabBar::tab:!selected {
             </item>
            </layout>
           </item>
-          <item row="6" column="1">
-           <layout class="QGridLayout" name="gridLayout">
-            <item row="0" column="0">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="2">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="2">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_26">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_33">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="1">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_32">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2">
-             <widget class="QDoubleSpinBox" name="doubleSpinBox_31">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                <horstretch>41</horstretch>
-                <verstretch>20</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>41</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <kerning>true</kerning>
-               </font>
-              </property>
-              <property name="frame">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-              <property name="buttonSymbols">
-               <enum>QAbstractSpinBox::NoButtons</enum>
-              </property>
-              <property name="keyboardTracking">
-               <bool>true</bool>
-              </property>
-              <property name="decimals">
-               <number>4</number>
-              </property>
-              <property name="maximum">
-               <double>1.000000000000000</double>
-              </property>
-              <property name="singleStep">
-               <double>0.010000000000000</double>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="2" column="1">
-           <spacer name="verticalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>10</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="FKLabelArt5_12">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>EOAT Location</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>142</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="6" column="2">
-           <spacer name="horizontalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>141</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="3" column="1">
-           <widget class="QLabel" name="FKLabelArt5_11">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>22</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>EOAT Angle</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="1">
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>59</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="5" column="1">
-           <widget class="QLabel" name="FKLabelArt5_13">
+          <item row="5" column="0">
+           <widget class="QLabel" name="IKLabel_7">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -5393,6 +5434,19 @@ QTabBar::tab:!selected {
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
+          </item>
+          <item row="7" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -5440,9 +5494,9 @@ QTabBar::tab:!selected {
         <widget class="QPushButton" name="Dec1ButtonGripper">
          <property name="geometry">
           <rect>
-           <x>198</x>
+           <x>207</x>
            <y>50</y>
-           <width>31</width>
+           <width>30</width>
            <height>23</height>
           </rect>
          </property>
@@ -5456,9 +5510,9 @@ QTabBar::tab:!selected {
         <widget class="QPushButton" name="Dec10ButtonGripper">
          <property name="geometry">
           <rect>
-           <x>148</x>
+           <x>157</x>
            <y>50</y>
-           <width>41</width>
+           <width>40</width>
            <height>23</height>
           </rect>
          </property>
@@ -5497,9 +5551,9 @@ QTabBar::tab:!selected {
         <widget class="QLabel" name="Gripper0Label">
          <property name="geometry">
           <rect>
-           <x>150</x>
+           <x>152</x>
            <y>30</y>
-           <width>16</width>
+           <width>21</width>
            <height>16</height>
           </rect>
          </property>
@@ -5510,7 +5564,7 @@ QTabBar::tab:!selected {
         <widget class="QLabel" name="Gripper100Label">
          <property name="geometry">
           <rect>
-           <x>420</x>
+           <x>413</x>
            <y>30</y>
            <width>31</width>
            <height>16</height>
@@ -5523,7 +5577,7 @@ QTabBar::tab:!selected {
         <widget class="QPushButton" name="Inc10ButtonGripper">
          <property name="geometry">
           <rect>
-           <x>388</x>
+           <x>390</x>
            <y>50</y>
            <width>41</width>
            <height>23</height>
@@ -5539,7 +5593,7 @@ QTabBar::tab:!selected {
         <widget class="QPushButton" name="Inc1ButtonGripper">
          <property name="geometry">
           <rect>
-           <x>348</x>
+           <x>350</x>
            <y>50</y>
            <width>31</width>
            <height>23</height>
@@ -7067,6 +7121,521 @@ QTabBar::tab:!selected {
          </item>
         </layout>
        </widget>
+       <widget class="QGroupBox" name="groupBox_9">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>20</y>
+          <width>241</width>
+          <height>282</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="title">
+         <string>3D Viewer Settings</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_16">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_32">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="Label_8">
+             <property name="minimumSize">
+              <size>
+               <width>65</width>
+               <height>15</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>65</width>
+               <height>15</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>MS Shell Dlg 2</family>
+               <pointsize>8</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>3D Quality:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="ComboBox_2">
+             <property name="minimumSize">
+              <size>
+               <width>70</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>70</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>Medium</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Low</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>High</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_10">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Current 3D Model</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="0" column="0" colspan="2">
+             <widget class="QCheckBox" name="SettingsShowCurrent">
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Show Current Position</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="tristate">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="SettingsColorLabelCurrent">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>3D Model Color</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QFrame" name="SettingsColorPreviewCurrent">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QPushButton" name="SettingsSetColorButtonCurrent">
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+              </property>
+              <property name="text">
+               <string>Set</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="SettingsOpacityLabelCurrent">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>3D Model Opacity</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" colspan="2">
+             <widget class="QSpinBox" name="SettingsSetOpacityCurrent">
+              <property name="minimumSize">
+               <size>
+                <width>51</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="suffix">
+               <string>%</string>
+              </property>
+              <property name="minimum">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_11">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="title">
+            <string>Next 3D Model</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="SettingsShowNext">
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="text">
+               <string>Show Next Position</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <property name="tristate">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="SettingsColorLabelNext">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>3D Model Color</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QFrame" name="SettingsColorPreviewNext">
+              <property name="minimumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QPushButton" name="SettingsSetColorButtonNext">
+              <property name="minimumSize">
+               <size>
+                <width>50</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+              </property>
+              <property name="text">
+               <string>Set</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="SettingsOpacityLabelNext">
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>15</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>8</pointsize>
+                <weight>75</weight>
+                <italic>false</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>3D Model Opacity</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1" colspan="2">
+             <widget class="QSpinBox" name="SettingsSetOpacityNext">
+              <property name="minimumSize">
+               <size>
+                <width>60</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>90</width>
+                <height>22</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+              </property>
+              <property name="suffix">
+               <string>%</string>
+              </property>
+              <property name="minimum">
+               <number>0</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="SettingsApplyCurrentButton">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>560</y>
+          <width>141</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+        </property>
+        <property name="text">
+         <string>Apply Current Settings</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="SettingsLoadDefaultButton">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>560</y>
+          <width>141</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+        </property>
+        <property name="text">
+         <string>Load Default Settings</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="SettingsSaveCurrentButton">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>560</y>
+          <width>141</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(200, 200, 200)rgb(220, 220, 220)</string>
+        </property>
+        <property name="text">
+         <string>Save Current Settings</string>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -7077,7 +7646,7 @@ QTabBar::tab:!selected {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1365</width>
+     <width>1337</width>
      <height>21</height>
     </rect>
    </property>
