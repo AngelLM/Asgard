@@ -93,7 +93,7 @@ class AsgardGUI(Ui_MainWindow):
 
         self.HomeButton.pressed.connect(self.sendHomingCycleCommand)
         self.ZeroPositionButton.pressed.connect(self.sendZeroPositionCommand)
-        self.KillAlarmLockButton.pressed.connect(self.sendKillAlarmCommand)
+        self.KillAlarmLockButton.pressed.connect(self.TestIK)
 
         self.G0MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
         self.G1MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
@@ -727,6 +727,17 @@ class AsgardGUI(Ui_MainWindow):
             self.thor3d.setColorCurrent(self.CurrentColor)
             self.thor3d.setColorNext(self.NextColor)
             self.thor3d.showModels(self.SettingsShowCurrent.isChecked(),self.SettingsShowNext.isChecked())
+
+    def TestIK(self):
+        #self.sendKillAlarmCommand es la buena
+
+        noaMatrix=[
+            [1,0,0],
+            [0,0,1],
+            [0,1,0]
+        ]
+        EOATpos=[0,422.15,202]
+        self.thor3d.IK(noaMatrix, EOATpos)
 
     def settingsDisable3DCurrent(self):
         if self.SettingsShowCurrent.isChecked():

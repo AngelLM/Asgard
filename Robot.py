@@ -4,12 +4,17 @@ import numpy as np
 
 class Robot(object):
     def __init__(self, showCurrent, showNext, colorCurrent, colorNext):
-        self.L1=86
-        self.L2=202
-        self.L3=160
-        self.L4=90.5
-        self.L5=104.5
-        self.L6=64
+        self.L1=202
+        self.L2=160
+        self.L3=195
+        self.L4=67.15
+
+        self.d1=86
+        self.d3=90.5
+        self.d4=104.5
+        self.d5=64
+
+
 
         self.w = gl.GLViewWidget()
         self.w.setCameraPosition(distance=1500, azimuth=-90)
@@ -100,8 +105,8 @@ class Robot(object):
         model[6].rotate(angle1, 0, 0, 1, True)
 
     def rotArt2(self, model, angle2):
-        art3x=self.L3*np.sin(angle2/180.0*np.pi)
-        art3z=self.L3*np.cos(angle2/180.0*np.pi)+self.L2
+        art3x=self.L2*np.sin(angle2/180.0*np.pi)
+        art3z=self.L2*np.cos(angle2/180.0*np.pi)+self.L1
 
         model[3].translate(art3x, 0, art3z, True)
         model[4].translate(art3x, 0, art3z, True)
@@ -115,11 +120,11 @@ class Robot(object):
         model[6].rotate(angle2, 0, 1, 0, True)
 
     def rotArt3(self, model, angle3):
-        art4x=self.L4*np.sin(angle3/180.0*np.pi)
-        art4z=self.L4*np.cos(angle3/180.0*np.pi)
+        art4x=self.d3*np.sin(angle3/180.0*np.pi)
+        art4z=self.d3*np.cos(angle3/180.0*np.pi)
 
-        art5x=(self.L4+self.L5)*np.sin(angle3/180.0*np.pi)
-        art5z=(self.L4+self.L5)*np.cos(angle3/180.0*np.pi)
+        art5x=(self.d3+self.d4)*np.sin(angle3/180.0*np.pi)
+        art5z=(self.d3+self.d4)*np.cos(angle3/180.0*np.pi)
 
         model[4].translate(art4x, 0, art4z, True)
         model[5].translate(art5x, 0, art5z, True)
@@ -136,8 +141,8 @@ class Robot(object):
         model[6].rotate(angle4, 0, 0, 1, True)
 
     def rotArt5(self, model, angle5):
-        art6x=self.L6*np.sin(angle5/180.0*np.pi)
-        art6z=self.L6*np.cos(angle5/180.0*np.pi)
+        art6x=self.d5*np.sin(angle5/180.0*np.pi)
+        art6z=self.d5*np.cos(angle5/180.0*np.pi)
 
         model[6].translate(art6x, 0, art6z, True)
 
@@ -161,8 +166,8 @@ class Robot(object):
         model[4].resetTransform()
         model[5].resetTransform()
         model[6].resetTransform()
-        model[1].translate(0, 0, self.L1)
-        model[2].translate(0, 0, self.L2)
+        model[1].translate(0, 0, self.d1)
+        model[2].translate(0, 0, self.L1)
 
         self.rotArt1(model,a1)
         self.rotArt2(model,a2)
@@ -175,6 +180,42 @@ class Robot(object):
         self.setColor(self.CurrentPosModel, color)
     def setColorNext(self, color):
         self.setColor(self.NextPosModel, color)
+
+    def IK(self, noaMatrix ,EOATpos):
+        mpos=[EOATpos[0]-noaMatrix[0][2]*self.L4, EOATpos[1]-noaMatrix[1][2]*self.L4, EOATpos[2]-noaMatrix[2][2]*self.L4-self.L1]
+        # print("Mpos: " + str(mpos))
+
+        ### Q1 ###
+        if mpos[0]!=0:
+            q1rad=np.arctan(mpos[1]/mpos[0])
+        else:
+            q1rad=0
+        q1=np.around(np.degrees(q1rad),1)
+
+        print("Q1: " + str(q1))
+
+
+        ### Q3 ###
+        cosq3=(np.square(mpos[0])+np.square(mpos[1])+np.square(mpos[2])-np.square(self.L2)-np.square(self.L3))/(2*self.L2*self.L3)
+        if cosq3!=0:
+            q3rad=np.arctan(np.sqrt(1-np.square(cosq3))/cosq3)
+        else:
+            q3rad=np.pi/2
+        q3=np.around(np.degrees(q3rad),1)
+
+        print("Q3: " + str(q3))
+
+        ### Q2 ###
+        q2rad=-np.arctan(mpos[2]/np.sqrt(np.square(mpos[0])+np.square(mpos[1])))+np.arctan((self.L3*np.sin(q3rad))/(self.L2+self.L3+np.cos(q3rad)))+np.pi/2
+        q2=np.around(np.degrees(q2rad),1)
+
+        print("Q2: " + str(q2))
+
+
+
+
+
+
 
     def setColor(self, model, color):
         model[0].setColor(color)
