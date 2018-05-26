@@ -192,7 +192,7 @@ class Robot(object):
             q1rad=0
         q1=np.around(np.degrees(q1rad),1)
 
-        print("Q1: " + str(q1))
+        # print("Q1: " + str(q1))
 
 
         ### Q3 ###
@@ -203,13 +203,38 @@ class Robot(object):
             q3rad=np.pi/2
         q3=np.around(np.degrees(q3rad),1)
 
-        print("Q3: " + str(q3))
+        # print("Q3: " + str(q3))
 
         ### Q2 ###
         q2rad=-np.arctan(mpos[2]/np.sqrt(np.square(mpos[0])+np.square(mpos[1])))+np.arctan((self.L3*np.sin(q3rad))/(self.L2+self.L3+np.cos(q3rad)))+np.pi/2
         q2=np.around(np.degrees(q2rad),1)
 
+        # print("Q2: " + str(q2))
+
+        S1 = np.sin(q1rad)
+        C1 = np.cos(q1rad)
+        S2 = np.sin(q2rad)
+        C2 = np.cos(q2rad)
+        S3 = np.sin(q3rad)
+        C3 = np.cos(q3rad)
+
+        q5rad = np.arccos(noaMatrix[0][2]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][2]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][2]*(-S2*C3 -C2*S3))
+        q5 = np.around(np.degrees(q5rad),1)
+        S5 = np.sin(q5rad)
+
+        q6rad = np.arcsin((-noaMatrix[0][0]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][0]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][0]*(-S2*C3-C2*S3))/S5)
+        q6 = np.around(np.degrees(q6rad),1)
+
+        q4rad = np.arccos((noaMatrix[0][1]*(C1*S2*C3-C1*C2*S3)+noaMatrix[1][1]*(S1*S2*C3-S1*C2*S3)+noaMatrix[1][1]*(-S2*S3-C2*C3))/S5)
+        q4 = np.around(np.degrees(q4rad),1)
+
+        print("Q1: " + str(q1))
         print("Q2: " + str(q2))
+        print("Q3: " + str(q3))
+        print("Q4: " + str(q4))
+        print("Q5: " + str(q5))
+        print("Q6: " + str(q6))
+
 
 
 
