@@ -160,6 +160,13 @@ class AsgardGUI(Ui_MainWindow):
 
         self.FKGoAllButton.pressed.connect(self.FKMoveAll)
 
+        self.IKLocSliderX.valueChanged.connect(self.IKUpdate)
+        self.IKInputLocSpinBoxX.valueChanged.connect(self.IKInputLocSpinBoxXUpdate)
+        self.IKLocSliderY.valueChanged.connect(self.IKUpdate)
+        self.IKInputLocSpinBoxY.valueChanged.connect(self.IKInputLocSpinBoxYUpdate)
+        self.IKLocSliderZ.valueChanged.connect(self.IKUpdate)
+        self.IKInputLocSpinBoxZ.valueChanged.connect(self.IKInputLocSpinBoxZUpdate)
+
         self.GoButtonGripper.pressed.connect(self.MoveGripper)
         self.SliderGripper.valueChanged.connect(self.SliderUpdateGripper)
         self.SpinBoxGripper.valueChanged.connect(self.SpinBoxUpdateGripper)
@@ -518,6 +525,41 @@ class AsgardGUI(Ui_MainWindow):
         else:
             self.noSerialConnection()
 
+# IK Functions
+    def IKInputLocSpinBoxXUpdate(self):
+        self.IKLocSliderX.setValue(self.IKInputLocSpinBoxX.value())
+    def IKInputLocSpinBoxYUpdate(self):
+        self.IKLocSliderY.setValue(self.IKInputLocSpinBoxY.value())
+    def IKInputLocSpinBoxZUpdate(self):
+        self.IKLocSliderZ.setValue(self.IKInputLocSpinBoxZ.value())
+
+    def IKUpdate(self):
+        IKX=self.IKLocSliderX.value()
+        IKY=self.IKLocSliderY.value()
+        IKZ=self.IKLocSliderZ.value()
+        self.IKInputLocSpinBoxX.setValue(IKX)
+        self.IKInputLocSpinBoxY.setValue(IKY)
+        self.IKInputLocSpinBoxZ.setValue(IKZ)
+
+        if self.Viewer3Dinit:
+            EOATpos=[IKX,IKY,IKZ]
+            print(EOATpos)
+            self.thor3d.moveEOAT(EOATpos)
+
+    def TestIK(self):
+        #self.sendKillAlarmCommand es la buena
+
+        noaMatrix=[
+            [1,0,0],
+            [0,0,1],
+            [0,1,0]
+        ]
+        EOATpos=[0,422.15,202]
+        # EOATpos=[self.IKLocSliderX.value(),self.IKLocSliderY.value(),self.IKLocSliderZ.value()]
+        self.thor3d.IK(noaMatrix, EOATpos)
+
+
+
 # Gripper Functions
     def MoveGripper(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
         if s0.isOpen():
@@ -727,17 +769,6 @@ class AsgardGUI(Ui_MainWindow):
             self.thor3d.setColorCurrent(self.CurrentColor)
             self.thor3d.setColorNext(self.NextColor)
             self.thor3d.showModels(self.SettingsShowCurrent.isChecked(),self.SettingsShowNext.isChecked())
-
-    def TestIK(self):
-        #self.sendKillAlarmCommand es la buena
-
-        noaMatrix=[
-            [1,0,0],
-            [0,0,1],
-            [0,1,0]
-        ]
-        EOATpos=[0,422.15,202]
-        self.thor3d.IK(noaMatrix, EOATpos)
 
     def settingsDisable3DCurrent(self):
         if self.SettingsShowCurrent.isChecked():

@@ -45,6 +45,8 @@ class Robot(object):
         art6STL = STLparser.parseSTL("stl/art6.stl")
         art6Mesh = gl.MeshData(vertexes=art6STL)
 
+        EOATcenter = gl.MeshData.sphere(rows=10, cols=20)
+
         self.base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='translucent')
         self.art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='translucent')
         self.art23D = gl.GLMeshItem(meshdata=art2Mesh, smooth=False, shader='shaded', glOptions='translucent')
@@ -62,6 +64,8 @@ class Robot(object):
         self.NextArt43D = gl.GLMeshItem(meshdata=art4Mesh, smooth=False, shader='shaded', glOptions='translucent')
         self.NextArt53D = gl.GLMeshItem(meshdata=art5Mesh, smooth=False, shader='shaded', glOptions='translucent')
         self.NextArt63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='translucent')
+
+        self.NextEOAT = gl.GLMeshItem(meshdata=EOATcenter, smooth=False, shader='shaded', glOptions='translucent')
 
         self.NextPosModel=[self.NextBase3D, self.NextArt13D, self.NextArt23D, self.NextArt33D, self.NextArt43D, self.NextArt53D, self.NextArt63D]
 
@@ -93,8 +97,12 @@ class Robot(object):
         if showNext:
             for part in self.NextPosModel:
                 self.w.addItem(part)
+        self.w.addItem(self.NextEOAT)
 
-
+    def moveEOAT(self, EOATpos):
+        self.NextEOAT.resetTransform()
+        self.NextEOAT.scale(5,5,5)
+        self.NextEOAT.translate(EOATpos[0], EOATpos[1], EOATpos[2])
 
     def rotArt1(self, model, angle1):
         model[1].rotate(angle1, 0, 0, 1, True)
@@ -183,7 +191,7 @@ class Robot(object):
 
     def IK(self, noaMatrix ,EOATpos):
         mpos=[EOATpos[0]-noaMatrix[0][2]*self.L4, EOATpos[1]-noaMatrix[1][2]*self.L4, EOATpos[2]-noaMatrix[2][2]*self.L4-self.L1]
-        # print("Mpos: " + str(mpos))
+        print("Mpos: " + str(mpos))
 
         ### Q1 ###
         if mpos[0]!=0:
@@ -218,7 +226,7 @@ class Robot(object):
         S3 = np.sin(q3rad)
         C3 = np.cos(q3rad)
 
-        q5rad = np.arccos(noaMatrix[0][2]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][2]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][2]*(-S2*C3 -C2*S3))
+        q5rad = np.pi/2 - np.arccos(noaMatrix[0][2]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][2]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][2]*(-S2*C3 -C2*S3))
         q5 = np.around(np.degrees(q5rad),1)
         S5 = np.sin(q5rad)
 
@@ -234,6 +242,10 @@ class Robot(object):
         print("Q4: " + str(q4))
         print("Q5: " + str(q5))
         print("Q6: " + str(q6))
+
+        self.rotateArm(self.NextPosModel, q1, q2, q3, q4, q5, q6)
+
+
 
 
 

@@ -1362,7 +1362,7 @@ QTabBar::tab:!selected {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1517,7 +1517,7 @@ QTabBar::tab:!selected {
          </font>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="FKTab">
          <attribute name="title">
@@ -4836,7 +4836,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="IKLabel_2">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4865,7 +4865,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QDoubleSpinBox" name="IKInputLocSpinBoxX">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4901,10 +4901,13 @@ QTabBar::tab:!selected {
                  <number>2</number>
                 </property>
                 <property name="minimum">
-                 <double>-300.000000000000000</double>
+                 <double>-425.000000000000000</double>
                 </property>
                 <property name="maximum">
-                 <double>300.000000000000000</double>
+                 <double>425.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.010000000000000</double>
                 </property>
                </widget>
               </item>
@@ -4918,7 +4921,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_53">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4948,7 +4951,7 @@ QTabBar::tab:!selected {
                  <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="text">
-                 <string>-300 mm</string>
+                 <string>-425 mm</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4958,7 +4961,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QSlider" name="IKLocSliderX">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4973,10 +4976,10 @@ QTabBar::tab:!selected {
                  </size>
                 </property>
                 <property name="minimum">
-                 <number>-300</number>
+                 <number>-425</number>
                 </property>
                 <property name="maximum">
-                 <number>300</number>
+                 <number>425</number>
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -4986,7 +4989,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_50">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5013,7 +5016,7 @@ QTabBar::tab:!selected {
                  <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="text">
-                 <string>+300 mm</string>
+                 <string>+425 mm</string>
                 </property>
                </widget>
               </item>
@@ -5024,7 +5027,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="IKLabel_3">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5053,7 +5056,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QDoubleSpinBox" name="IKInputLocSpinBoxY">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5089,10 +5092,13 @@ QTabBar::tab:!selected {
                  <number>2</number>
                 </property>
                 <property name="minimum">
-                 <double>-300.000000000000000</double>
+                 <double>-425.000000000000000</double>
                 </property>
                 <property name="maximum">
-                 <double>300.000000000000000</double>
+                 <double>425.000000000000000</double>
+                </property>
+                <property name="singleStep">
+                 <double>0.010000000000000</double>
                 </property>
                </widget>
               </item>
@@ -5106,7 +5112,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_54">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5136,7 +5142,7 @@ QTabBar::tab:!selected {
                  <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="text">
-                 <string>-300 mm</string>
+                 <string>-425 mm</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -5146,7 +5152,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QSlider" name="IKLocSliderY">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5161,10 +5167,10 @@ QTabBar::tab:!selected {
                  </size>
                 </property>
                 <property name="minimum">
-                 <number>-300</number>
+                 <number>-425</number>
                 </property>
                 <property name="maximum">
-                 <number>300</number>
+                 <number>425</number>
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -5174,7 +5180,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_55">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5201,7 +5207,7 @@ QTabBar::tab:!selected {
                  <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="text">
-                 <string>+300 mm</string>
+                 <string>+425 mm</string>
                 </property>
                </widget>
               </item>
@@ -5212,7 +5218,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="IKLabel_4">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5241,7 +5247,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QDoubleSpinBox" name="IKInputLocSpinBoxZ">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5294,7 +5300,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_56">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5334,7 +5340,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QSlider" name="IKLocSliderZ">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5349,10 +5355,10 @@ QTabBar::tab:!selected {
                  </size>
                 </property>
                 <property name="minimum">
-                 <number>-300</number>
+                 <number>0</number>
                 </property>
                 <property name="maximum">
-                 <number>300</number>
+                 <number>700</number>
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -5362,7 +5368,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_57">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -5389,7 +5395,7 @@ QTabBar::tab:!selected {
                  <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
                 </property>
                 <property name="text">
-                 <string>+500 mm</string>
+                 <string>+700 mm</string>
                 </property>
                </widget>
               </item>
