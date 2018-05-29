@@ -225,16 +225,37 @@ class Robot(object):
         C2 = np.cos(q2rad)
         S3 = np.sin(q3rad)
         C3 = np.cos(q3rad)
+        Nx=noaMatrix[0][0]
+        Ny=noaMatrix[1][0]
+        Nz=noaMatrix[2][0]
+        Ox=noaMatrix[0][1]
+        Oy=noaMatrix[1][1]
+        Oz=noaMatrix[2][1]
+        Ax=noaMatrix[0][2]
+        Ay=noaMatrix[1][2]
+        Az=noaMatrix[2][2]
 
-        q5rad = np.pi/2 - np.arccos(noaMatrix[0][2]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][2]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][2]*(-S2*C3 -C2*S3))
+        r23=-Ax*S1 + Ay*C1
+        r31=Nx*(C1*C2*S3 + C1*C3*S2) + Ny*(C2*S1*S3 + C3*S1*S2) + Nz*(C2*C3 - S2*S3)
+        r32=Ox*(C1*C2*S3 + C1*C3*S2) + Oy*(C2*S1*S3 + C3*S1*S2) + Oz*(C2*C3 - S2*S3)
+        r33=Ax*(C1*C2*S3 + C1*C3*S2) + Ay*(C2*S1*S3 + C3*S1*S2) + Az*(C2*C3 - S2*S3)
+
+        q4rad=np.arcsin(r23/r33)
+        q5rad=np.arccos(r33)
+        q6rad=np.arctan(-r32/r31)
+        q4 = np.around(np.degrees(q4rad),1)
         q5 = np.around(np.degrees(q5rad),1)
-        S5 = np.sin(q5rad)
-
-        q6rad = np.arcsin((-noaMatrix[0][0]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][0]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][0]*(-S2*C3-C2*S3))/S5)
         q6 = np.around(np.degrees(q6rad),1)
 
-        q4rad = np.arccos((noaMatrix[0][1]*(C1*S2*C3-C1*C2*S3)+noaMatrix[1][1]*(S1*S2*C3-S1*C2*S3)+noaMatrix[1][1]*(-S2*S3-C2*C3))/S5)
-        q4 = np.around(np.degrees(q4rad),1)
+        # q5rad = np.pi/2 - np.arccos(noaMatrix[0][2]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][2]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][2]*(-S2*C3 -C2*S3))
+        # q5 = np.around(np.degrees(q5rad),1)
+        # S5 = np.sin(q5rad)
+
+        # q6rad = np.arcsin((-noaMatrix[0][0]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][0]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][0]*(-S2*C3-C2*S3))/S5)
+        # q6 = np.around(np.degrees(q6rad),1)
+
+        # q4rad = np.arccos((noaMatrix[0][1]*(C1*S2*C3-C1*C2*S3)+noaMatrix[1][1]*(S1*S2*C3-S1*C2*S3)+noaMatrix[1][1]*(-S2*S3-C2*C3))/S5)
+        # q4 = np.around(np.degrees(q4rad),1)
 
         print("Q1: " + str(q1))
         print("Q2: " + str(q2))

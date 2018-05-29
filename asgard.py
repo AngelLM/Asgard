@@ -554,8 +554,8 @@ class AsgardGUI(Ui_MainWindow):
             [0,0,1],
             [0,1,0]
         ]
-        EOATpos=[0,422.15,202]
-        # EOATpos=[self.IKLocSliderX.value(),self.IKLocSliderY.value(),self.IKLocSliderZ.value()]
+        # EOATpos=[0,422.15,202]
+        EOATpos=[self.IKLocSliderX.value(),self.IKLocSliderY.value(),self.IKLocSliderZ.value()]
         self.thor3d.IK(noaMatrix, EOATpos)
 
 
