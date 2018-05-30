@@ -4268,7 +4268,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="IKLabel_5">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4297,7 +4297,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QDoubleSpinBox" name="IKInputAngleSpinBoxX">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4350,7 +4350,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_58">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4390,7 +4390,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QSlider" name="IKAngleSliderX">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4418,7 +4418,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_59">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4456,7 +4456,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="IKLabel_6">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4485,7 +4485,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QDoubleSpinBox" name="IKInputAngleSpinBoxY">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4538,7 +4538,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_60">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4578,7 +4578,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QSlider" name="IKAngleSliderY">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4606,7 +4606,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_61">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4644,7 +4644,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="IKLabel">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4673,7 +4673,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QDoubleSpinBox" name="IKInputAngleSpinBoxZ">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4726,7 +4726,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_62">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4766,7 +4766,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QSlider" name="IKAngleSliderZ">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>
@@ -4794,7 +4794,7 @@ QTabBar::tab:!selected {
               <item>
                <widget class="QLabel" name="label_63">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="minimumSize">
                  <size>

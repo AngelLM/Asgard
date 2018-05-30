@@ -189,8 +189,31 @@ class Robot(object):
     def setColorNext(self, color):
         self.setColor(self.NextPosModel, color)
 
-    def IK(self, noaMatrix ,EOATpos):
-        mpos=[EOATpos[0]-noaMatrix[0][2]*self.L4, EOATpos[1]-noaMatrix[1][2]*self.L4, EOATpos[2]-noaMatrix[2][2]*self.L4-self.L1]
+    def calculatenoaMatrix(self, orientationAngles):
+        angleX = np.radians(orientationAngles[0])
+        angleY = np.radians(orientationAngles[1])
+        angleZ = np.radians(orientationAngles[2])
+
+        Sx = np.around(np.sin(angleX),4)
+        Sy = np.around(np.sin(angleY),4)
+        Sz = np.around(np.sin(angleZ),4)
+        Cx = np.around(np.cos(angleX),4)
+        Cy = np.around(np.cos(angleY),4)
+        Cz = np.around(np.cos(angleZ),4)
+
+        noaMatrix=[
+            [Cy*Cz, -Cy*Sz, Sy],
+            [Cx*Sz + Cz*Sx*Sy, Cx*Cz - Sx*Sy*Sz, -Cy*Sx],
+            [-Cx*Cz*Sy + Sx*Sz, Cx*Sy*Sz + Cz*Sx, Cx*Cy]
+        ]
+
+        return noaMatrix
+
+    def IK(self, EOATpos, orientationAngles):
+
+        noaMatrix=self.calculatenoaMatrix(orientationAngles)
+
+        mpos=[EOATpos[0]-noaMatrix[0][2]*self.L4, EOATpos[1]-noaMatrix[1][2]*self.L4, EOATpos[2]-noaMatrix[2][2]*self.L4]
         print("Mpos: " + str(mpos))
 
         ### Q1 ###
@@ -204,7 +227,7 @@ class Robot(object):
 
 
         ### Q3 ###
-        cosq3=(np.square(mpos[0])+np.square(mpos[1])+np.square(mpos[2])-np.square(self.L2)-np.square(self.L3))/(2*self.L2*self.L3)
+        cosq3=(np.square(mpos[0])+np.square(mpos[1])+np.square(mpos[2]-self.L1)-np.square(self.L2)-np.square(self.L3))/(2*self.L2*self.L3)
         if cosq3!=0:
             q3rad=np.arctan(np.sqrt(1-np.square(cosq3))/cosq3)
         else:
@@ -240,7 +263,10 @@ class Robot(object):
         r32=Ox*(C1*C2*S3 + C1*C3*S2) + Oy*(C2*S1*S3 + C3*S1*S2) + Oz*(C2*C3 - S2*S3)
         r33=Ax*(C1*C2*S3 + C1*C3*S2) + Ay*(C2*S1*S3 + C3*S1*S2) + Az*(C2*C3 - S2*S3)
 
-        q4rad=np.arcsin(r23/r33)
+        p=r23/r33
+
+        # q4rad=np.arcsin(r23/r33)
+        q4rad=np.arctan(p/np.sqrt(1-np.square(p)))
         q5rad=np.arccos(r33)
         q6rad=np.arctan(-r32/r31)
         q4 = np.around(np.degrees(q4rad),1)
