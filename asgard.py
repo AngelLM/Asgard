@@ -1,6 +1,8 @@
 import sys
 import json
 
+import numpy as np
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
@@ -549,15 +551,27 @@ class AsgardGUI(Ui_MainWindow):
     def TestIK(self):
         #self.sendKillAlarmCommand es la buena
 
-        noaMatrix=[
-            [1,0,0],
-            [0,0,1],
-            [0,1,0]
-        ]
-        # EOATpos=[0,422.15,202]
-        EOATpos=[self.IKLocSliderX.value(),self.IKLocSliderY.value(),self.IKLocSliderZ.value()]
+        EOATpos=[self.IKInputLocSpinBoxX.value(),self.IKInputLocSpinBoxY.value(),self.IKInputLocSpinBoxZ.value()]
         orientationAngles=[self.IKInputAngleSpinBoxX.value(),self.IKInputAngleSpinBoxY.value(),self.IKInputAngleSpinBoxZ.value()]
-        self.thor3d.IK(EOATpos, orientationAngles)
+        noaMatrix=self.thor3d.calculatenoaMatrix(orientationAngles)
+        angles = self.thor3d.IK(EOATpos, noaMatrix)
+
+        self.IKOrMatrix11.setValue(np.around(noaMatrix[0][0],4))
+        self.IKOrMatrix12.setValue(np.around(noaMatrix[0][1],4))
+        self.IKOrMatrix13.setValue(np.around(noaMatrix[0][2],4))
+        self.IKOrMatrix21.setValue(np.around(noaMatrix[1][0],4))
+        self.IKOrMatrix22.setValue(np.around(noaMatrix[1][1],4))
+        self.IKOrMatrix23.setValue(np.around(noaMatrix[1][2],4))
+        self.IKOrMatrix31.setValue(np.around(noaMatrix[2][0],4))
+        self.IKOrMatrix32.setValue(np.around(noaMatrix[2][1],4))
+        self.IKOrMatrix33.setValue(np.around(noaMatrix[2][2],4))
+        self.SpinBoxArt1.setValue(angles[0])
+        self.SpinBoxArt2.setValue(angles[1])
+        self.SpinBoxArt3.setValue(angles[2])
+        self.SpinBoxArt4.setValue(angles[3])
+        self.SpinBoxArt5.setValue(angles[4])
+        self.SpinBoxArt6.setValue(angles[5])
+
 
 
 

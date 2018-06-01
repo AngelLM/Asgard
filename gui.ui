@@ -1745,7 +1745,7 @@ QTabBar::tab:!selected {
                 <string>º</string>
                </property>
                <property name="decimals">
-                <number>1</number>
+                <number>2</number>
                </property>
                <property name="minimum">
                 <double>-180.000000000000000</double>
@@ -2078,7 +2078,7 @@ QTabBar::tab:!selected {
                 <string>º</string>
                </property>
                <property name="decimals">
-                <number>1</number>
+                <number>2</number>
                </property>
                <property name="minimum">
                 <double>-180.000000000000000</double>
@@ -2411,7 +2411,7 @@ QTabBar::tab:!selected {
                 <string>º</string>
                </property>
                <property name="decimals">
-                <number>1</number>
+                <number>2</number>
                </property>
                <property name="minimum">
                 <double>-180.000000000000000</double>
@@ -2744,7 +2744,7 @@ QTabBar::tab:!selected {
                 <string>º</string>
                </property>
                <property name="decimals">
-                <number>1</number>
+                <number>2</number>
                </property>
                <property name="minimum">
                 <double>-180.000000000000000</double>
@@ -3077,7 +3077,7 @@ QTabBar::tab:!selected {
                 <string>º</string>
                </property>
                <property name="decimals">
-                <number>1</number>
+                <number>2</number>
                </property>
                <property name="minimum">
                 <double>-180.000000000000000</double>
@@ -3410,7 +3410,7 @@ QTabBar::tab:!selected {
                 <string>º</string>
                </property>
                <property name="decimals">
-                <number>1</number>
+                <number>2</number>
                </property>
                <property name="minimum">
                 <double>-180.000000000000000</double>
@@ -3714,7 +3714,7 @@ QTabBar::tab:!selected {
             <item row="2" column="3">
              <widget class="QDoubleSpinBox" name="IKOrMatrix33">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -3760,6 +3760,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -3772,7 +3775,7 @@ QTabBar::tab:!selected {
             <item row="0" column="3">
              <widget class="QDoubleSpinBox" name="IKOrMatrix13">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -3818,6 +3821,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -3830,7 +3836,7 @@ QTabBar::tab:!selected {
             <item row="0" column="1">
              <widget class="QDoubleSpinBox" name="IKOrMatrix11">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -3876,6 +3882,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -3888,7 +3897,7 @@ QTabBar::tab:!selected {
             <item row="0" column="2">
              <widget class="QDoubleSpinBox" name="IKOrMatrix12">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -3934,6 +3943,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -3946,7 +3958,7 @@ QTabBar::tab:!selected {
             <item row="1" column="3">
              <widget class="QDoubleSpinBox" name="IKOrMatrix23">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -3992,6 +4004,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -4004,7 +4019,7 @@ QTabBar::tab:!selected {
             <item row="2" column="1">
              <widget class="QDoubleSpinBox" name="IKOrMatrix31">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -4050,6 +4065,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -4062,7 +4080,7 @@ QTabBar::tab:!selected {
             <item row="2" column="2">
              <widget class="QDoubleSpinBox" name="IKOrMatrix32">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -4108,6 +4126,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -4120,7 +4141,7 @@ QTabBar::tab:!selected {
             <item row="1" column="2">
              <widget class="QDoubleSpinBox" name="IKOrMatrix22">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -4166,6 +4187,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -4178,7 +4202,7 @@ QTabBar::tab:!selected {
             <item row="1" column="1">
              <widget class="QDoubleSpinBox" name="IKOrMatrix21">
               <property name="enabled">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -4224,6 +4248,9 @@ QTabBar::tab:!selected {
               </property>
               <property name="decimals">
                <number>4</number>
+              </property>
+              <property name="minimum">
+               <double>-1.000000000000000</double>
               </property>
               <property name="maximum">
                <double>1.000000000000000</double>
@@ -5286,7 +5313,7 @@ QTabBar::tab:!selected {
                  <double>0.000000000000000</double>
                 </property>
                 <property name="maximum">
-                 <double>500.000000000000000</double>
+                 <double>700.000000000000000</double>
                 </property>
                </widget>
               </item>
@@ -5406,7 +5433,7 @@ QTabBar::tab:!selected {
           <item row="5" column="0">
            <widget class="QLabel" name="IKLabel_7">
             <property name="enabled">
-             <bool>false</bool>
+             <bool>true</bool>
             </property>
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">

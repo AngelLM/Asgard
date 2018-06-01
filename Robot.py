@@ -36,16 +36,18 @@ class Robot(object):
         art3STL = STLparser.parseSTL("stl/art3.stl")
         art3Mesh = gl.MeshData(vertexes=art3STL)
 
-        art4STL = STLparser.parseSTL("stl/art4.stl")
+        art4STL = STLparser.parseSTL("stl/art4-2.stl")
         art4Mesh = gl.MeshData(vertexes=art4STL)
 
         art5STL = STLparser.parseSTL("stl/art5.stl")
         art5Mesh = gl.MeshData(vertexes=art5STL)
 
-        art6STL = STLparser.parseSTL("stl/art6.stl")
+        art6STL = STLparser.parseSTL("stl/art6-2.stl")
         art6Mesh = gl.MeshData(vertexes=art6STL)
 
         EOATcenter = gl.MeshData.sphere(rows=10, cols=20)
+
+        MposSphere = gl.MeshData.sphere(rows=10, cols=20)
 
         self.base3D = gl.GLMeshItem(meshdata=baseMesh, smooth=False, shader='shaded', glOptions='translucent')
         self.art13D = gl.GLMeshItem(meshdata=art1Mesh, smooth=False, shader='shaded', glOptions='translucent')
@@ -66,6 +68,7 @@ class Robot(object):
         self.NextArt63D = gl.GLMeshItem(meshdata=art6Mesh, smooth=False, shader='shaded', glOptions='translucent')
 
         self.NextEOAT = gl.GLMeshItem(meshdata=EOATcenter, smooth=False, shader='shaded', glOptions='translucent')
+        self.MposSphere = gl.GLMeshItem(meshdata=EOATcenter, smooth=False, shader='shaded', glOptions='translucent')
 
         self.NextPosModel=[self.NextBase3D, self.NextArt13D, self.NextArt23D, self.NextArt33D, self.NextArt43D, self.NextArt53D, self.NextArt63D]
 
@@ -98,6 +101,12 @@ class Robot(object):
             for part in self.NextPosModel:
                 self.w.addItem(part)
         self.w.addItem(self.NextEOAT)
+        self.w.addItem(self.MposSphere)
+
+    def moveMpos(self, Mpos):
+        self.MposSphere.resetTransform()
+        self.MposSphere.scale(5,5,5)
+        self.MposSphere.translate(Mpos[0], Mpos[1], Mpos[2])
 
     def moveEOAT(self, EOATpos):
         self.NextEOAT.resetTransform()
@@ -194,12 +203,19 @@ class Robot(object):
         angleY = np.radians(orientationAngles[1])
         angleZ = np.radians(orientationAngles[2])
 
-        Sx = np.around(np.sin(angleX),4)
-        Sy = np.around(np.sin(angleY),4)
-        Sz = np.around(np.sin(angleZ),4)
-        Cx = np.around(np.cos(angleX),4)
-        Cy = np.around(np.cos(angleY),4)
-        Cz = np.around(np.cos(angleZ),4)
+        # Sx = np.around(np.sin(angleX),4)
+        # Sy = np.around(np.sin(angleY),4)
+        # Sz = np.around(np.sin(angleZ),4)
+        # Cx = np.around(np.cos(angleX),4)
+        # Cy = np.around(np.cos(angleY),4)
+        # Cz = np.around(np.cos(angleZ),4)
+
+        Sx = np.sin(angleX)
+        Sy = np.sin(angleY)
+        Sz = np.sin(angleZ)
+        Cx = np.cos(angleX)
+        Cy = np.cos(angleY)
+        Cz = np.cos(angleZ)
 
         noaMatrix=[
             [Cy*Cz, -Cy*Sz, Sy],
@@ -209,38 +225,36 @@ class Robot(object):
 
         return noaMatrix
 
-    def IK(self, EOATpos, orientationAngles):
+    def IK(self, EOATpos, noaMatrix):
 
-        noaMatrix=self.calculatenoaMatrix(orientationAngles)
-
-        mpos=[EOATpos[0]-noaMatrix[0][2]*self.L4, EOATpos[1]-noaMatrix[1][2]*self.L4, EOATpos[2]-noaMatrix[2][2]*self.L4]
+        print("EOATpos: " + str(EOATpos))
+        mpos=[EOATpos[0]-noaMatrix[0][2]*self.L4, EOATpos[1]-noaMatrix[1][2]*self.L4, EOATpos[2]-self.L1-noaMatrix[2][2]*self.L4]
         print("Mpos: " + str(mpos))
+
+        self.moveMpos([mpos[0], mpos[1], mpos[2]+self.L1])
 
         ### Q1 ###
         if mpos[0]!=0:
             q1rad=np.arctan(mpos[1]/mpos[0])
         else:
-            q1rad=0
-        q1=np.around(np.degrees(q1rad),1)
+            q1rad=np.pi/2
+        q1=np.around(np.degrees(q1rad),2)
 
-        # print("Q1: " + str(q1))
 
 
         ### Q3 ###
-        cosq3=(np.square(mpos[0])+np.square(mpos[1])+np.square(mpos[2]-self.L1)-np.square(self.L2)-np.square(self.L3))/(2*self.L2*self.L3)
+        cosq3=(np.square(mpos[0])+np.square(mpos[1])+np.square(mpos[2])-np.square(self.L2)-np.square(self.L3))/(2*self.L2*self.L3)
         if cosq3!=0:
             q3rad=np.arctan(np.sqrt(1-np.square(cosq3))/cosq3)
         else:
             q3rad=np.pi/2
-        q3=np.around(np.degrees(q3rad),1)
+        q3=np.around(np.degrees(q3rad),2)
 
-        # print("Q3: " + str(q3))
 
         ### Q2 ###
-        q2rad=-np.arctan(mpos[2]/np.sqrt(np.square(mpos[0])+np.square(mpos[1])))+np.arctan((self.L3*np.sin(q3rad))/(self.L2+self.L3+np.cos(q3rad)))+np.pi/2
-        q2=np.around(np.degrees(q2rad),1)
+        q2rad=np.pi/2+(np.arctan((mpos[2])/-np.sqrt(np.square(mpos[0])+np.square(mpos[1])))-np.arctan((self.L3*np.sin(q3rad))/(self.L2+self.L3*np.cos(q3rad))))
+        q2=np.around(np.degrees(q2rad),2)
 
-        # print("Q2: " + str(q2))
 
         S1 = np.sin(q1rad)
         C1 = np.cos(q1rad)
@@ -248,6 +262,7 @@ class Robot(object):
         C2 = np.cos(q2rad)
         S3 = np.sin(q3rad)
         C3 = np.cos(q3rad)
+
         Nx=noaMatrix[0][0]
         Ny=noaMatrix[1][0]
         Nz=noaMatrix[2][0]
@@ -266,38 +281,30 @@ class Robot(object):
         p=r23/r33
 
         # q4rad=np.arcsin(r23/r33)
-        q4rad=np.arctan(p/np.sqrt(1-np.square(p)))
-        q5rad=np.arccos(r33)
-        q6rad=np.arctan(-r32/r31)
-        q4 = np.around(np.degrees(q4rad),1)
-        q5 = np.around(np.degrees(q5rad),1)
-        q6 = np.around(np.degrees(q6rad),1)
-
-        # q5rad = np.pi/2 - np.arccos(noaMatrix[0][2]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][2]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][2]*(-S2*C3 -C2*S3))
-        # q5 = np.around(np.degrees(q5rad),1)
-        # S5 = np.sin(q5rad)
-
-        # q6rad = np.arcsin((-noaMatrix[0][0]*(C1*S2*S3-C1*C2*C3)+noaMatrix[1][0]*(S1*S2*S3-S1*C2*C3)+noaMatrix[2][0]*(-S2*C3-C2*S3))/S5)
-        # q6 = np.around(np.degrees(q6rad),1)
-
-        # q4rad = np.arccos((noaMatrix[0][1]*(C1*S2*C3-C1*C2*S3)+noaMatrix[1][1]*(S1*S2*C3-S1*C2*S3)+noaMatrix[1][1]*(-S2*S3-C2*C3))/S5)
-        # q4 = np.around(np.degrees(q4rad),1)
-
-        print("Q1: " + str(q1))
-        print("Q2: " + str(q2))
-        print("Q3: " + str(q3))
-        print("Q4: " + str(q4))
-        print("Q5: " + str(q5))
-        print("Q6: " + str(q6))
-
-        self.rotateArm(self.NextPosModel, q1, q2, q3, q4, q5, q6)
+        q4rad=np.arctan(p/-np.sqrt(1-np.square(p)))
+        q5rad=-np.arccos(r33)
+        if r32!=0:
+            q6rad=np.arctan(-r32/r31)
+        else:
+            q6rad=0
+        q4 = np.around(np.degrees(q4rad),2)
+        q5 = np.around(np.degrees(q5rad),2)
+        q6 = np.around(np.degrees(q6rad),2)
 
 
+        # print("Q1: " + str(q1))
+        # print("Q2: " + str(q2))
+        # print("Q3: " + str(q3))
+        # print("Q4: " + str(q4))
+        # print("Q5: " + str(q5))
+        # print("Q6: " + str(q6))
 
+        angles=[q1, q2, q3, q4, q5, q6]
 
+        # self.NextArt53D.hide()
+        # self.NextArt63D.hide()
 
-
-
+        return angles
 
 
 
