@@ -1,0 +1,116 @@
+[cos(Q1), -sin(Q1)*cos(90), -sin(90)*sin(Q1), 0]
+[sin(Q1), cos(90)*cos(Q1), sin(90)*cos(Q1), 0]
+[0, -sin(90), cos(90), L1]
+[0, 0, 0, 1]
+
+Printing matrix 1A2
+[cos(Q2 - 90), -sin(Q2 - 90), 0, L2*cos(Q2 - 90)]
+[sin(Q2 - 90), cos(Q2 - 90), 0, L2*sin(Q2 - 90)]
+[0, 0, 1, 0]
+[0, 0, 0, 1]
+
+Printing matrix 2A3
+[cos(Q3 + 90), -sin(Q3 + 90)*cos(90), sin(90)*sin(Q3 + 90), 0]
+[sin(Q3 + 90), cos(90)*cos(Q3 + 90), -sin(90)*cos(Q3 + 90), 0]
+[0, sin(90), cos(90), 0]
+[0, 0, 0, 1]
+
+Printing matrix 3A4
+[cos(Q4), -sin(Q4)*cos(90), -sin(90)*sin(Q4), 0]
+[sin(Q4), cos(90)*cos(Q4), sin(90)*cos(Q4), 0]
+[0, -sin(90), cos(90), L3]
+[0, 0, 0, 1]
+
+Printing matrix 4A5
+[cos(Q5), -sin(Q5)*cos(90), sin(90)*sin(Q5), 0]
+[sin(Q5), cos(90)*cos(Q5), -sin(90)*cos(Q5), 0]
+[0, sin(90), cos(90), 0]
+[0, 0, 0, 1]
+
+Printing matrix 5A6
+[cos(Q6), -sin(Q6), 0, 0]
+[sin(Q6), cos(Q6), 0, 0]
+[0, 0, 1, L4]
+[0, 0, 0, 1]
+
+
+
+*------*
+
+
+
+[cos(Q1), 0, -sin(Q1), 0]
+[sin(Q1), 0, cos(Q1), 0]
+[0, -1, 0, L1]
+[0, 0, 0, 1]
+
+Printing matrix 1A2
+[sin(Q2), cos(Q2), 0, L2*sin(Q2)]
+[-cos(Q2), sin(Q2), 0, L2*-cos(Q2)]
+[0, 0, 1, 0]
+[0, 0, 0, 1]
+
+Printing matrix 2A3
+[-sin(Q3), 0, cos(Q3), 0]
+[cos(Q3), 0, sin(Q3), 0]
+[0, 1, 0, 0]
+[0, 0, 0, 1]
+
+Printing matrix 3A4
+[cos(Q4), -sin(Q4)*0, -sin(Q4), 0]
+[sin(Q4), 0, cos(Q4), 0]
+[0, -1, 0, L3]
+[0, 0, 0, 1]
+
+Printing matrix 4A5
+[cos(Q5), 0, sin(Q5), 0]
+[sin(Q5), 0, -cos(Q5), 0]
+[0, 1, 0, 0]
+[0, 0, 0, 1]
+
+Printing matrix 5A6
+[cos(Q6), -sin(Q6), 0, 0]
+[sin(Q6), cos(Q6), 0, 0]
+[0, 0, 1, L4]
+[0, 0, 0, 1]
+
+
+----------------
+
+
+
+
+[C1, 0, -S1, 0]
+[S1, 0, C1, 0]
+[0, -1, 0, L1]
+[0, 0, 0, 1]
+
+Printing matrix 1A2
+[S2, C2, 0, L2*S2]
+[-C2, S2, 0, -L2*C2]
+[0, 0, 1, 0]
+[0, 0, 0, 1]
+
+Printing matrix 2A3
+[-S3, 0, C3, 0]
+[C3, 0, S3, 0]
+[0, 1, 0, 0]
+[0, 0, 0, 1]
+
+Printing matrix 3A4
+[C4, 0, -S4, 0]
+[S4, 0, C4, 0]
+[0, -1, 0, L3]
+[0, 0, 0, 1]
+
+Printing matrix 4A5
+[C5, 0, S5, 0]
+[S5, 0, -C5, 0]
+[0, 1, 0, 0]
+[0, 0, 0, 1]
+
+Printing matrix 5A6
+[C6, -S6, 0, 0]
+[S6, C6, 0, 0]
+[0, 0, 1, L4]
+[0, 0, 0, 1]

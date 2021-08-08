@@ -1,7 +1,13 @@
 import sys
+import json
+
+import numpy as np
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+
+from Robot import Robot
 
 from gui import Ui_MainWindow
 from about import Ui_Dialog as About_Ui_Dialog
@@ -11,12 +17,62 @@ import serial_port_finder as spf
 
 import serial, time
 
+from PyQt5.QtCore import QPointF, QRect, QRectF, Qt, QTimer
+from PyQt5.QtGui import (QBrush, QColor, QFont, QLinearGradient, QPainter,
+        QPen, QSurfaceFormat)
+from PyQt5.QtWidgets import (QApplication, QGridLayout, QLabel, QOpenGLWidget,
+        QWidget)
+
+
+# import numpy as np
+# from OpenGL import GL
+
+from pyqtgraph.Qt import QtCore, QtGui
+import pyqtgraph as pg
+# import pyqtgraph.opengl as gl
+
+# import STLparser
+
+
 s0 = serial.Serial()
+
+############### SERIAL READ THREAD CLASS ###############
+class SerialThreadClass(QtCore.QThread):
+    elapsedTime = time.time()
+    serialSignal = pyqtSignal(str)
+    def __init__(self, parent=None):
+         super(SerialThreadClass,self).__init__(parent)
+    def run(self):
+        while True:
+            lastLineRead=""
+            if s0.isOpen():
+                try:
+                    s0.inWaiting()
+                except:
+                    self.serialSignal.emit("SERIAL-DISCONNECTED")
+                    print ("Lost Serial connection!")
+
+                try:
+                    if time.time()-self.elapsedTime>0.01:
+                        self.elapsedTime=time.time()
+                        s0.write("?\n".encode('UTF-8'))
+                    # s0.write("?\n".encode('UTF-8'))
+                    dataRead = str(s0.readline())
+                    dataCropped=dataRead[2:][:-5]
+                    if dataCropped!="" and lastLineRead!=dataCropped:
+                        lastLineRead=dataCropped
+                        self.serialSignal.emit(dataCropped)
+
+                except Exception as e:
+                    print ("Something failed: " + str(e))
+###############  SERIAL READ THREAD CLASS ###############
+
 
 class AboutDialog(About_Ui_Dialog):
     def __init__(self, dialog):
         About_Ui_Dialog.__init__(self)
         self.setupUi(dialog)
+
 
 class AsgardGUI(Ui_MainWindow):
     def __init__(self, dialog):
@@ -28,6 +84,8 @@ class AsgardGUI(Ui_MainWindow):
         self.SerialThreadClass = SerialThreadClass()
         self.SerialThreadClass.serialSignal.connect(self.updateConsole)
 
+        self.Viewer3Dinit = False
+
         self.actionAbout.triggered.connect(self.launchAboutWindow)
         self.actionExit.triggered.connect(self.close_application)
 
@@ -37,7 +95,7 @@ class AsgardGUI(Ui_MainWindow):
 
         self.HomeButton.pressed.connect(self.sendHomingCycleCommand)
         self.ZeroPositionButton.pressed.connect(self.sendZeroPositionCommand)
-        self.KillAlarmLockButton.pressed.connect(self.sendKillAlarmCommand)
+        self.KillAlarmLockButton.pressed.connect(self.TestIK)
 
         self.G0MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
         self.G1MoveRadioButton.clicked.connect(self.FeedRateBoxHide)
@@ -104,6 +162,13 @@ class AsgardGUI(Ui_MainWindow):
 
         self.FKGoAllButton.pressed.connect(self.FKMoveAll)
 
+        self.IKLocSliderX.valueChanged.connect(self.IKUpdate)
+        self.IKInputLocSpinBoxX.valueChanged.connect(self.IKInputLocSpinBoxXUpdate)
+        self.IKLocSliderY.valueChanged.connect(self.IKUpdate)
+        self.IKInputLocSpinBoxY.valueChanged.connect(self.IKInputLocSpinBoxYUpdate)
+        self.IKLocSliderZ.valueChanged.connect(self.IKUpdate)
+        self.IKInputLocSpinBoxZ.valueChanged.connect(self.IKInputLocSpinBoxZUpdate)
+
         self.GoButtonGripper.pressed.connect(self.MoveGripper)
         self.SliderGripper.valueChanged.connect(self.SliderUpdateGripper)
         self.SpinBoxGripper.valueChanged.connect(self.SpinBoxUpdateGripper)
@@ -117,6 +182,19 @@ class AsgardGUI(Ui_MainWindow):
 
         self.ConsoleButtonSend.pressed.connect(self.sendSerialCommand)
         self.ConsoleInput.returnPressed.connect(self.sendSerialCommand)
+
+        self.TabWidget.currentChanged.connect(self.start3D)
+
+        self.SettingsSaveCurrentButton.clicked.connect(self.saveCurrentSettings)
+        self.SettingsShowCurrent.stateChanged.connect(self.settingsDisable3DCurrent)
+        self.SettingsShowNext.stateChanged.connect(self.settingsDisable3DNext)
+        self.SettingsSetColorButtonCurrent.pressed.connect(self.settingsUpdateColorCurrent)
+        self.SettingsSetColorButtonNext.pressed.connect(self.settingsUpdateColorNext)
+        self.SettingsApplyCurrentButton.pressed.connect(self.applyCurrentSettings)
+
+        self.loadSettings("conf/saved_configuration.json")
+
+
 
     def close_application(self):
         sys.exit()
@@ -149,10 +227,6 @@ class AsgardGUI(Ui_MainWindow):
         else:
             self.QABMenuBot.hide()
             self.CollapseButtonQAB.setText("▶")
-
-
-
-
 
     def sendHomingCycleCommand(self):
         if s0.isOpen():
@@ -206,6 +280,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt1(self):
         val=int(self.SpinBoxArt1.value()*10)
         self.FKSliderArt1.setValue(val)
+        self.moveNext3D()
     def FKDec10Art1(self):
         val=self.SpinBoxArt1.value()-10
         self.SpinBoxArt1.setValue(val)
@@ -247,6 +322,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt2(self):
         val=int(self.SpinBoxArt2.value()*10)
         self.FKSliderArt2.setValue(val)
+        self.moveNext3D()
     def FKDec10Art2(self):
         val=self.SpinBoxArt2.value()-10
         self.SpinBoxArt2.setValue(val)
@@ -288,6 +364,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt3(self):
         val=int(self.SpinBoxArt3.value()*10)
         self.FKSliderArt3.setValue(val)
+        self.moveNext3D()
     def FKDec10Art3(self):
         val=self.SpinBoxArt3.value()-10
         self.SpinBoxArt3.setValue(val)
@@ -329,6 +406,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt4(self):
         val=int(self.SpinBoxArt4.value()*10)
         self.FKSliderArt4.setValue(val)
+        self.moveNext3D()
     def FKDec10Art4(self):
         val=self.SpinBoxArt4.value()-10
         self.SpinBoxArt4.setValue(val)
@@ -370,6 +448,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt5(self):
         val=int(self.SpinBoxArt5.value()*10)
         self.FKSliderArt5.setValue(val)
+        self.moveNext3D()
     def FKDec10Art5(self):
         val=self.SpinBoxArt5.value()-10
         self.SpinBoxArt5.setValue(val)
@@ -411,6 +490,7 @@ class AsgardGUI(Ui_MainWindow):
     def FKSpinBoxUpdateArt6(self):
         val=int(self.SpinBoxArt6.value()*10)
         self.FKSliderArt6.setValue(val)
+        self.moveNext3D()
     def FKDec10Art6(self):
         val=self.SpinBoxArt6.value()-10
         self.SpinBoxArt6.setValue(val)
@@ -431,7 +511,7 @@ class AsgardGUI(Ui_MainWindow):
         self.SpinBoxArt6.setValue(val)
 
 #FK Every Articulation Functions
-    def FKMoveAll(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
+    def FKMoveAll(self): # En realidad esto no va así, hay que calcular el movimiento acoplado de los dos ultimos grados de libertad. Proximamente.
         if s0.isOpen():
             if self.G1MoveRadioButton.isChecked():
                 typeOfMovement="G1 "
@@ -446,6 +526,54 @@ class AsgardGUI(Ui_MainWindow):
             self.ConsoleOutput.appendPlainText(messageToConsole)
         else:
             self.noSerialConnection()
+
+# IK Functions
+    def IKInputLocSpinBoxXUpdate(self):
+        self.IKLocSliderX.setValue(self.IKInputLocSpinBoxX.value())
+    def IKInputLocSpinBoxYUpdate(self):
+        self.IKLocSliderY.setValue(self.IKInputLocSpinBoxY.value())
+    def IKInputLocSpinBoxZUpdate(self):
+        self.IKLocSliderZ.setValue(self.IKInputLocSpinBoxZ.value())
+
+    def IKUpdate(self):
+        IKX=self.IKLocSliderX.value()
+        IKY=self.IKLocSliderY.value()
+        IKZ=self.IKLocSliderZ.value()
+        self.IKInputLocSpinBoxX.setValue(IKX)
+        self.IKInputLocSpinBoxY.setValue(IKY)
+        self.IKInputLocSpinBoxZ.setValue(IKZ)
+
+        if self.Viewer3Dinit:
+            EOATpos=[IKX,IKY,IKZ]
+            print(EOATpos)
+            self.thor3d.moveEOAT(EOATpos)
+
+    def TestIK(self):
+        #self.sendKillAlarmCommand es la buena
+
+        EOATpos=[self.IKInputLocSpinBoxX.value(),self.IKInputLocSpinBoxY.value(),self.IKInputLocSpinBoxZ.value()]
+        orientationAngles=[self.IKInputAngleSpinBoxX.value(),self.IKInputAngleSpinBoxY.value(),self.IKInputAngleSpinBoxZ.value()]
+        noaMatrix=self.thor3d.calculatenoaMatrix(orientationAngles)
+        angles = self.thor3d.IK(EOATpos, noaMatrix)
+
+        self.IKOrMatrix11.setValue(np.around(noaMatrix[0][0],4))
+        self.IKOrMatrix12.setValue(np.around(noaMatrix[0][1],4))
+        self.IKOrMatrix13.setValue(np.around(noaMatrix[0][2],4))
+        self.IKOrMatrix21.setValue(np.around(noaMatrix[1][0],4))
+        self.IKOrMatrix22.setValue(np.around(noaMatrix[1][1],4))
+        self.IKOrMatrix23.setValue(np.around(noaMatrix[1][2],4))
+        self.IKOrMatrix31.setValue(np.around(noaMatrix[2][0],4))
+        self.IKOrMatrix32.setValue(np.around(noaMatrix[2][1],4))
+        self.IKOrMatrix33.setValue(np.around(noaMatrix[2][2],4))
+        self.SpinBoxArt1.setValue(angles[0])
+        self.SpinBoxArt2.setValue(angles[1])
+        self.SpinBoxArt3.setValue(angles[2])
+        self.SpinBoxArt4.setValue(angles[3])
+        self.SpinBoxArt5.setValue(angles[4])
+        self.SpinBoxArt6.setValue(angles[5])
+
+
+
 
 # Gripper Functions
     def MoveGripper(self): # En realidad esto no va así, hay que calcular el movimiento acoplado. Proximamente.
@@ -540,12 +668,21 @@ class AsgardGUI(Ui_MainWindow):
     def updateFKPosDisplay(self,dataRead):
         data=dataRead[1:][:-1].split(",")
         self.updateCurrentState(data[0])
-        self.FKCurrentPosValueArt1.setText(data[1][5:][:-2]+"º")
-        self.FKCurrentPosValueArt2.setText(data[2][:-2]+"º")
-        self.FKCurrentPosValueArt3.setText(data[4][:-2]+"º")
-        self.FKCurrentPosValueArt4.setText(data[5][:-2]+"º")
-        self.FKCurrentPosValueArt5.setText(data[6][:-2]+"º")
-        self.FKCurrentPosValueArt6.setText(data[7][:-2]+"º")
+        a1=data[1][5:][:-2]
+        a2=data[2][:-2]
+        a3=data[4][:-2]
+        a4=data[5][:-2]
+        a5=data[6][:-2]
+        a6=data[7][:-2]
+        self.FKCurrentPosValueArt1.setText(a1+"º")
+        self.FKCurrentPosValueArt2.setText(a2+"º")
+        self.FKCurrentPosValueArt3.setText(a3+"º")
+        self.FKCurrentPosValueArt4.setText(a4+"º")
+        self.FKCurrentPosValueArt5.setText(a5+"º")
+        self.FKCurrentPosValueArt6.setText(a6+"º")
+
+        if self.Viewer3Dinit:
+            self.thor3d.rotateCurrentArm(float(a1),float(a2),float(a3),float(a4),float(a5),float(a6))
 
     def updateCurrentState(self, state):
         self.RobotStateDisplay.setText(state)
@@ -579,47 +716,117 @@ class AsgardGUI(Ui_MainWindow):
         msgBox.setText("The connection has not been established yet. Please establish the connection before trying to control.")
         msgBox.exec_()
 
-############### SERIAL READ THREAD CLASS ###############
+########## 3D ##############
 
-class SerialThreadClass(QtCore.QThread):
-    elapsedTime = time.time()
-    serialSignal = pyqtSignal(str)
-    def __init__(self, parent=None):
-         super(SerialThreadClass,self).__init__(parent)
-    def run(self):
-        while True:
-            if s0.isOpen():
-                try:
-                    s0.inWaiting()
-                except:
-                    self.serialSignal.emit("SERIAL-DISCONNECTED")
-                    print ("Lost Serial connection!")
+    def start3D(self):
+        if self.TabWidget.currentIndex()==1 and self.Viewer3Dinit==False:
+            self.thor3d=Robot(self.SettingsShowCurrent.isChecked(), self.SettingsShowNext.isChecked(), self.CurrentColor, self.NextColor)
+            self.gridLayout_5.addWidget(self.thor3d.w,0,0)
+            self.Viewer3Dinit=True
 
-                try:
-                    if time.time()-self.elapsedTime>0.1:
-                        self.elapsedTime=time.time()
-                        s0.write("?\n".encode('UTF-8'))
-                    dataRead = str(s0.readline())
-                    dataCropped=dataRead[2:][:-5]
-                    if dataCropped!="":
-                        self.serialSignal.emit(dataCropped)
-                except Exception as e:
-                    print ("Something failed: " + str(e))
+    def moveNext3D(self):
+        a1=self.SpinBoxArt1.value()
+        a2=self.SpinBoxArt2.value()
+        a3=self.SpinBoxArt3.value()
+        a4=self.SpinBoxArt4.value()
+        a5=self.SpinBoxArt5.value()
+        a6=self.SpinBoxArt6.value()
+        self.thor3d.rotateNextArm(a1,a2,a3,a4,a5,a6)
 
 
-###############  SERIAL READ THREAD CLASS ###############
+### settings
+
+
+    def loadSettings(self, path):
+        with open(path, "r") as jsonFile:
+                data = json.load(jsonFile)
+                jsonFile.close()
+
+
+        self.CurrentColor=QColor(data["3dviewer"]["currentmodel"]["color"]["r"],data["3dviewer"]["currentmodel"]["color"]["g"],data["3dviewer"]["currentmodel"]["color"]["b"],int(data["3dviewer"]["currentmodel"]["opacity"]*2.55))
+        self.SettingsSetOpacityCurrent.setValue(data["3dviewer"]["currentmodel"]["opacity"])
+        self.SettingsColorPreviewCurrent.setStyleSheet('background-color: rgba' + str(self.CurrentColor.getRgb()))
+        self.SettingsShowCurrent.setChecked(data["3dviewer"]["currentmodel"]["show"])
+
+        self.NextColor=QColor(data["3dviewer"]["nextmodel"]["color"]["r"],data["3dviewer"]["nextmodel"]["color"]["g"],data["3dviewer"]["nextmodel"]["color"]["b"],int(data["3dviewer"]["nextmodel"]["opacity"]*2.55))
+        self.SettingsSetOpacityNext.setValue(data["3dviewer"]["nextmodel"]["opacity"])
+        self.SettingsColorPreviewNext.setStyleSheet('background-color: rgba' + str(self.NextColor.getRgb()))
+        self.SettingsShowNext.setChecked(data["3dviewer"]["nextmodel"]["show"])
+
+
+    def saveCurrentSettings(self):
+        with open("conf/saved_configuration.json", "r") as jsonFile:
+                temp = json.load(jsonFile)
+                jsonFile.close()
+
+        temp["3dviewer"]["currentmodel"]["color"]["r"]=self.CurrentColor.red()
+        temp["3dviewer"]["currentmodel"]["color"]["g"]=self.CurrentColor.green()
+        temp["3dviewer"]["currentmodel"]["color"]["b"]=self.CurrentColor.blue()
+        temp["3dviewer"]["currentmodel"]["opacity"]=self.SettingsSetOpacityCurrent.value()
+        temp["3dviewer"]["currentmodel"]["show"]=self.SettingsShowCurrent.isChecked()
+        temp["3dviewer"]["nextmodel"]["color"]["r"]=self.NextColor.red()
+        temp["3dviewer"]["nextmodel"]["color"]["g"]=self.NextColor.green()
+        temp["3dviewer"]["nextmodel"]["color"]["b"]=self.NextColor.blue()
+        temp["3dviewer"]["nextmodel"]["opacity"]=self.SettingsSetOpacityNext.value()
+        temp["3dviewer"]["nextmodel"]["show"]=self.SettingsShowNext.isChecked()
+
+        with open("conf/saved_configuration.json", "w") as jsonFile:
+            json.dump(temp, jsonFile)
+            jsonFile.close()
 
 
 
 
+    def applyCurrentSettings(self):
+        if self.Viewer3Dinit:
+            self.CurrentColor.setAlpha(int(self.SettingsSetOpacityCurrent.value()*2.55))
+            self.NextColor.setAlpha(int(self.SettingsSetOpacityNext.value()*2.55))
+            self.thor3d.setColorCurrent(self.CurrentColor)
+            self.thor3d.setColorNext(self.NextColor)
+            self.thor3d.showModels(self.SettingsShowCurrent.isChecked(),self.SettingsShowNext.isChecked())
 
+    def settingsDisable3DCurrent(self):
+        if self.SettingsShowCurrent.isChecked():
+            self.SettingsColorLabelCurrent.setEnabled(True)
+            self.SettingsColorPreviewCurrent.setEnabled(True)
+            self.SettingsSetColorButtonCurrent.setEnabled(True)
+            self.SettingsOpacityLabelCurrent.setEnabled(True)
+            self.SettingsSetOpacityCurrent.setEnabled(True)
+        else:
+            self.SettingsColorLabelCurrent.setEnabled(False)
+            self.SettingsColorPreviewCurrent.setEnabled(False)
+            self.SettingsSetColorButtonCurrent.setEnabled(False)
+            self.SettingsOpacityLabelCurrent.setEnabled(False)
+            self.SettingsSetOpacityCurrent.setEnabled(False)
 
+    def settingsDisable3DNext(self):
+        if self.SettingsShowNext.isChecked():
+            self.SettingsColorLabelNext.setEnabled(True)
+            self.SettingsColorPreviewNext.setEnabled(True)
+            self.SettingsSetColorButtonNext.setEnabled(True)
+            self.SettingsOpacityLabelNext.setEnabled(True)
+            self.SettingsSetOpacityNext.setEnabled(True)
+        else:
+            self.SettingsColorLabelNext.setEnabled(False)
+            self.SettingsColorPreviewNext.setEnabled(False)
+            self.SettingsSetColorButtonNext.setEnabled(False)
+            self.SettingsOpacityLabelNext.setEnabled(False)
+            self.SettingsSetOpacityNext.setEnabled(False)
+
+    def settingsUpdateColorCurrent(self):
+        self.CurrentColor = QtWidgets.QColorDialog.getColor(self.CurrentColor)
+        self.SettingsColorPreviewCurrent.setStyleSheet('background-color: rgba' + str(self.CurrentColor.getRgb()))
+
+    def settingsUpdateColorNext(self):
+        self.NextColor = QtWidgets.QColorDialog.getColor(self.NextColor)
+        self.SettingsColorPreviewNext.setStyleSheet('background-color: rgba' + str(self.NextColor.getRgb()))
 
 
 
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
+
     mwindow = QtWidgets.QMainWindow()
 
     prog = AsgardGUI(mwindow)
