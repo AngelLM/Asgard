@@ -11,9 +11,14 @@ Asgard is a Graphical User Interface (GUI) for [Thor](https://github.com/AngelLM
   * 3D display
   * 3D IK Controller/Sequence Programmer
 
+## Changes
+
+ * 12/23/2024: Convert from PyQt5 to PyQt6. Add Gripper Upper range setting to Preferences dialog
+
 <img src="doc/AsgardGUI.png" width="800">
 
 ## Tools and useful links
+
 * **QtDesigner** - Used to design the graphical part of gui
 * **Python 3.4** - Used to program and execute Asgard
 + **[SKYLOGIC PROJECTS Tutorial](http://projects.skylogic.ca/blog/how-to-install-pyqt5-and-build-your-first-gui-in-python-3-4/)** - How to Install PyQt5 and Build Your First GUI in Python 3.4

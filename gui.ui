@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>900</width>
-    <height>898</height>
+    <height>920</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -39,7 +39,7 @@
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+     <enum>Qt::Orientation::Horizontal</enum>
     </property>
    </widget>
    <widget class="Line" name="line_8">
@@ -52,7 +52,7 @@
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Vertical</enum>
+     <enum>Qt::Orientation::Vertical</enum>
     </property>
    </widget>
    <widget class="Line" name="line_15">
@@ -65,7 +65,7 @@
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+     <enum>Qt::Orientation::Horizontal</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="KillAlarmLockButton">
@@ -73,7 +73,7 @@
      <rect>
       <x>270</x>
       <y>120</y>
-      <width>81</width>
+      <width>85</width>
       <height>25</height>
      </rect>
     </property>
@@ -86,7 +86,7 @@
      <rect>
       <x>30</x>
       <y>120</y>
-      <width>81</width>
+      <width>85</width>
       <height>25</height>
      </rect>
     </property>
@@ -99,7 +99,7 @@
      <rect>
       <x>150</x>
       <y>120</y>
-      <width>81</width>
+      <width>85</width>
       <height>25</height>
      </rect>
     </property>
@@ -122,7 +122,6 @@
     <property name="font">
      <font>
       <pointsize>16</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
       <underline>false</underline>
      </font>
@@ -143,7 +142,6 @@
     <property name="font">
      <font>
       <pointsize>16</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -167,10 +165,10 @@
      <string notr="true">background-color:rgb(255, 255, 255)</string>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Box</enum>
+     <enum>QFrame::Shape::Box</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
+     <enum>QFrame::Shadow::Plain</enum>
     </property>
     <widget class="QLabel" name="IkOutputValueZ">
      <property name="geometry">
@@ -200,7 +198,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -239,7 +236,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -262,7 +258,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -300,7 +295,7 @@
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+     <enum>Qt::Orientation::Horizontal</enum>
     </property>
    </widget>
    <widget class="QLineEdit" name="ConsoleInput">
@@ -329,9 +324,9 @@
    <widget class="QCheckBox" name="ConsoleShowOkRespcheckBox">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>720</x>
       <y>615</y>
-      <width>121</width>
+      <width>131</width>
       <height>17</height>
      </rect>
     </property>
@@ -351,7 +346,6 @@
     <property name="font">
      <font>
       <pointsize>16</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -391,7 +385,7 @@
      </rect>
     </property>
     <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+     <enum>Qt::Orientation::Horizontal</enum>
     </property>
    </widget>
    <widget class="QFrame" name="GripperFrame">
@@ -404,10 +398,10 @@
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
     <widget class="QLabel" name="GripperLabel">
      <property name="geometry">
@@ -421,7 +415,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -460,12 +453,12 @@
       <rect>
        <x>20</x>
        <y>40</y>
-       <width>51</width>
+       <width>88</width>
        <height>22</height>
       </rect>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
      <property name="suffix">
       <string>%</string>
@@ -551,13 +544,13 @@
       <bool>true</bool>
      </property>
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
      <property name="invertedAppearance">
       <bool>false</bool>
      </property>
      <property name="tickPosition">
-      <enum>QSlider::TicksBelow</enum>
+      <enum>QSlider::TickPosition::TicksBelow</enum>
      </property>
      <property name="tickInterval">
       <number>20</number>
@@ -587,7 +580,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -606,10 +598,10 @@
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
     <widget class="QDoubleSpinBox" name="IKInputSpinBoxX">
      <property name="enabled">
@@ -619,12 +611,12 @@
       <rect>
        <x>15</x>
        <y>6</y>
-       <width>82</width>
+       <width>88</width>
        <height>20</height>
       </rect>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
      <property name="suffix">
       <string> mm</string>
@@ -647,12 +639,12 @@
       <rect>
        <x>125</x>
        <y>6</y>
-       <width>82</width>
+       <width>88</width>
        <height>20</height>
       </rect>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
      <property name="suffix">
       <string> mm</string>
@@ -682,7 +674,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -708,7 +699,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -727,12 +717,12 @@
       <rect>
        <x>233</x>
        <y>6</y>
-       <width>82</width>
+       <width>88</width>
        <height>20</height>
       </rect>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
      <property name="suffix">
       <string> mm</string>
@@ -762,7 +752,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -797,7 +786,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -828,7 +816,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -887,12 +874,11 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="text">
      <string>Connect</string>
@@ -922,7 +908,6 @@
     <property name="font">
      <font>
       <pointsize>12</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -953,7 +938,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -961,13 +945,13 @@
      <string notr="true">background-color: rgb(255, 0, 0)</string>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Box</enum>
+     <enum>QFrame::Shape::Box</enum>
     </property>
     <property name="text">
      <string>Disconnected</string>
     </property>
     <property name="alignment">
-     <set>Qt::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
    <widget class="QComboBox" name="BaudRateComboBox">
@@ -1078,7 +1062,6 @@
     </property>
     <property name="font">
      <font>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -1089,9 +1072,9 @@
    <widget class="QCheckBox" name="ConsoleShowVerbosecheckBox">
     <property name="geometry">
      <rect>
-      <x>580</x>
+      <x>570</x>
       <y>615</y>
-      <width>131</width>
+      <width>141</width>
       <height>17</height>
      </rect>
     </property>
@@ -1123,7 +1106,6 @@
     <property name="font">
      <font>
       <pointsize>10</pointsize>
-      <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
@@ -1144,10 +1126,10 @@
      <string notr="true">background-color:rgb(255, 255, 255)</string>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Box</enum>
+     <enum>QFrame::Shape::Box</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
+     <enum>QFrame::Shadow::Plain</enum>
     </property>
     <widget class="QLabel" name="FKCurrentPosValueArt1">
      <property name="geometry">
@@ -1177,7 +1159,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -1200,7 +1181,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -1239,7 +1219,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -1278,7 +1257,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -1317,7 +1295,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -1372,7 +1349,6 @@
      <property name="font">
       <font>
        <pointsize>10</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -1397,10 +1373,10 @@
      <item>
       <widget class="QFrame" name="frame_7">
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <widget class="QLabel" name="label_29">
         <property name="geometry">
@@ -1427,7 +1403,6 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -1460,13 +1435,13 @@
          <bool>true</bool>
         </property>
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="invertedAppearance">
          <bool>false</bool>
         </property>
         <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
+         <enum>QSlider::TickPosition::TicksBelow</enum>
         </property>
         <property name="tickInterval">
          <number>200</number>
@@ -1508,7 +1483,7 @@
          </rect>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <widget class="QDoubleSpinBox" name="SpinBoxArt1">
@@ -1516,12 +1491,12 @@
          <rect>
           <x>25</x>
           <y>40</y>
-          <width>62</width>
+          <width>88</width>
           <height>22</height>
          </rect>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="suffix">
          <string>º</string>
@@ -1633,7 +1608,6 @@
        <property name="font">
         <font>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -1657,10 +1631,10 @@
      <item>
       <widget class="QFrame" name="frame_8">
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <widget class="QLabel" name="label_33">
         <property name="geometry">
@@ -1687,7 +1661,6 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -1720,13 +1693,13 @@
          <bool>true</bool>
         </property>
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="invertedAppearance">
          <bool>false</bool>
         </property>
         <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
+         <enum>QSlider::TickPosition::TicksBelow</enum>
         </property>
         <property name="tickInterval">
          <number>200</number>
@@ -1768,7 +1741,7 @@
          </rect>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <widget class="QDoubleSpinBox" name="SpinBoxArt2">
@@ -1776,12 +1749,12 @@
          <rect>
           <x>25</x>
           <y>40</y>
-          <width>62</width>
+          <width>88</width>
           <height>22</height>
          </rect>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="suffix">
          <string>º</string>
@@ -1893,7 +1866,6 @@
        <property name="font">
         <font>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -1917,10 +1889,10 @@
      <item>
       <widget class="QFrame" name="frame_9">
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <widget class="QLabel" name="label_37">
         <property name="geometry">
@@ -1947,7 +1919,6 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -1980,13 +1951,13 @@
          <bool>true</bool>
         </property>
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="invertedAppearance">
          <bool>false</bool>
         </property>
         <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
+         <enum>QSlider::TickPosition::TicksBelow</enum>
         </property>
         <property name="tickInterval">
          <number>200</number>
@@ -2028,7 +1999,7 @@
          </rect>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <widget class="QDoubleSpinBox" name="SpinBoxArt3">
@@ -2036,12 +2007,12 @@
          <rect>
           <x>25</x>
           <y>40</y>
-          <width>62</width>
+          <width>88</width>
           <height>22</height>
          </rect>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="suffix">
          <string>º</string>
@@ -2153,7 +2124,6 @@
        <property name="font">
         <font>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -2177,10 +2147,10 @@
      <item>
       <widget class="QFrame" name="frame_10">
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <widget class="QLabel" name="label_41">
         <property name="geometry">
@@ -2207,7 +2177,6 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -2240,13 +2209,13 @@
          <bool>true</bool>
         </property>
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="invertedAppearance">
          <bool>false</bool>
         </property>
         <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
+         <enum>QSlider::TickPosition::TicksBelow</enum>
         </property>
         <property name="tickInterval">
          <number>200</number>
@@ -2288,7 +2257,7 @@
          </rect>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <widget class="QDoubleSpinBox" name="SpinBoxArt4">
@@ -2296,12 +2265,12 @@
          <rect>
           <x>25</x>
           <y>40</y>
-          <width>62</width>
+          <width>88</width>
           <height>22</height>
          </rect>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="suffix">
          <string>º</string>
@@ -2413,7 +2382,6 @@
        <property name="font">
         <font>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -2437,10 +2405,10 @@
      <item>
       <widget class="QFrame" name="frame_11">
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <widget class="QLabel" name="label_45">
         <property name="geometry">
@@ -2467,7 +2435,6 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -2500,13 +2467,13 @@
          <bool>true</bool>
         </property>
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="invertedAppearance">
          <bool>false</bool>
         </property>
         <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
+         <enum>QSlider::TickPosition::TicksBelow</enum>
         </property>
         <property name="tickInterval">
          <number>200</number>
@@ -2548,7 +2515,7 @@
          </rect>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <widget class="QDoubleSpinBox" name="SpinBoxArt5">
@@ -2556,12 +2523,12 @@
          <rect>
           <x>25</x>
           <y>40</y>
-          <width>62</width>
+          <width>88</width>
           <height>22</height>
          </rect>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="suffix">
          <string>º</string>
@@ -2673,7 +2640,6 @@
        <property name="font">
         <font>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -2697,10 +2663,10 @@
      <item>
       <widget class="QFrame" name="frame_12">
        <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+        <enum>QFrame::Shape::StyledPanel</enum>
        </property>
        <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Shadow::Raised</enum>
        </property>
        <widget class="QLabel" name="label_49">
         <property name="geometry">
@@ -2727,7 +2693,6 @@
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -2760,13 +2725,13 @@
          <bool>true</bool>
         </property>
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="invertedAppearance">
          <bool>false</bool>
         </property>
         <property name="tickPosition">
-         <enum>QSlider::TicksBelow</enum>
+         <enum>QSlider::TickPosition::TicksBelow</enum>
         </property>
         <property name="tickInterval">
          <number>200</number>
@@ -2808,7 +2773,7 @@
          </rect>
         </property>
         <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <enum>Qt::Orientation::Vertical</enum>
         </property>
        </widget>
        <widget class="QDoubleSpinBox" name="SpinBoxArt6">
@@ -2816,12 +2781,12 @@
          <rect>
           <x>25</x>
           <y>40</y>
-          <width>62</width>
+          <width>88</width>
           <height>22</height>
          </rect>
         </property>
         <property name="alignment">
-         <set>Qt::AlignCenter</set>
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
         <property name="suffix">
          <string>º</string>
@@ -2933,7 +2898,6 @@
        <property name="font">
         <font>
          <pointsize>10</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -3010,10 +2974,10 @@
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Shape::StyledPanel</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <enum>QFrame::Shadow::Raised</enum>
     </property>
     <widget class="QPushButton" name="IkMultiplierDecSpinBox">
      <property name="enabled">
@@ -3087,12 +3051,12 @@
       <rect>
        <x>3</x>
        <y>75</y>
-       <width>71</width>
+       <width>88</width>
        <height>22</height>
       </rect>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
      <property name="suffix">
       <string/>
@@ -3269,7 +3233,7 @@
      </rect>
     </property>
     <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
     <property name="suffix">
      <string> º/min</string>
@@ -3340,7 +3304,7 @@
      <x>0</x>
      <y>0</y>
      <width>900</width>
-     <height>21</height>
+     <height>33</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -3379,7 +3343,7 @@
   </action>
   <action name="actionPreferences">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="text">
     <string>Preferences</string>
