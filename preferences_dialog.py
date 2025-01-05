@@ -1,5 +1,8 @@
-from PyQt6.QtWidgets import QDialog, QSpinBox, QDialogButtonBox
+from PyQt6.QtWidgets import QDialog, QDialogButtonBox, QSpinBox
+from PyQt6.QtGui import QPixmap, QIcon
+from PyQt6.QtCore import QByteArray
 from preferences import Ui_PreferencesDialog
+from img.thor_icon import icon_32, icon_16
 
 
 class PreferencesDialog(QDialog, Ui_PreferencesDialog):
@@ -9,7 +12,8 @@ class PreferencesDialog(QDialog, Ui_PreferencesDialog):
         self.setupUi(self)
 
         # Store references to UI elements
-        self.spinBoxGripperUpperRange = self.findChild(QSpinBox, "spinBoxGripperUpperRange")
+        self.spinBoxGripperUpperRange = self.findChild(
+            QSpinBox, "spinBoxGripperUpperRange")
         self.buttonBox = self.findChild(QDialogButtonBox, "buttonBox")
 
         # Set initial values
@@ -18,7 +22,30 @@ class PreferencesDialog(QDialog, Ui_PreferencesDialog):
         # Connect the dialog buttons
         self.buttonBox.accepted.connect(self.accept)
         self.buttonBox.rejected.connect(self.reject)
+        self.setIcon()
 
     @property
     def gripperUpperRange(self):
         return int(self.spinBoxGripperUpperRange.value())
+
+    def setIcon(self):
+        # Convert base64 to bytes
+        image_32 = QByteArray.fromBase64(icon_32.encode())
+
+        # Create QPixmap from bytes
+        pixmap_32 = QPixmap()
+        pixmap_32.loadFromData(image_32)
+
+        # Convert base64 to bytes
+        image_16 = QByteArray.fromBase64(icon_16.encode())
+
+        # Create QPixmap from bytes
+        pixmap_16 = QPixmap()
+        pixmap_16.loadFromData(image_16)
+
+        # Create and set icon
+        icon = QIcon()
+        icon.addPixmap(pixmap_32, QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addPixmap(pixmap_16, QIcon.Mode.Normal, QIcon.State.On)
+
+        self.setWindowIcon(icon)

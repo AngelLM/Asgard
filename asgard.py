@@ -1,9 +1,12 @@
-import time
+"""
+    File: asgard.py
+    Description: Main application code for the Asgard GUI.
+"""
 import sys
 import os
 
 # pip install PyQt6
-from PyQt6 import QtCore, QtWidgets
+from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtGui import *
 from PyQt6.QtCore import *
@@ -11,37 +14,48 @@ from PyQt6.QtCore import *
 # Save settings from preferences dialog
 import configparser
 
-# pip install pyserial
-import serial
-
 from gui import Ui_MainWindow
 from about import Ui_Dialog as About_Ui_Dialog
 from preferences_dialog import PreferencesDialog
 
+# Import the application icons
+from img.thor_icon import icon_32, icon_16
+
 import serial_port_finder as spf
+from serial_read_thread_class import SerialThreadClass
 
+# pip install pyserial
+import serial
+
+# Create a serial object
 s0 = serial.Serial()
-
-
-class AboutDialog(About_Ui_Dialog):
-    def __init__(self, dialog):
-        About_Ui_Dialog.__init__(self)
-        self.setupUi(dialog)
 
 
 class AsgardGUI(QMainWindow, Ui_MainWindow):
     def __init__(self):
         # Call the QMainWindow __init__ method
         super(AsgardGUI, self).__init__()
+
         # Call the Ui_MainWindow setupUi method to create the GUI
         self.setupUi(self)
+
+        # Set the icon of the application
+        self.setIcon()
 
         # Load settings from settings.ini file
         self.loadSettings()
 
+        # Get the available serial ports
         self.getSerialPorts()
 
-        self.SerialThreadClass = SerialThreadClass()
+        self.SerialThreadClass = SerialThreadClass(s0)
+
+        # Connect methods to the GUI elements
+        self.connect_methods()
+
+ # -------------------------- CONNECT METHODS ------------------------------ #
+    def connect_methods(self):
+        """Connect methods to GUI elements."""
         self.SerialThreadClass.serialSignal.connect(self.updateConsole)
 
         # Menu bar actions
@@ -170,7 +184,6 @@ class AsgardGUI(QMainWindow, Ui_MainWindow):
             self.FeedRateInput.setEnabled(False)
 
     # FK Art1 Functions
-
     def FKMoveArt1(self):
         if s0.is_open:
             if self.G1MoveRadioButton.isChecked():
@@ -664,7 +677,7 @@ class AsgardGUI(QMainWindow, Ui_MainWindow):
         )
         msgBox.exec()
 
-    # ------------------ LAUNCH PREFERENCES WINDOW --------------------------- #
+# ------------------- LAUNCH PREFERENCES WINDOW ---------------------------- #
     def launchPreferencesWindow(self):
         dialog = PreferencesDialog(self.gripperUpperRange)
         result = dialog.exec()
@@ -680,7 +693,7 @@ class AsgardGUI(QMainWindow, Ui_MainWindow):
         self.saveSettings()
         return self.gripperUpperRange
 
-    # --------------------------- SAVE SETTINGS -------------------------------#
+# ---------------------------- SAVE SETTINGS --------------------------------#
     def saveSettings(self):
         """Save program settings for RotationAngle"""
         # Create a ConfigParser object to handle configuration file
@@ -696,7 +709,7 @@ class AsgardGUI(QMainWindow, Ui_MainWindow):
             # Write the configuration data into the settings.ini file
             config.write(configfile)
 
-    # --------------------------- LOAD SETTINGS -------------------------------#
+# --------------------------- LOAD SETTINGS -------------------------------- #
     def loadSettings(self):
         """Load program prefences from settings.ini file"""
         # Check if the settings file exists
@@ -717,37 +730,35 @@ class AsgardGUI(QMainWindow, Ui_MainWindow):
                 # and assign it to the gripperUpperRange variable
                 self.gripperUpperRange = int(gripperUpperRange)
 
+# ---------------------------- SET ICON ------------------------------------ #
+    def setIcon(self):
+        # Convert base64 to bytes
+        image_32 = QByteArray.fromBase64(icon_32.encode())
 
-############### SERIAL READ THREAD CLASS ###############
-class SerialThreadClass(QtCore.QThread):
-    elapsedTime = time.time()
-    serialSignal = pyqtSignal(str)
+        # Create QPixmap from bytes
+        pixmap_32 = QPixmap()
+        pixmap_32.loadFromData(image_32)
 
-    def __init__(self, parent=None):
-        super(SerialThreadClass, self).__init__(parent)
+        # Convert base64 to bytes
+        image_16 = QByteArray.fromBase64(icon_16.encode())
 
-    def run(self):
-        while True:
-            if s0.is_open:
-                try:
-                    s0.in_waiting
-                except:
-                    self.serialSignal.emit("SERIAL-DISCONNECTED")
-                    print("Lost Serial connection!")
+        # Create QPixmap from bytes
+        pixmap_16 = QPixmap()
+        pixmap_16.loadFromData(image_16)
 
-                try:
-                    if time.time() - self.elapsedTime > 0.1:
-                        self.elapsedTime = time.time()
-                        s0.write("?\n".encode("UTF-8"))
-                    dataRead = str(s0.readline())
-                    dataCropped = dataRead[2:][:-5]
-                    if dataCropped != "":
-                        self.serialSignal.emit(dataCropped)
-                except Exception as e:
-                    print("Something failed: " + str(e))
+        # Create and set icon
+        icon = QIcon()
+        icon.addPixmap(pixmap_32, QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addPixmap(pixmap_16, QIcon.Mode.Normal, QIcon.State.On)
+
+        self.setWindowIcon(icon)
 
 
-###############  SERIAL READ THREAD CLASS ###############
+# ---------------------- ABOUT DIALOG CLASS -------------------------------- #
+class AboutDialog(About_Ui_Dialog):
+    def __init__(self, dialog):
+        About_Ui_Dialog.__init__(self)
+        self.setupUi(dialog)
 
 
 def main():
