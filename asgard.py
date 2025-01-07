@@ -1,15 +1,15 @@
 """
     File: asgard.py
-    Description: Main application code for the Asgard GUI.
+    Description: Main application code for the Thor Asgard GUI.
 """
 import sys
 import os
 
 # pip install PyQt6
-from PyQt6 import QtWidgets
-from PyQt6.QtWidgets import QMainWindow
-from PyQt6.QtGui import *
-from PyQt6.QtCore import *
+from PySide6 import QtWidgets
+from PySide6.QtWidgets import QMainWindow
+from PySide6.QtGui import *
+from PySide6.QtCore import *
 
 # Save settings from preferences dialog
 import configparser

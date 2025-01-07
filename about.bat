@@ -1,3 +1,3 @@
 rem Convert about.ui file to a python file
-pyuic6 -o about.py -x about.ui
+pyside6-uic about.ui -o about.py 
 pause

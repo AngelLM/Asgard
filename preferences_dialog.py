@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import QDialog, QDialogButtonBox, QSpinBox
-from PyQt6.QtGui import QPixmap, QIcon
-from PyQt6.QtCore import QByteArray
+from PySide6.QtWidgets import QDialog, QDialogButtonBox, QSpinBox
+from PySide6.QtGui import QPixmap, QIcon
+from PySide6.QtCore import QByteArray
 from preferences import Ui_PreferencesDialog
 from img.thor_icon import icon_32, icon_16
 
@@ -45,7 +45,7 @@ class PreferencesDialog(QDialog, Ui_PreferencesDialog):
 
         # Create and set icon
         icon = QIcon()
-        icon.addPixmap(pixmap_32, QIcon.Mode.Normal, QIcon.State.Off)
-        icon.addPixmap(pixmap_16, QIcon.Mode.Normal, QIcon.State.On)
+        icon.addPixmap(pixmap_32, QIcon.Normal, QIcon.Off)
+        icon.addPixmap(pixmap_16, QIcon.Normal, QIcon.On)
 
         self.setWindowIcon(icon)
